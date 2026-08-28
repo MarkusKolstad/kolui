@@ -1,0 +1,89 @@
+@reference "../../../index.css";
+
+.btn {
+  @apply border rounded-sm cursor-pointer transition-all;
+
+  --color: #ff4141;
+  /* Colors */
+  &.btn-primary {
+    --color: var(--primary);
+  }
+  &.btn-secondary {
+    --color: var(--secondary);
+  }
+  &.btn-accent {
+    --color: var(--accent);
+  }
+  &.btn-success {
+    --color: var(--success);
+  }
+  &.btn-error {
+    --color: var(--error);
+  }
+  &.btn-warning {
+    --color: var(--warning);
+  }
+
+  /* Variants */
+  &.btn-filled {
+    @apply border border-[var(--color)] bg-[var(--color)] text-white;
+
+    &:hover {
+      background-color: color-mix(in oklch, var(--color) 95%, black);
+    }
+    &:active {
+      background-color: color-mix(in oklch, var(--color) 85%, black);
+    }
+  }
+  &.btn-outlined {
+    @apply border border-[var(--color)] text-[var(--color)];
+
+    &:hover {
+      background-color: color-mix(in oklch, var(--color) 15%, white);
+    }
+    &:active {
+      background-color: color-mix(in oklch, var(--color) 25%, white);
+    }
+  }
+  &.btn-ghost {
+    @apply border-transparent text-[var(--color)];
+
+    &:hover {
+      background-color: color-mix(in oklch, var(--color) 15%, white);
+    }
+    &:active {
+      background-color: color-mix(in oklch, var(--color) 25%, white);
+    }
+  }
+
+  /* Sizes */
+  &.btn-sm {
+    @apply px-2 text-sm;
+  }
+  &.btn-md {
+    @apply px-3 py-1 text-base;
+  }
+  &.btn-lg {
+    @apply px-4 py-2 text-lg;
+  }
+
+  &.icon-btn {
+    @apply aspect-square flex justify-center items-center p-0;
+    &.btn-sm {
+      @apply min-w-6;
+    }
+    &.btn-md {
+      @apply min-w-8;
+    }
+    &.btn-lg {
+      @apply min-w-10;
+    }
+  }
+
+  &.btn-rounded {
+    @apply rounded-full;
+  }
+  &.btn-square {
+    @apply rounded-sm;
+  }
+}

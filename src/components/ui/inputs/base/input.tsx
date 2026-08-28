@@ -1,4 +1,4 @@
-import { cn } from "#/lib/utils";
+import { cn } from "@/lib/utils";
 import { useRender } from "@base-ui/react";
 import {
   type ComponentPropsWithoutRef,

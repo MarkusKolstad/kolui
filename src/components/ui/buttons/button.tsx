@@ -1,8 +1,8 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cva, type VariantProps } from "class-variance-authority";
 
-import { useRipple } from "#/hooks/useRipple";
-import { cn } from "#/lib/utils";
+import { useRipple } from "@/hooks/useRipple";
+import { cn } from "@/lib/utils";
 import "./button.styles.css";
 
 const buttonVariants = cva("btn", {

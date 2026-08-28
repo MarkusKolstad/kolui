@@ -8,7 +8,7 @@ import {
   TabPanel,
   Tabs,
   TabsList,
-} from "#/components/ui/tabs/tabs";
+} from "@/components/ui/tabs/tabs";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {

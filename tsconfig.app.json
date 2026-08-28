@@ -1,11 +1,9 @@
 {
   "compilerOptions": {
     /* AI recommendation */
-    "baseUrl": ".",
     "paths": {
-      "#/*": ["./src/*"]
+      "@/*": ["./src/*"]
     },
-    "ignoreDeprecations": "6.0",
 
     /* Base */
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",

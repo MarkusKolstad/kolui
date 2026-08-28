@@ -2,12 +2,30 @@ import type { Meta, StoryObj } from "@storybook/react-vite";
 
 import { fn } from "storybook/test";
 
-import { Button } from "../components/ui/buttons/button";
+import {
+  Tab,
+  TabIndicator,
+  TabPanel,
+  Tabs,
+  TabsList,
+} from "@/components/ui/tabs/tabs";
+import { type LucideProps } from "lucide-react";
+import { createElement } from "react";
+
+const icon = (
+  svg: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >,
+) =>
+  createElement(svg, {
+    // size: 16,
+    "aria-hidden": true,
+  });
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: "Example/Buttons/Button",
-  component: Button,
+  title: "Example/Tabs",
+  //   component: ReactNode,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: "centered",
@@ -16,80 +34,45 @@ const meta = {
   tags: ["autodocs"],
   // More on argTypes: https://storybook.js.org/docs/api/arg-types
   argTypes: {
-    // backgroundColor: { control: "color" },
     variant: {
       control: "select",
       options: ["filled", "outlined", "ghost"],
     },
     theme: {
       control: "select",
-      options: [
-        "primary",
-        "secondary",
-        "accent",
-        "success",
-        "warning",
-        "error",
-      ],
-    },
-    size: {
-      control: "select",
-      options: ["sm", "md", "lg"],
-    },
-    shape: {
-      control: "select",
-      options: ["rounded", "square"],
+      options: ["primary", "secondary", "tertiary"],
     },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
-  args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+  args: {
+    onClick: fn(),
+  },
+} satisfies Meta<typeof TabsList>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const tabs = Array.from(Array(5)).map((_item, index) => index + 1);
+
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
   args: {
-    // primary: true,
-
     variant: "filled",
     theme: "primary",
-    children: "Filled",
   },
-};
-
-export const Secondary: Story = {
-  args: {
-    variant: "outlined",
-    children: "Outlined",
-  },
-};
-
-export const Ghost: Story = {
-  args: {
-    variant: "ghost",
-    children: "Ghost",
-  },
-};
-
-export const Large: Story = {
-  args: {
-    size: "lg",
-    children: "Large",
-  },
-};
-
-export const Medium: Story = {
-  args: {
-    size: "md",
-    children: "Medium",
-  },
-};
-
-export const Small: Story = {
-  args: {
-    size: "sm",
-    children: "Small",
+  render: (args: any) => {
+    return (
+      <Tabs>
+        <TabsList variant={args.variant} theme={args.theme}>
+          {tabs.map((tab) => (
+            <Tab value={`tab${tab}`}>Tab {tab}</Tab>
+          ))}
+          <TabIndicator />
+        </TabsList>
+        {tabs.map((tab) => (
+          <TabPanel value={`tab${tab}`}>TabPanel {tab}</TabPanel>
+        ))}
+      </Tabs>
+    );
   },
 };

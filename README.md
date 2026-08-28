@@ -1,3 +1,19 @@
+## Get Started
+
+Update the library In kolui:powershell
+
+git add .
+git commit -m "Add new components"
+git push
+
+In the app:powershell
+
+bun update @marku/kolui
+
+Or reinstall:powershell
+
+bun add github:YOUR_USERNAME/kolui
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.

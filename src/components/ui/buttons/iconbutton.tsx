@@ -12,7 +12,7 @@ const iconButtonVariants = (props: VariantProps<typeof buttonVariants>) =>
 function IconButton({
   className,
   variant = "filled",
-  color = "accent",
+  theme = "primary",
   size = "md",
   shape = "square",
   ...props
@@ -24,7 +24,7 @@ function IconButton({
       data-slot="button"
       onMouseDown={createRipple}
       className={cn(
-        iconButtonVariants({ variant, color, size, shape }),
+        iconButtonVariants({ variant, theme, size, shape }),
         className,
       )}
       {...props}

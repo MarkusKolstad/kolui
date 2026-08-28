@@ -12,7 +12,7 @@ const buttonVariants = cva("btn", {
       outlined: "btn-outlined",
       ghost: "btn-ghost",
     },
-    color: {
+    theme: {
       primary: "btn-primary",
       secondary: "btn-secondary",
       accent: "btn-accent",
@@ -40,7 +40,7 @@ const buttonVariants = cva("btn", {
 function Button({
   className,
   variant = "filled",
-  color = "accent",
+  theme = "primary",
   size = "md",
   shape = "square",
   ...props
@@ -51,7 +51,7 @@ function Button({
     <ButtonPrimitive
       data-slot="button"
       onMouseDown={createRipple}
-      className={cn(buttonVariants({ variant, color, size, shape, className }))}
+      className={cn(buttonVariants({ variant, theme, size, shape, className }))}
       {...props}
     />
   );

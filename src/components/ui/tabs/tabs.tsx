@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import { cn } from "#/lib/utils";
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
 import { cva, type VariantProps } from "class-variance-authority";
 import { forwardRef } from "react";

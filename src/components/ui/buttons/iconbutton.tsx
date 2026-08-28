@@ -1,8 +1,8 @@
 import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { type VariantProps } from "class-variance-authority";
 
-import { useRipple } from "@/hooks/useRipple";
-import { cn } from "@/lib/utils";
+import { useRipple } from "#/hooks/useRipple";
+import { cn } from "#/lib/utils";
 import { buttonVariants } from "./button";
 import "./button.styles.css";
 

@@ -59,7 +59,7 @@ export const Header = ({
             <Button size="sm" onClick={onLogin}>
               Log in
             </Button>
-            <Button color="primary" size="sm" onClick={onCreateAccount}>
+            <Button theme="primary" size="sm" onClick={onCreateAccount}>
               Sign up
             </Button>
           </>

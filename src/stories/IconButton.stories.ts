@@ -32,7 +32,7 @@ const meta = {
       control: "select",
       options: ["filled", "outlined", "ghost"],
     },
-    color: {
+    theme: {
       control: "select",
       options: [
         "primary",
@@ -65,7 +65,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     variant: "filled",
-    color: "accent",
+    theme: "primary",
     children: icon(XIcon),
   },
 };

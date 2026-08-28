@@ -10,6 +10,11 @@
     ".": "./src/index.ts",
     "./styles": "./src/index.css"
   },
+  "imports": {
+    "#/hooks/useRipple": "./src/hooks/useRipple.tsx",
+    "#lib/*": "./src/lib/*.ts",
+    "#components/*": "./src/components/*"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

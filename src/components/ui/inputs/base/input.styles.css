@@ -8,10 +8,6 @@
     @apply bg-transparent border-none outline-none;
   }
 
-  &:hover {
-    /* background-color: rgba(0, 0, 0, 0.1); */
-  }
-
   &:focus-within {
     @apply outline;
   }

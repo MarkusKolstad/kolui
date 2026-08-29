@@ -32,7 +32,6 @@
   "scripts": {
     "dev": "vite",
     "build": "bunx tsup && bun run scripts/build-css.mjs",
-    "prepare": "bun run build",
     "build:app": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { useRender } from "@base-ui/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import {
   type ComponentPropsWithoutRef,
   type ForwardedRef,
@@ -11,13 +12,29 @@ import {
 } from "react";
 import "./input.styles.css";
 
+const inputVariants = cva("input-wrapper", {
+  variants: {
+    size: {
+      sm: "input-sm",
+      md: "input-md",
+      lg: "input-lg",
+    },
+  },
+  defaultVariants: {
+    size: "md",
+  },
+});
+
 export interface AdornmentProps {
   startAdornment?: ReactNode;
   endAdornment?: ReactNode;
 }
 
 export interface InputBase
-  extends AdornmentProps, Omit<useRender.ComponentProps<"input">, "ref"> {}
+  extends
+    AdornmentProps,
+    Omit<useRender.ComponentProps<"input">, "ref" | "size">,
+    VariantProps<typeof inputVariants> {}
 
 type InputFieldElement = HTMLInputElement | HTMLTextAreaElement;
 
@@ -32,6 +49,7 @@ function InputWrapperImpl<
 >(
   {
     className,
+    size = "md",
     startAdornment,
     endAdornment,
     id,
@@ -51,7 +69,7 @@ function InputWrapperImpl<
   });
 
   return (
-    <label className={cn("input-wrapper", className)} htmlFor={inputId}>
+    <label className={cn(inputVariants({ size, className }))} htmlFor={inputId}>
       {startAdornment}
       {element}
       {endAdornment}
@@ -194,3 +212,5 @@ export function InputController({
 }
 
 export const InputFieldChildren = InputController;
+
+export { inputVariants };

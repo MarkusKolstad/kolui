@@ -38,7 +38,8 @@ __export(index_exports, {
   TextField: () => TextField,
   buttonVariants: () => buttonVariants,
   cn: () => cn,
-  iconButtonVariants: () => iconButtonVariants
+  iconButtonVariants: () => iconButtonVariants,
+  inputVariants: () => inputVariants
 });
 
 // src/components/index.ts
@@ -62,7 +63,8 @@ __export(components_exports, {
   TextAreaField: () => TextAreaField,
   TextField: () => TextField,
   buttonVariants: () => buttonVariants,
-  iconButtonVariants: () => iconButtonVariants
+  iconButtonVariants: () => iconButtonVariants,
+  inputVariants: () => inputVariants
 });
 
 // src/components/ui/index.ts
@@ -86,7 +88,8 @@ __export(ui_exports, {
   TextAreaField: () => TextAreaField,
   TextField: () => TextField,
   buttonVariants: () => buttonVariants,
-  iconButtonVariants: () => iconButtonVariants
+  iconButtonVariants: () => iconButtonVariants,
+  inputVariants: () => inputVariants
 });
 
 // src/components/ui/buttons/button.tsx
@@ -3536,8 +3539,21 @@ import {
   useId
 } from "react";
 import { Fragment, jsx as jsx3, jsxs } from "react/jsx-runtime";
+var inputVariants = cva("input-wrapper", {
+  variants: {
+    size: {
+      sm: "input-sm",
+      md: "input-md",
+      lg: "input-lg"
+    }
+  },
+  defaultVariants: {
+    size: "md"
+  }
+});
 function InputWrapperImpl({
   className,
+  size = "md",
   startAdornment,
   endAdornment,
   id,
@@ -3552,7 +3568,7 @@ function InputWrapperImpl({
     props: { ...inputProps, id: inputId },
     render
   });
-  return /* @__PURE__ */ jsxs("label", { className: cn("input-wrapper", className), htmlFor: inputId, children: [
+  return /* @__PURE__ */ jsxs("label", { className: cn(inputVariants({ size, className })), htmlFor: inputId, children: [
     startAdornment,
     element,
     endAdornment
@@ -4028,7 +4044,8 @@ export {
   TextField,
   buttonVariants,
   cn,
-  iconButtonVariants
+  iconButtonVariants,
+  inputVariants
 };
 /*! Bundled license information:
 

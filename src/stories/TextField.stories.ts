@@ -34,10 +34,10 @@ const meta = {
     //     "error",
     //   ],
     // },
-    // size: {
-    //   control: "select",
-    //   options: ["sm", "md", "lg"],
-    // },
+    size: {
+      control: "select",
+      options: ["sm", "md", "lg"],
+    },
   },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#story-args
   args: { onClick: fn() },
@@ -55,6 +55,7 @@ export const Primary: Story = {
       size: 16,
       "aria-hidden": true,
     }),
+    size: "md",
     // primary: true,
     // variant: "filled",
     // color: "accent",

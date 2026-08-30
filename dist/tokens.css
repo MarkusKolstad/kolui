@@ -38,6 +38,18 @@
   }
 }
 
+@layer utilities {
+  .border,
+  .border-x,
+  .border-y,
+  .border-t,
+  .border-r,
+  .border-b,
+  .border-l {
+    border-color: var(--border);
+  }
+}
+
 @keyframes ripple {
   to {
     transform: scale(4);
@@ -189,10 +201,10 @@
   border-radius: var(--radius-sm, 0.25rem);
   border-style: var(--tw-border-style);
   border-width: 1px;
-  padding-inline: calc(var(--spacing, 0.25rem) * 2);
-  padding-block: var(--spacing, 0.25rem);
+  border-color: var(--border);
   input,
   textarea {
+    flex-grow: 1;
     --tw-border-style: none;
     border-style: none;
     background-color: transparent;
@@ -203,6 +215,24 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
+}
+.input-wrapper.input-sm {
+  padding-inline: calc(var(--spacing, 0.25rem) * 2);
+  padding-block: var(--spacing, 0.25rem);
+  font-size: var(--text-sm, 0.875rem);
+  line-height: var(--tw-leading, var(--text-sm--line-height, calc(1.25 / 0.875)));
+}
+.input-wrapper.input-md {
+  padding-inline: calc(var(--spacing, 0.25rem) * 2);
+  padding-block: calc(var(--spacing, 0.25rem) * 1.5);
+  font-size: var(--text-base, 1rem);
+  line-height: var(--tw-leading, var(--text-base--line-height, calc(1.5 / 1)));
+}
+.input-wrapper.input-lg {
+  padding-inline: calc(var(--spacing, 0.25rem) * 3);
+  padding-block: calc(var(--spacing, 0.25rem) * 2);
+  font-size: var(--text-base, 1rem);
+  line-height: var(--tw-leading, var(--text-base--line-height, calc(1.5 / 1)));
 }
 .input-label {
   font-size: var(--text-sm, 0.875rem);

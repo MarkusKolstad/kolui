@@ -21,11 +21,14 @@ declare function Button({ className, variant, theme, size, shape, ...props }: Bu
 declare const iconButtonVariants: (props: VariantProps<typeof buttonVariants>) => string;
 declare function IconButton({ className, variant, theme, size, shape, ...props }: Button$1.Props & VariantProps<typeof buttonVariants>): react.JSX.Element;
 
+declare const inputVariants: (props?: {
+    size?: "sm" | "md" | "lg";
+} & class_variance_authority_types.ClassProp) => string;
 interface AdornmentProps {
     startAdornment?: ReactNode;
     endAdornment?: ReactNode;
 }
-interface InputBase extends AdornmentProps, Omit<useRender.ComponentProps<"input">, "ref"> {
+interface InputBase extends AdornmentProps, Omit<useRender.ComponentProps<"input">, "ref" | "size">, VariantProps<typeof inputVariants> {
 }
 type InputFieldElement = HTMLInputElement | HTMLTextAreaElement;
 type InputWrapperComponent = <TElement extends InputFieldElement = HTMLInputElement>(props: InputBase & RefAttributes<TElement>) => ReactElement | null;
@@ -85,4 +88,4 @@ declare const TabPanel: react.ForwardRefExoticComponent<Omit<_base_ui_react.Tabs
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { type AdornmentProps, Button, ComboboxField, type ComboboxProps, IconButton, type InputBase, InputController, type InputControllerProps, type InputControllerRenderProps, InputDescription, type InputDescriptionProps, InputField, InputFieldChildren, type InputFieldProps, InputLabel, type InputLabelProps, InputWrapper, SelectField, Tab, TabIndicator, TabPanel, Tabs, TabsList, TextAreaField, TextField, buttonVariants, cn, iconButtonVariants };
+export { type AdornmentProps, Button, ComboboxField, type ComboboxProps, IconButton, type InputBase, InputController, type InputControllerProps, type InputControllerRenderProps, InputDescription, type InputDescriptionProps, InputField, InputFieldChildren, type InputFieldProps, InputLabel, type InputLabelProps, InputWrapper, SelectField, Tab, TabIndicator, TabPanel, Tabs, TabsList, TextAreaField, TextField, buttonVariants, cn, iconButtonVariants, inputVariants };

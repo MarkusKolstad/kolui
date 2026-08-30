@@ -38,6 +38,18 @@
   }
 }
 
+@layer utilities {
+  .border,
+  .border-x,
+  .border-y,
+  .border-t,
+  .border-r,
+  .border-b,
+  .border-l {
+    border-color: var(--border);
+  }
+}
+
 @keyframes ripple {
   to {
     transform: scale(4);

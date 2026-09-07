@@ -1,18 +1,30 @@
-:root {
+:root,
+:root[data-kolui-theme="light"] {
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
+  --surface-soft: #f4f6f8;
+  /* --border: #e5e4e7; */
+  --border: #dfe3e8;
   --code-bg: #f4f3ec;
 
-  --primary: oklch(49.476% 0.24666 309.493);
-  --secondary: oklch(29.313% 0.00003 271.152);
-  --accent: oklch(60.811% 0.26912 305.12);
-  --success: oklch(72.3% 0.219 149.579);
-  --error: oklch(63.7% 0.237 25.331);
-  --warning: oklch(70.5% 0.213 47.604);
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
+  /* --primary: oklch(49.476% 0.24666 309.493); */
+  --primary: #2563eb;
+  /* --secondary: oklch(29.313% 0.00003 271.152); */
+  --secondary: #64748b;
+  /* --accent: oklch(60.811% 0.26912 305.12); */
+  /* --accent: #c026d3; */
+  --accent: #9333ea;
+  /* --success: oklch(72.3% 0.219 149.579); */
+  --success: #15803d;
+  /* --error: oklch(63.7% 0.237 25.331); */
+  --error: #dc2626;
+  /* --warning: oklch(70.5% 0.213 47.604); */
+  --warning: #b45309;
+  /* --accent-bg: rgba(170, 59, 255, 0.1); */
+  --accent-bg: rgba(147, 51, 234, 0.12);
+  /* --accent-border: rgba(170, 59, 255, 0.5); */
+  --accent-border: rgba(147, 51, 234, 0.45);
   --social-bg: rgba(244, 243, 236, 0.5);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
@@ -23,19 +35,41 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-kolui-theme]) {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
+    --surface-soft: #22252e;
     --border: #2e303a;
     --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
+    /* --accent: #c026d3; */
+    --accent: #9333ea;
+    /* --accent-bg: rgba(192, 132, 252, 0.15); */
+    --accent-bg: rgba(147, 51, 234, 0.18);
+    /* --accent-border: rgba(192, 132, 252, 0.5); */
+    --accent-border: rgba(147, 51, 234, 0.55);
     --social-bg: rgba(47, 48, 58, 0.5);
     --shadow:
       rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
+}
+
+:root[data-kolui-theme="dark"] {
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --surface-soft: #22252e;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  /* --accent: #c026d3; */
+  --accent: #9333ea;
+  /* --accent-bg: rgba(192, 132, 252, 0.15); */
+  --accent-bg: rgba(147, 51, 234, 0.18);
+  /* --accent-border: rgba(192, 132, 252, 0.5); */
+  --accent-border: rgba(147, 51, 234, 0.55);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
 }
 
 @layer utilities {

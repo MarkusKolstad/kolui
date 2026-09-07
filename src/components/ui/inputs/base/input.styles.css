@@ -1,17 +1,53 @@
 @reference "../../../../index.css";
 
 .input-wrapper {
-  @apply flex flex-row items-center gap-1 border rounded-sm;
+  @apply flex flex-row items-center gap-2 border rounded-sm;
+  background-color: var(--surface-soft);
+  color: var(--text-h);
   border-color: var(--border);
 
   input,
   textarea {
     @apply bg-transparent border-none outline-none grow;
+    color: inherit;
+
+    &::placeholder {
+      color: var(--text);
+    }
   }
 
   &:focus-within {
     @apply outline;
+    outline-color: var(--accent);
+    border-color: var(--accent);
   }
+
+  input[type="date"] {
+    color-scheme: light;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    color: var(--text-h);
+    opacity: 0.9;
+  }
+
+  input[type="date"]::-webkit-datetime-edit {
+    color: var(--text-h);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .input-wrapper input[type="date"] {
+    color-scheme: dark;
+  }
+}
+
+:root[data-kolui-theme="dark"] .input-wrapper input[type="date"] {
+  color-scheme: dark;
+}
+
+:root[data-kolui-theme="light"] .input-wrapper input[type="date"] {
+  color-scheme: light;
 }
 
 .input-wrapper.input-sm {
@@ -26,10 +62,20 @@
   @apply px-3 py-2 text-base;
 }
 
+.input-wrapper.input-square {
+  @apply rounded-sm;
+}
+
+.input-wrapper.input-rounded {
+  @apply rounded-lg;
+}
+
 .input-label {
   @apply text-sm font-medium;
+  color: var(--text-h);
 }
 
 .input-description {
-  @apply text-sm text-gray-500 font-normal;
+  @apply text-sm font-normal;
+  color: var(--text);
 }

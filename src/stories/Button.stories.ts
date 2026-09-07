@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 
+import { createElement } from "react";
 import { fn } from "storybook/test";
 
 import { Button } from "../components/ui/buttons/button";
@@ -70,6 +71,63 @@ export const Ghost: Story = {
   args: {
     variant: "ghost",
     children: "Ghost",
+  },
+};
+
+export const DarkSurfacePalette: Story = {
+  parameters: {
+    layout: "padded",
+  },
+  render: () => {
+    const themes = [
+      "primary",
+      "secondary",
+      "accent",
+      "success",
+      "warning",
+      "error",
+    ] as const;
+    const variants = ["filled", "outlined", "ghost"] as const;
+
+    return createElement(
+      "div",
+      {
+        style: {
+          display: "grid",
+          gap: "1rem",
+          background: "#16171d",
+          padding: "2rem",
+          borderRadius: "1rem",
+        },
+      },
+      variants.map((variant) =>
+        createElement(
+          "div",
+          {
+            key: variant,
+            style: {
+              display: "flex",
+              gap: "0.75rem",
+              flexWrap: "wrap",
+              alignItems: "center",
+              marginLeft: "auto",
+              marginRight: "auto",
+            },
+          },
+          themes.map((theme) =>
+            createElement(
+              Button,
+              {
+                key: `${variant}-${theme}`,
+                variant,
+                theme,
+              },
+              theme,
+            ),
+          ),
+        ),
+      ),
+    );
   },
 };
 

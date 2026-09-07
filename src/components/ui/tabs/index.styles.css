@@ -22,7 +22,7 @@
     margin: 0;
     outline: 0;
     background: none;
-    color: oklch(43.9% 0 0deg);
+    color: var(--text);
     font-family: inherit;
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -35,35 +35,19 @@
     padding-block: 0;
     height: calc(2rem + 1px);
 
-    @media (prefers-color-scheme: dark) {
-      color: oklch(87% 0 0deg);
-    }
-
     @media (hover: hover) {
       &:hover {
-        color: oklch(14.5% 0 0deg);
-
-        @media (prefers-color-scheme: dark) {
-          color: white;
-        }
+        color: var(--text-h);
       }
     }
 
     &[data-active] {
-      color: oklch(14.5% 0 0deg);
-
-      @media (prefers-color-scheme: dark) {
-        color: white;
-      }
+      color: var(--text-h);
     }
 
     &:focus-visible {
-      outline: 2px solid oklch(14.5% 0 0deg);
+      outline: 2px solid var(--accent);
       outline-offset: -1px;
-
-      @media (prefers-color-scheme: dark) {
-        outline-color: white;
-      }
     }
   }
 }
@@ -81,22 +65,13 @@
   font-size: 0.875rem;
   line-height: 1.25rem;
   text-align: center;
-  color: oklch(14.5% 0 0deg);
-  background-color: white;
-
-  @media (prefers-color-scheme: dark) {
-    color: white;
-    background-color: oklch(14.5% 0 0deg);
-  }
+  color: var(--text-h);
+  background-color: var(--surface-soft);
 
   &:focus-visible {
-    outline: 2px solid oklch(14.5% 0 0deg);
+    outline: 2px solid var(--accent);
     outline-offset: -1px;
     z-index: 1;
-
-    @media (prefers-color-scheme: dark) {
-      outline-color: white;
-    }
   }
 
   &[hidden] {
@@ -172,13 +147,8 @@
   grid-template-columns: minmax(0, 1fr);
   width: 100%;
   min-height: 8rem;
-  border-inline: 1px solid oklch(14.5% 0 0deg);
-  border-block: 1px solid oklch(14.5% 0 0deg);
-
-  @media (prefers-color-scheme: dark) {
-    border-inline: 1px solid white;
-    border-block: 1px solid white;
-  }
+  border-inline: 1px solid var(--border);
+  border-block: 1px solid var(--border);
 }
 
 .Panel {
@@ -232,52 +202,50 @@
   transition-property: translate, width;
   transition-duration: 150ms;
   transition-timing-function: ease-in-out;
-  border-top: 1px solid oklch(14.5% 0 0deg);
-  border-inline: 1px solid oklch(14.5% 0 0deg);
-  background-color: white;
-
-  @media (prefers-color-scheme: dark) {
-    border-top: 1px solid white;
-    border-inline: 1px solid white;
-    background-color: oklch(14.5% 0 0deg);
-  }
+  border-top: 1px solid var(--border);
+  border-inline: 1px solid var(--border);
+  background-color: var(--surface-soft);
 }
 
 .tablist {
-  --color: white;
+  --color: var(--primary);
 
   &.tablist-primary {
     --color: var(--primary);
   }
 
   &.tablist-secondary {
-    --color: var(--secondary);
+    --color: var(--text-h);
   }
 
   &.tablist-tertiary {
+    --color: var(--accent);
+
     .tab-indicator {
       @apply border-0 h-0.5 bottom-0 top-auto;
     }
   }
 
   .tab {
-    @apply border border-transparent text-[var(--color)] cursor-pointer;
+    @apply border border-transparent text-(--color) cursor-pointer;
   }
 
   /** Variants */
   &.tablist-filled {
     .tab {
-      @apply rounded-sm text-inherit hover:text-black;
+      @apply rounded-sm;
+      color: var(--text);
+
       &:hover {
-        background-color: color-mix(in oklch, var(--color) 15%, white);
+        color: var(--text-h);
+        background-color: color-mix(in oklch, var(--color) 12%, transparent);
       }
       &:active {
-        background-color: color-mix(in oklch, var(--color) 85%, black);
-        color: white;
+        background-color: color-mix(in oklch, var(--color) 18%, transparent);
       }
 
       &[aria-selected="true"] {
-        @apply border border-[var(--color)] bg-[var(--color)] text-white;
+        @apply border border-(--color) bg-(--color) text-white;
       }
     }
     .tab-indicator {
@@ -285,40 +253,50 @@
     }
   }
 
+  &.tablist-secondary.tablist-filled {
+    .tab[aria-selected="true"] {
+      color: var(--bg);
+    }
+  }
+
   &.tablist-outlined {
     .tab {
-      @apply border-transparent text-inherit hover:text-black;
+      @apply border-transparent;
+      color: var(--text);
 
       &:hover {
-        background-color: color-mix(in oklch, var(--color) 15%, white);
+        color: var(--text-h);
+        background-color: color-mix(in oklch, var(--color) 10%, transparent);
       }
       &:active {
-        background-color: color-mix(in oklch, var(--color) 25%, white);
+        background-color: color-mix(in oklch, var(--color) 16%, transparent);
       }
 
       &[aria-selected="true"] {
-        @apply text-[var(--color)];
+        @apply text-(--color);
       }
     }
     .tab-indicator {
-      @apply border-0 h-0.5 bottom-0 top-auto bg-[var(--color)];
+      @apply border-0 h-0.5 bottom-0 top-auto bg-(--color);
     }
   }
 
   &.tablist-ghost {
     .tab {
-      @apply rounded-sm text-inherit hover:text-black;
+      @apply rounded-sm;
+      color: var(--text);
 
       &:hover {
-        background-color: color-mix(in oklch, var(--color) 15%, white);
+        color: var(--text-h);
+        background-color: color-mix(in oklch, var(--color) 9%, transparent);
       }
       &:active {
-        background-color: color-mix(in oklch, var(--color) 25%, white);
+        background-color: color-mix(in oklch, var(--color) 15%, transparent);
       }
 
       &[aria-selected="true"] {
-        background-color: color-mix(in oklch, var(--color) 25%, white);
-        @apply text-[var(--color)];
+        background-color: color-mix(in oklch, var(--color) 15%, transparent);
+        @apply text-(--color);
       }
     }
     .tab-indicator {

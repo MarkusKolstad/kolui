@@ -61,8 +61,6 @@ function ComboboxFieldImpl<T, Multiple extends boolean = false>(
           <Combobox.InputGroup>
             <InputWrapper<HTMLInputElement>
               ref={ref}
-              // label={label}
-              // description={description}
               startAdornment={startAdornment}
               endAdornment={
                 <div className={styles.ActionButtons}>

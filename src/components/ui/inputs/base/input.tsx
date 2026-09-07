@@ -19,9 +19,14 @@ const inputVariants = cva("input-wrapper", {
       md: "input-md",
       lg: "input-lg",
     },
+    shape: {
+      square: "input-square",
+      rounded: "input-rounded",
+    },
   },
   defaultVariants: {
     size: "md",
+    shape: "square",
   },
 });
 
@@ -50,6 +55,7 @@ function InputWrapperImpl<
   {
     className,
     size = "md",
+    shape = "square",
     startAdornment,
     endAdornment,
     id,
@@ -69,7 +75,10 @@ function InputWrapperImpl<
   });
 
   return (
-    <label className={cn(inputVariants({ size, className }))} htmlFor={inputId}>
+    <label
+      className={cn(inputVariants({ size, shape, className }))}
+      htmlFor={inputId}
+    >
       {startAdornment}
       {element}
       {endAdornment}
@@ -124,7 +133,9 @@ InputDescription.displayName = "InputDescription";
 
 export interface InputFieldProps extends InputBase {
   label?: ReactNode;
+  labelProps?: InputLabelProps;
   description?: ReactNode;
+  descriptionProps?: InputDescriptionProps;
 }
 
 export interface InputControllerRenderProps {
@@ -136,6 +147,8 @@ export interface InputControllerRenderProps {
 export interface InputControllerProps {
   id?: string;
   label?: ReactNode;
+  labelProps?: InputLabelProps;
+  descriptionProps?: InputDescriptionProps;
   description?: ReactNode;
   render: (props: InputControllerRenderProps) => ReactNode;
 }
@@ -147,7 +160,15 @@ type InputFieldComponent = <
 ) => ReactElement | null;
 
 function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
-  { className, id, label, description, ...inputProps }: InputFieldProps,
+  {
+    className,
+    id,
+    label,
+    labelProps,
+    description,
+    descriptionProps,
+    ...inputProps
+  }: InputFieldProps,
   ref: ForwardedRef<TElement>,
 ) {
   const generatedId = useId();
@@ -158,7 +179,7 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
   return (
     <>
       {labelId ? (
-        <InputLabel id={labelId} htmlFor={inputId}>
+        <InputLabel id={labelId} htmlFor={inputId} {...labelProps}>
           {label}
         </InputLabel>
       ) : null}
@@ -171,7 +192,9 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
         {...inputProps}
       />
       {descriptionId ? (
-        <InputDescription id={descriptionId}>{description}</InputDescription>
+        <InputDescription id={descriptionId} {...descriptionProps}>
+          {description}
+        </InputDescription>
       ) : null}
     </>
   );
@@ -182,7 +205,9 @@ export const InputField = forwardRef(InputFieldImpl) as InputFieldComponent;
 export function InputController({
   id,
   label,
+  labelProps,
   description,
+  descriptionProps,
   render,
 }: InputControllerProps) {
   const generatedId = useId();
@@ -199,13 +224,15 @@ export function InputController({
   return (
     <>
       {labelId ? (
-        <InputLabel id={labelId} htmlFor={inputId}>
+        <InputLabel id={labelId} htmlFor={inputId} {...labelProps}>
           {label}
         </InputLabel>
       ) : null}
       {content}
       {descriptionId ? (
-        <InputDescription id={descriptionId}>{description}</InputDescription>
+        <InputDescription id={descriptionId} {...descriptionProps}>
+          {description}
+        </InputDescription>
       ) : null}
     </>
   );

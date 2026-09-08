@@ -35,18 +35,20 @@ export interface AdornmentProps {
   endAdornment?: ReactNode;
 }
 
-export interface InputBase
-  extends
-    AdornmentProps,
-    Omit<useRender.ComponentProps<"input">, "ref" | "size">,
-    VariantProps<typeof inputVariants> {}
-
 type InputFieldElement = HTMLInputElement | HTMLTextAreaElement;
+
+type InputElementTag<TElement extends InputFieldElement> =
+  TElement extends HTMLTextAreaElement ? "textarea" : "input";
+
+export type InputBase<TElement extends InputFieldElement = HTMLInputElement> =
+  AdornmentProps &
+    Omit<useRender.ComponentProps<InputElementTag<TElement>>, "ref" | "size"> &
+    VariantProps<typeof inputVariants>;
 
 type InputWrapperComponent = <
   TElement extends InputFieldElement = HTMLInputElement,
 >(
-  props: InputBase & RefAttributes<TElement>,
+  props: InputBase<TElement> & RefAttributes<TElement>,
 ) => ReactElement | null;
 
 function InputWrapperImpl<
@@ -61,7 +63,7 @@ function InputWrapperImpl<
     id,
     render,
     ...inputProps
-  }: InputBase,
+  }: InputBase<TElement>,
   ref: ForwardedRef<TElement>,
 ) {
   const generatedId = useId();
@@ -93,16 +95,32 @@ export const InputWrapper = forwardRef(
 export interface InputLabelProps extends ComponentPropsWithoutRef<"label"> {
   id: string;
   htmlFor: string;
+  required?: boolean;
+  disabled?: boolean;
 }
 
 export const InputLabel = forwardRef<HTMLLabelElement, InputLabelProps>(
-  function InputLabel({ className, id, htmlFor, ...labelProps }, ref) {
+  function InputLabel(
+    {
+      className,
+      id,
+      htmlFor,
+      disabled,
+      "aria-disabled": ariaDisabled = disabled,
+      required,
+      "aria-required": ariaRequired = required,
+      ...labelProps
+    },
+    ref,
+  ) {
     return (
       <label
         ref={ref}
         id={id}
         htmlFor={htmlFor}
         className={cn("input-label", className)}
+        aria-disabled={ariaDisabled}
+        aria-required={ariaRequired}
         {...labelProps}
       />
     );
@@ -131,12 +149,14 @@ export const InputDescription = forwardRef<
 
 InputDescription.displayName = "InputDescription";
 
-export interface InputFieldProps extends InputBase {
+export type InputFieldProps<
+  TElement extends InputFieldElement = HTMLInputElement,
+> = InputBase<TElement> & {
   label?: ReactNode;
   labelProps?: InputLabelProps;
   description?: ReactNode;
   descriptionProps?: InputDescriptionProps;
-}
+};
 
 export interface InputControllerRenderProps {
   id: string;
@@ -156,7 +176,7 @@ export interface InputControllerProps {
 type InputFieldComponent = <
   TElement extends InputFieldElement = HTMLInputElement,
 >(
-  props: InputFieldProps & RefAttributes<TElement>,
+  props: InputFieldProps<TElement> & RefAttributes<TElement>,
 ) => ReactElement | null;
 
 function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
@@ -168,7 +188,7 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
     description,
     descriptionProps,
     ...inputProps
-  }: InputFieldProps,
+  }: InputFieldProps<TElement>,
   ref: ForwardedRef<TElement>,
 ) {
   const generatedId = useId();
@@ -177,7 +197,7 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
   const descriptionId = description ? `${inputId}-description` : undefined;
 
   return (
-    <>
+    <div className="flex flex-col gap-1">
       {labelId ? (
         <InputLabel id={labelId} htmlFor={inputId} {...labelProps}>
           {label}
@@ -189,14 +209,14 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
         aria-labelledby={labelId}
         aria-describedby={descriptionId}
         id={inputId}
-        {...inputProps}
+        {...(inputProps as InputBase<TElement>)}
       />
       {descriptionId ? (
         <InputDescription id={descriptionId} {...descriptionProps}>
           {description}
         </InputDescription>
       ) : null}
-    </>
+    </div>
   );
 }
 
@@ -222,7 +242,7 @@ export function InputController({
   });
 
   return (
-    <>
+    <div className="flex flex-col gap-1">
       {labelId ? (
         <InputLabel id={labelId} htmlFor={inputId} {...labelProps}>
           {label}
@@ -234,7 +254,7 @@ export function InputController({
           {description}
         </InputDescription>
       ) : null}
-    </>
+    </div>
   );
 }
 

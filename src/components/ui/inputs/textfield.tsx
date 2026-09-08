@@ -8,7 +8,7 @@ import {
 
 export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(
   function TextField(
-    { className, id, label, description, ...inputProps },
+    { className, id, label, description, required, disabled, ...inputProps },
     ref,
   ) {
     const generatedId = useId();
@@ -17,22 +17,30 @@ export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(
     const descriptionId = description ? inputId + "-description" : undefined;
 
     return (
-      <>
+      <div className="flex flex-col gap-1">
         {labelId ? (
-          <InputLabel id={labelId} htmlFor={inputId}>
+          <InputLabel
+            id={labelId}
+            htmlFor={inputId}
+            required={required}
+            disabled={disabled}
+          >
             {label}
           </InputLabel>
         ) : null}
         <InputWrapper
           ref={ref}
+          id={inputId}
           aria-labelledby={labelId}
           aria-describedby={descriptionId}
+          required={required}
+          disabled={disabled}
           {...inputProps}
         />
         {descriptionId ? (
           <InputDescription id={descriptionId}>{description}</InputDescription>
         ) : null}
-      </>
+      </div>
     );
   },
 );

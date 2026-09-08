@@ -208,6 +208,7 @@
 }
 
 .tablist {
+  max-height: max-content;
   --color: var(--primary);
 
   &.tablist-primary {

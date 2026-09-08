@@ -2,6 +2,7 @@
 :root[data-kolui-theme="light"] {
   --text: #6b6375;
   --text-h: #08060d;
+  --text-contrast: #ffffff;
   --bg: #fff;
   --surface-soft: #f4f6f8;
   /* --border: #e5e4e7; */
@@ -16,11 +17,11 @@
   /* --accent: #c026d3; */
   --accent: #9333ea;
   /* --success: oklch(72.3% 0.219 149.579); */
-  --success: #15803d;
+  --success: #16a34a;
   /* --error: oklch(63.7% 0.237 25.331); */
   --error: #dc2626;
   /* --warning: oklch(70.5% 0.213 47.604); */
-  --warning: #b45309;
+  --warning: #f97316;
   /* --accent-bg: rgba(170, 59, 255, 0.1); */
   --accent-bg: rgba(147, 51, 234, 0.12);
   /* --accent-border: rgba(170, 59, 255, 0.5); */
@@ -38,6 +39,7 @@
   :root:not([data-kolui-theme]) {
     --text: #9ca3af;
     --text-h: #f3f4f6;
+    --text-contrast: #08060d;
     --bg: #16171d;
     --surface-soft: #22252e;
     --border: #2e303a;
@@ -57,6 +59,7 @@
 :root[data-kolui-theme="dark"] {
   --text: #9ca3af;
   --text-h: #f3f4f6;
+  --text-contrast: #08060d;
   --bg: #16171d;
   --surface-soft: #22252e;
   --border: #2e303a;

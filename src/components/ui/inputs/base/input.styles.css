@@ -73,6 +73,14 @@
 .input-label {
   @apply text-sm font-medium;
   color: var(--text-h);
+
+  &[aria-required="true"] {
+    &::after {
+      content: "*";
+      color: var(--error);
+      margin-left: 2px;
+    }
+  }
 }
 
 .input-description {

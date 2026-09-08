@@ -1,0 +1,78 @@
+.RadioGroup {
+  display: grid;
+  gap: 0.75rem;
+  color: var(--text-h);
+}
+
+.Label {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.Options {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.Option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--text-h);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.Radio {
+  position: relative;
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  margin: 0.125rem 0 0;
+  padding: 0;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  background: var(--bg);
+  /* color: oklch(14.5% 0 0deg); */
+  color: var(--accent);
+}
+
+.Radio[data-checked] {
+  /* border-color: oklch(14.5% 0 0deg); */
+  border-color: var(--accent);
+}
+
+.Radio:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.Indicator {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.Indicator[data-unchecked] {
+  display: none;
+}
+
+.Content {
+  display: grid;
+  gap: 0.125rem;
+}
+
+.Description,
+.GroupDescription {
+  color: var(--text);
+  font-size: 0.75rem;
+}

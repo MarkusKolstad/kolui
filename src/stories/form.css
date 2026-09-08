@@ -1,0 +1,213 @@
+.form-story {
+  min-height: 100vh;
+  padding: clamp(1.5rem, 5vw, 5rem);
+  background:
+    radial-gradient(
+      circle at 8% 8%,
+      color-mix(in srgb, var(--warning) 14%, transparent),
+      transparent 28rem
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--surface-soft) 84%, var(--primary)),
+      var(--bg)
+    );
+  color: var(--text-h);
+}
+
+#form-story-title {
+  color: white;
+}
+
+.form-story-shell {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.7fr) minmax(0, 1.3fr);
+  max-width: 70rem;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: color-mix(in srgb, var(--bg) 94%, transparent);
+  box-shadow: var(--shadow);
+}
+
+.form-story-intro {
+  padding: clamp(1.5rem, 5vw, 4rem);
+  background: linear-gradient(
+    155deg,
+    var(--primary),
+    color-mix(in srgb, var(--primary) 65%, var(--accent))
+  );
+  color: white;
+}
+
+.form-story-eyebrow,
+.form-story-note,
+.form-story-actions,
+.form-story-required {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.form-story-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.82;
+}
+
+.form-story-intro h1 {
+  max-width: 13ch;
+  margin: 4rem 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 0.98;
+}
+
+.form-story-intro > p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgb(255 255 255 / 0.8);
+  line-height: 1.6;
+}
+
+.form-story-note {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: rgb(255 255 255 / 0.82);
+}
+
+.form-story-note-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--warning);
+  box-shadow: 0 0 0 0.25rem rgb(249 115 22 / 0.22);
+}
+
+.form-story-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: clamp(1.5rem, 5vw, 4rem);
+}
+
+.form-story-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.form-story-kicker {
+  margin: 0 0 0.4rem;
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-story-heading h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.form-story-required {
+  flex-shrink: 0;
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.form-story-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1rem;
+}
+
+.form-story-tabs {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: none;
+}
+
+.form-story-tab-panel {
+  grid-area: auto;
+  display: grid;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 1.25rem;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.form-story-checkboxes {
+  display: grid;
+  gap: 0.875rem;
+  padding-top: 0.25rem;
+}
+
+.form-story-field-label {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.form-story-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.form-story-privacy {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.75rem;
+}
+
+.form-story-actions {
+  flex-shrink: 0;
+}
+
+.form-story-success {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--success) 45%, transparent);
+  border-radius: 0.375rem;
+  background: color-mix(in srgb, var(--success) 10%, transparent);
+  color: var(--success);
+  font-size: 0.875rem;
+}
+
+@media (max-width: 700px) {
+  .form-story-shell,
+  .form-story-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-story-intro h1 {
+    margin-top: 2rem;
+  }
+
+  .form-story-note {
+    margin-top: 2rem;
+  }
+
+  .form-story-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .form-story-actions {
+    justify-content: flex-end;
+  }
+}

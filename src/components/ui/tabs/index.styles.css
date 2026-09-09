@@ -9,7 +9,6 @@
 [role="tablist"] {
   display: flex;
   position: relative;
-  z-index: 1;
   gap: 0.25rem;
   margin-bottom: -1px;
 
@@ -208,6 +207,13 @@
 }
 
 .tablist {
+  box-sizing: border-box;
+  display: flex;
+  position: relative;
+  width: 100%;
+  gap: 0.5rem;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
   max-height: max-content;
   --color: var(--primary);
 
@@ -229,14 +235,23 @@
 
   .tab {
     @apply border border-transparent text-(--color) cursor-pointer;
+    flex: 1 0 auto;
+    min-height: 2.75rem;
+    padding-inline: 0.75rem;
+    border-radius: 0;
+    color: var(--text);
+    font-weight: 600;
+    white-space: nowrap;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease,
+      box-shadow 150ms ease;
   }
 
   /** Variants */
   &.tablist-filled {
     .tab {
-      @apply rounded-sm;
-      color: var(--text);
-
       &:hover {
         color: var(--text-h);
         background-color: color-mix(in oklch, var(--color) 12%, transparent);
@@ -246,7 +261,10 @@
       }
 
       &[aria-selected="true"] {
-        @apply border border-(--color) bg-(--color) text-white;
+        border-color: var(--color);
+        background: var(--color);
+        color: var(--text-contrast);
+        box-shadow: var(--shadow);
       }
     }
     .tab-indicator {
@@ -262,9 +280,6 @@
 
   &.tablist-outlined {
     .tab {
-      @apply border-transparent;
-      color: var(--text);
-
       &:hover {
         color: var(--text-h);
         background-color: color-mix(in oklch, var(--color) 10%, transparent);
@@ -274,19 +289,21 @@
       }
 
       &[aria-selected="true"] {
-        @apply text-(--color);
+        color: var(--color);
       }
     }
     .tab-indicator {
-      @apply border-0 h-0.5 bottom-0 top-auto bg-(--color);
+      display: block;
+      top: auto;
+      bottom: 0;
+      height: 0.1875rem;
+      border: 0;
+      background: var(--color);
     }
   }
 
   &.tablist-ghost {
     .tab {
-      @apply rounded-sm;
-      color: var(--text);
-
       &:hover {
         color: var(--text-h);
         background-color: color-mix(in oklch, var(--color) 9%, transparent);
@@ -302,6 +319,16 @@
     }
     .tab-indicator {
       @apply hidden;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .tablist {
+    justify-content: flex-start;
+
+    .tab {
+      flex: 0 0 auto;
     }
   }
 }

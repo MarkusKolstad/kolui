@@ -3,15 +3,23 @@ import * as React from "react";
 import styles from "./loading.module.css";
 
 export type LoadingVariant = "spinner" | "bar" | "overlay";
+export type LoadingTone = "default" | "contrast";
 
 export interface LoadingProps extends React.ComponentPropsWithoutRef<"div"> {
   variant?: LoadingVariant;
+  tone?: LoadingTone;
   label?: React.ReactNode;
 }
 
 export const Loading = React.forwardRef<HTMLDivElement, LoadingProps>(
   function Loading(
-    { variant = "spinner", label = "Loading", className, ...props },
+    {
+      variant = "spinner",
+      tone = "default",
+      label = "Loading",
+      className,
+      ...props
+    },
     ref,
   ) {
     return (
@@ -21,6 +29,7 @@ export const Loading = React.forwardRef<HTMLDivElement, LoadingProps>(
         aria-label={typeof label === "string" ? label : undefined}
         aria-busy="true"
         data-variant={variant}
+        data-tone={tone}
         className={cn(styles.Loading, className)}
         {...props}
       >

@@ -10,6 +10,8 @@ import {
   TabsList,
 } from "@/components/ui/tabs/tabs";
 
+import "./tabs-story.css";
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: "Example/Tabs",
@@ -40,7 +42,11 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const tabs = Array.from(Array(5)).map((_item, index) => index + 1);
+const tabs = [
+  { value: "overview", label: "Overview" },
+  { value: "activity", label: "Activity" },
+  { value: "members", label: "Members" },
+];
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
@@ -50,16 +56,83 @@ export const Default: Story = {
   },
   render: (args: any) => {
     return (
-      <Tabs>
-        <TabsList variant={args.variant} theme={args.theme}>
+      <Tabs className="tabs-story">
+        <TabsList
+          variant={args.variant}
+          theme={args.theme}
+          aria-label="Workspace views"
+        >
           {tabs.map((tab) => (
-            <Tab value={`tab${tab}`}>Tab {tab}</Tab>
+            <Tab key={tab.value} value={tab.value}>
+              {tab.label}
+            </Tab>
           ))}
           <TabIndicator />
         </TabsList>
-        {tabs.map((tab) => (
-          <TabPanel value={`tab${tab}`}>TabPanel {tab}</TabPanel>
-        ))}
+        <TabPanel value="overview" className="tabs-story-panel">
+          <div className="tabs-story-panel-header">
+            <div>
+              <p className="tabs-story-eyebrow">Workspace overview</p>
+              <h2>Northstar is moving forward</h2>
+              <p>Keep an eye on the work that needs attention this week.</p>
+            </div>
+            <span className="tabs-story-status">On track</span>
+          </div>
+          <div className="tabs-story-metrics">
+            <div>
+              <strong>24</strong>
+              <span>Open tasks</span>
+            </div>
+            <div>
+              <strong>8</strong>
+              <span>Completed</span>
+            </div>
+            <div>
+              <strong>6</strong>
+              <span>Contributors</span>
+            </div>
+          </div>
+        </TabPanel>
+        <TabPanel value="activity" className="tabs-story-panel">
+          <div className="tabs-story-panel-header">
+            <div>
+              <p className="tabs-story-eyebrow">Recent activity</p>
+              <h2>What changed this week</h2>
+              <p>Updates from your team, gathered in one place.</p>
+            </div>
+          </div>
+          <ul className="tabs-story-list">
+            <li>
+              <strong>Amelia</strong> moved Launch plan to In progress
+            </li>
+            <li>
+              <strong>Jonas</strong> completed the onboarding checklist
+            </li>
+            <li>
+              <strong>Priya</strong> added a new project brief
+            </li>
+          </ul>
+        </TabPanel>
+        <TabPanel value="members" className="tabs-story-panel">
+          <div className="tabs-story-panel-header">
+            <div>
+              <p className="tabs-story-eyebrow">People</p>
+              <h2>Your project team</h2>
+              <p>Six people are currently collaborating in Northstar.</p>
+            </div>
+          </div>
+          <div className="tabs-story-member-list">
+            <span>
+              <b>MK</b> Markus Kolstad <em>Owner</em>
+            </span>
+            <span>
+              <b>AM</b> Amelia Morgan <em>Editor</em>
+            </span>
+            <span>
+              <b>JP</b> Jonas Persson <em>Editor</em>
+            </span>
+          </div>
+        </TabPanel>
       </Tabs>
     );
   },

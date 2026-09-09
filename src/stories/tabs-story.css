@@ -1,0 +1,139 @@
+.tabs-story {
+  width: 500px;
+  max-width: calc(100vw - 2rem);
+}
+
+.tabs-story .tablist .tab {
+  min-width: 0;
+  flex: 1 1 0;
+}
+
+.tabs-story-panel {
+  display: grid;
+  min-height: 15rem;
+  align-content: start;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid var(--border);
+  border-top: 0;
+  border-radius: 0 0 0.5rem 0.5rem;
+  background: var(--bg);
+  color: var(--text-h);
+  text-align: left;
+}
+
+.tabs-story-panel-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.tabs-story-panel-header h2 {
+  margin: 0.25rem 0 0.4rem;
+  font-size: 1.125rem;
+  line-height: 1.25;
+}
+
+.tabs-story-panel-header p:last-child {
+  max-width: 42ch;
+  margin: 0;
+  color: var(--text);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.tabs-story-eyebrow {
+  margin: 0;
+  color: var(--primary);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.tabs-story-status {
+  flex-shrink: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.6rem;
+  background: color-mix(in srgb, var(--success) 12%, transparent);
+  color: var(--success);
+  font-size: 0.6875rem;
+  font-weight: 700;
+}
+
+.tabs-story-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.tabs-story-metrics div {
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background: var(--surface-soft);
+}
+
+.tabs-story-metrics strong {
+  font-size: 1.25rem;
+}
+
+.tabs-story-metrics span,
+.tabs-story-list,
+.tabs-story-member-list {
+  color: var(--text);
+  font-size: 0.8125rem;
+}
+
+.tabs-story-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.tabs-story-list strong {
+  color: var(--text-h);
+}
+
+.tabs-story-member-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.tabs-story-member-list span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tabs-story-member-list b {
+  display: inline-grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface-soft));
+  color: var(--primary);
+  font-size: 0.625rem;
+}
+
+.tabs-story-member-list em {
+  margin-left: auto;
+  color: var(--text);
+  font-size: 0.6875rem;
+  font-style: normal;
+}
+
+@media (max-width: 560px) {
+  .tabs-story-panel-header {
+    flex-direction: column;
+  }
+
+  .tabs-story-metrics {
+    grid-template-columns: 1fr;
+  }
+}

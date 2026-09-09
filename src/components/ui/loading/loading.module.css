@@ -20,6 +20,11 @@
   animation: loading-spin 700ms linear infinite;
 }
 
+.Loading[data-tone="contrast"] .Spinner {
+  border-color: color-mix(in srgb, var(--text-contrast) 28%, transparent);
+  border-top-color: var(--text-contrast);
+}
+
 .Label {
   color: var(--text);
 }

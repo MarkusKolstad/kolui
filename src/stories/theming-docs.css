@@ -3,8 +3,16 @@
   margin: 0;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 40%),
-    radial-gradient(circle at 0% 100%, color-mix(in srgb, var(--primary) 14%, transparent) 0%, transparent 45%),
+    radial-gradient(
+      circle at 90% 0%,
+      color-mix(in srgb, var(--accent) 18%, transparent) 0%,
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      color-mix(in srgb, var(--primary) 14%, transparent) 0%,
+      transparent 45%
+    ),
     var(--bg);
   padding: clamp(20px, 3vw, 44px);
   color: var(--text-h);
@@ -12,19 +20,18 @@
 }
 
 .theming-hero {
-  margin: 0 auto 28px;
+  margin: 0 auto 52px;
   max-width: 1080px;
-  border: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
-  border-radius: 20px;
-  background: color-mix(in srgb, var(--surface-soft) 80%, transparent);
-  padding: clamp(18px, 3vw, 30px);
-  box-shadow: var(--shadow);
+  padding: clamp(28px, 6vw, 72px) clamp(4px, 1vw, 12px) 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
 }
 
 .theming-hero h1 {
-  margin: 0 0 10px;
+  max-width: 14ch;
+  margin: 0 0 18px;
   font-family: var(--heading);
-  font-size: clamp(28px, 4vw, 44px);
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1;
   letter-spacing: -0.02em;
 }
 
@@ -38,8 +45,10 @@
 }
 
 .theming-hero p {
+  max-width: 70ch;
   margin: 0;
   color: var(--text);
+  line-height: 1.6;
 }
 
 .theming-hero code {
@@ -60,6 +69,59 @@
   margin: 0 0 12px;
   font-family: var(--heading);
   font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+}
+
+.theming-section-intro {
+  max-width: 72ch;
+  margin: 0 0 16px;
+  color: var(--text);
+  line-height: 1.55;
+}
+
+.theming-guidance-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.theming-guidance-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.6fr 1.6fr;
+  align-items: start;
+  gap: 12px;
+  border: 1px solid color-mix(in srgb, var(--border) 65%, transparent);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  padding: 12px;
+}
+
+.theming-guidance-row code {
+  color: var(--text-h);
+  font-family: var(--mono);
+  font-size: 0.87rem;
+}
+
+.theming-guidance-row span,
+.theming-guidance-row strong {
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.theming-guidance-row strong {
+  color: var(--text-h);
+}
+
+.theming-guidance-head {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--bg) 64%, transparent);
+}
+
+.theming-guidance-head span {
+  color: var(--text-h);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .theming-grid {
@@ -148,7 +210,13 @@
     grid-template-columns: 1fr;
   }
 
-  .theming-row-head {
+  .theming-guidance-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .theming-row-head,
+  .theming-guidance-head {
     display: none;
   }
 }

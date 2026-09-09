@@ -9,13 +9,7 @@ const DialogTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof BaseDialog.Trigger>
 >(function DialogTrigger({ className, ...props }, ref) {
-  return (
-    <BaseDialog.Trigger
-      ref={ref}
-      className={cn(styles.Trigger, className)}
-      {...props}
-    />
-  );
+  return <BaseDialog.Trigger ref={ref} className={className} {...props} />;
 });
 
 DialogTrigger.displayName = "DialogTrigger";

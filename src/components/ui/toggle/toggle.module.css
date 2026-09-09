@@ -1,0 +1,55 @@
+.ToggleGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.375rem;
+  background: var(--surface-soft);
+  max-width: max-content;
+}
+
+.ToggleGroup[data-orientation="vertical"] {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.Toggle {
+  display: inline-flex;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.Toggle:hover {
+  color: var(--text-h);
+}
+
+.Toggle[data-pressed] {
+  border-color: var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  box-shadow: var(--shadow);
+}
+
+.Toggle:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.Toggle[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}

@@ -1,0 +1,58 @@
+.Avatar {
+  position: relative;
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--text-h);
+  vertical-align: middle;
+}
+
+.Avatar[data-size="sm"] {
+  width: 2rem;
+  height: 2rem;
+  font-size: 0.75rem;
+}
+
+.Avatar[data-size="xs"] {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.6875rem;
+}
+
+.Avatar[data-size="xxs"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.625rem;
+}
+
+.Avatar[data-size="lg"] {
+  width: 3.5rem;
+  height: 3.5rem;
+  font-size: 1.125rem;
+}
+
+.Image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Fallback {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--primary) 14%, var(--surface-soft));
+  color: var(--primary);
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 1;
+}

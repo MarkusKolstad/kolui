@@ -1,0 +1,92 @@
+.Trigger,
+.Close {
+  box-sizing: border-box;
+  display: inline-flex;
+  min-height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--primary);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.875rem;
+  background: var(--primary);
+  color: var(--text-contrast);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.Trigger:hover,
+.Close:hover {
+  background: color-mix(in oklch, var(--primary) 90%, black);
+}
+
+.Trigger:focus-visible,
+.Close:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.Close {
+  border-color: var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.Close:hover {
+  background: var(--surface-soft);
+}
+
+.Backdrop {
+  position: fixed;
+  inset: 0;
+  min-height: 100dvh;
+  background: rgb(8 6 13 / 0.42);
+  transition: opacity 150ms ease;
+}
+
+.Backdrop[data-starting-style],
+.Backdrop[data-ending-style] {
+  opacity: 0;
+}
+
+.Popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: min(30rem, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+  transform: translate(-50%, -50%);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background: var(--bg);
+  color: var(--text-h);
+  box-shadow: var(--shadow);
+  transition:
+    transform 150ms ease,
+    opacity 150ms ease;
+}
+
+.Popup[data-starting-style],
+.Popup[data-ending-style] {
+  transform: translate(-50%, -50%) scale(0.98);
+  opacity: 0;
+}
+
+.Title {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.Description {
+  color: var(--text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

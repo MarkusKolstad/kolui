@@ -1,0 +1,95 @@
+.Loading {
+  color: var(--text-h);
+}
+
+.Loading[data-variant="spinner"] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.Spinner {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  border: 2px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: loading-spin 700ms linear infinite;
+}
+
+.Label {
+  color: var(--text);
+}
+
+.Loading[data-variant="bar"] {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  height: 0.25rem;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--primary) 16%, transparent);
+}
+
+.Bar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -35%;
+  width: 35%;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0.75rem color-mix(in srgb, var(--primary) 70%, transparent);
+  animation: loading-bar 1.2s ease-in-out infinite;
+}
+
+.Loading[data-variant="overlay"] {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.OverlayContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading-bar {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(185%);
+  }
+  100% {
+    transform: translateX(385%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .Spinner,
+  .Bar {
+    animation-duration: 1.8s;
+  }
+}

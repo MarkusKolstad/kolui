@@ -1,0 +1,65 @@
+.Field {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  color: var(--text-h);
+}
+
+.Switch {
+  position: relative;
+  display: inline-flex;
+  width: 2.75rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.125rem;
+  background: var(--surface-soft);
+  cursor: pointer;
+  transition:
+    background 150ms ease,
+    border-color 150ms ease;
+}
+
+.Switch[data-checked] {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.Switch[data-disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.Switch:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.Thumb {
+  display: block;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 50%;
+  background: var(--text-contrast);
+  box-shadow: var(--shadow);
+  transition: translate 150ms ease;
+}
+
+.Thumb[data-checked] {
+  translate: 1.25rem 0;
+}
+
+.Label {
+  display: grid;
+  gap: 0.125rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+}
+
+.Description {
+  color: var(--text);
+  font-size: 0.75rem;
+}

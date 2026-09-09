@@ -4,7 +4,7 @@
   background:
     radial-gradient(
       circle at 8% 8%,
-      color-mix(in srgb, var(--warning) 14%, transparent),
+      color-mix(in srgb, var(--primary) 14%, transparent),
       transparent 28rem
     ),
     linear-gradient(
@@ -38,6 +38,11 @@
     var(--primary),
     color-mix(in srgb, var(--primary) 65%, var(--accent))
   );
+  /* background: linear-gradient(
+    155deg,
+    var(--accent),
+    color-mix(in srgb, black 65%, var(--accent))
+  ); */
   color: white;
 }
 

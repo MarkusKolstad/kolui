@@ -1,5 +1,6 @@
 export * from "./accordion";
 export * from "./avatar";
+export * from "./badge";
 export * from "./buttons";
 export * from "./collapsible";
 export * from "./dialog";

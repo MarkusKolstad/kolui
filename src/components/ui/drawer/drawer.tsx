@@ -10,13 +10,7 @@ export const DrawerTrigger = React.forwardRef<
   HTMLButtonElement,
   React.ComponentPropsWithoutRef<typeof BaseDrawer.Trigger>
 >(function DrawerTrigger({ className, ...props }, ref) {
-  return (
-    <BaseDrawer.Trigger
-      ref={ref}
-      className={cn(styles.Trigger, className)}
-      {...props}
-    />
-  );
+  return <BaseDrawer.Trigger ref={ref} className={className} {...props} />;
 });
 
 DrawerTrigger.displayName = "DrawerTrigger";
@@ -105,7 +99,7 @@ export const DrawerClose = React.forwardRef<
   return (
     <BaseDrawer.Close
       ref={ref}
-      className={cn(styles.Close, className)}
+      className={className}
       aria-label={props["aria-label"] ?? "Close drawer"}
       {...props}
     >

@@ -8,17 +8,12 @@
   border: 1px solid var(--primary);
   border-radius: 0.25rem;
   padding: 0.5rem 0.875rem;
-  background: var(--primary);
   color: var(--text-contrast);
   font: inherit;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1;
   cursor: pointer;
-}
-
-.Close:hover {
-  background: color-mix(in oklch, var(--primary) 90%, black);
 }
 
 .Close:focus-visible {
@@ -28,12 +23,7 @@
 
 .Close {
   border-color: var(--border);
-  background: var(--bg);
   color: var(--text-h);
-}
-
-.Close:hover {
-  background: var(--surface-soft);
 }
 
 .Backdrop {
@@ -49,7 +39,7 @@
   opacity: 0;
 }
 
-.Popup {
+:where(.Popup) {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -71,8 +61,8 @@
     opacity 150ms ease;
 }
 
-.Popup[data-starting-style],
-.Popup[data-ending-style] {
+:where(.Popup[data-starting-style]),
+:where(.Popup[data-ending-style]) {
   transform: translate(-50%, -50%) scale(0.98);
   opacity: 0;
 }

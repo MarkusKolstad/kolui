@@ -31,7 +31,7 @@ export const Default: Story = {
         <Bell size={16} aria-hidden="true" />
         View notifications
       </DialogTrigger>
-      <DialogPortal>
+      <DialogPortal className={"bg-black"}>
         <DialogBackdrop />
         <DialogPopup>
           <div>

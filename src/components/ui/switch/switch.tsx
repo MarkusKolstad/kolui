@@ -1,7 +1,15 @@
 import { cn } from "@/lib/utils";
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
 import * as React from "react";
-import styles from "./switch.module.css";
+import "./switch.css";
+
+const styles = {
+  Field: "SwitchField",
+  Switch: "Switch",
+  Thumb: "SwitchThumb",
+  Label: "SwitchLabel",
+  Description: "SwitchDescription",
+} as const;
 
 export interface SwitchProps extends React.ComponentPropsWithoutRef<
   typeof BaseSwitch.Root

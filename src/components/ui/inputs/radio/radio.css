@@ -4,17 +4,17 @@
   color: var(--text-h);
 }
 
-.Label {
+.RadioGroupLabel {
   font-size: 0.875rem;
   font-weight: 600;
 }
 
-.Options {
+.RadioOptions {
   display: grid;
   gap: 0.75rem;
 }
 
-.Option {
+.RadioOption {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -50,7 +50,7 @@
   outline-offset: 2px;
 }
 
-.Indicator {
+.RadioIndicator {
   display: flex;
   position: absolute;
   top: 50%;
@@ -62,17 +62,17 @@
   background: currentColor;
 }
 
-.Indicator[data-unchecked] {
+.RadioIndicator[data-unchecked] {
   display: none;
 }
 
-.Content {
+.RadioContent {
   display: grid;
   gap: 0.125rem;
 }
 
-.Description,
-.GroupDescription {
+.RadioDescription,
+.RadioGroupDescription {
   color: var(--text);
   font-size: 0.75rem;
 }

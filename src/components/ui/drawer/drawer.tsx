@@ -2,7 +2,16 @@ import { cn } from "@/lib/utils";
 import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
 import { X } from "lucide-react";
 import * as React from "react";
-import styles from "./drawer.module.css";
+import "./drawer.css";
+
+const styles = {
+  Backdrop: "DrawerBackdrop",
+  Viewport: "DrawerViewport",
+  Popup: "DrawerPopup",
+  Title: "DrawerTitle",
+  Description: "DrawerDescription",
+  Close: "DrawerClose",
+} as const;
 
 export const Drawer = BaseDrawer.Root;
 

@@ -1,7 +1,13 @@
 import { cn } from "@/lib/utils";
 import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
 import * as React from "react";
-import styles from "./avatar.module.css";
+import "./avatar.css";
+
+const styles = {
+  Avatar: "Avatar",
+  Image: "Image",
+  Fallback: "Fallback",
+} as const;
 
 export type AvatarSize = "xxs" | "xs" | "sm" | "md" | "lg";
 

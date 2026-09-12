@@ -2,7 +2,12 @@ import { cn } from "@/lib/utils";
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
 import * as React from "react";
-import styles from "./toggle.module.css";
+import "./toggle.css";
+
+const styles = {
+  Toggle: "Toggle",
+  ToggleGroup: "ToggleGroup",
+} as const;
 
 export const Toggle = React.forwardRef<
   HTMLButtonElement,

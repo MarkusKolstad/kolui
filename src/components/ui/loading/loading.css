@@ -9,7 +9,7 @@
   font-size: 0.875rem;
 }
 
-.Spinner {
+.LoadingSpinner {
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
@@ -20,12 +20,12 @@
   animation: loading-spin 700ms linear infinite;
 }
 
-.Loading[data-tone="contrast"] .Spinner {
+.Loading[data-tone="contrast"] .LoadingSpinner {
   border-color: color-mix(in srgb, var(--text-contrast) 28%, transparent);
   border-top-color: var(--text-contrast);
 }
 
-.Label {
+.LoadingLabel {
   color: var(--text);
 }
 
@@ -40,7 +40,7 @@
   background: color-mix(in srgb, var(--primary) 16%, transparent);
 }
 
-.Bar {
+.LoadingBar {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -62,7 +62,7 @@
   backdrop-filter: blur(2px);
 }
 
-.OverlayContent {
+.LoadingOverlayContent {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -93,8 +93,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .Spinner,
-  .Bar {
+  .LoadingSpinner,
+  .LoadingBar {
     animation-duration: 1.8s;
   }
 }

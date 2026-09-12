@@ -1,7 +1,15 @@
 import { cn } from "@/lib/utils";
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 import * as React from "react";
-import styles from "./dialog.module.css";
+import "./dialog.css";
+
+const styles = {
+  Backdrop: "DialogBackdrop",
+  Popup: "DialogPopup",
+  Title: "DialogTitle",
+  Description: "DialogDescription",
+  Close: "DialogClose",
+} as const;
 
 const Dialog = BaseDialog.Root;
 

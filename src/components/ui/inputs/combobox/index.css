@@ -1,4 +1,4 @@
-.InputGroup {
+.ComboboxInputGroup {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,12 +25,12 @@
     }
   }
 
-  /* &:has(.Clear) .Input {
+  /* &:has(.ComboboxClear) .ComboboxInput {
     padding: 0 calc(0.5rem + 2rem * 2) 0 0.5rem;
   } */
 }
 
-.Input {
+.ComboboxInput {
   box-sizing: border-box;
   /* padding: 0 calc(0.5rem + 2rem) 0 0.5rem; */
   /* padding: 0 0.5rem 0 0.5rem; */
@@ -69,7 +69,7 @@
   }
 }
 
-.Label {
+.ComboboxLabel {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
@@ -84,7 +84,7 @@
   }
 }
 
-.StartAdornment {
+.ComboboxStartAdornment {
   box-sizing: border-box;
   /* position: absolute; */
   display: flex;
@@ -102,7 +102,7 @@
   }
 }
 
-.ActionButtons {
+.ComboboxActionButtons {
   box-sizing: border-box;
   /* position: absolute; */
   display: flex;
@@ -116,8 +116,8 @@
   padding: 0;
 }
 
-.Trigger,
-.Clear {
+.ComboboxTrigger,
+.ComboboxClear {
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -130,7 +130,7 @@
   background: none;
 }
 
-.Trigger {
+.ComboboxTrigger {
   svg {
     /* @apply transition-all; */
     transition: all ease-in-out 0.125s;
@@ -142,11 +142,11 @@
   }
 }
 
-.Positioner {
+.ComboboxPositioner {
   outline: 0;
 }
 
-.Popup {
+.ComboboxPopup {
   box-sizing: border-box;
   background-color: var(--surface-soft);
   color: var(--text-h);
@@ -167,7 +167,7 @@
   }
 }
 
-.List {
+.ComboboxList {
   box-sizing: border-box;
   overflow-y: auto;
   overscroll-behavior: contain;
@@ -206,7 +206,7 @@
   }
 }
 
-.Item {
+.ComboboxItem {
   box-sizing: border-box;
   outline: 0;
   cursor: default;
@@ -238,15 +238,15 @@
   }
 }
 
-.ItemText {
+.ComboboxItemText {
   grid-column-start: 2;
 }
 
-.ItemIndicator {
+.ComboboxItemIndicator {
   grid-column-start: 1;
 }
 
-.Empty {
+.ComboboxEmpty {
   box-sizing: border-box;
   padding: 1rem 1rem 1rem 0.5rem;
   font-size: 0.875rem;

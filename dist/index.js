@@ -3680,18 +3680,21 @@ var X = createLucideIcon("x", __iconNode4);
 
 // src/components/ui/accordion/accordion.tsx
 import * as React from "react";
-
-// src/components/ui/accordion/accordion.module.css
-var accordion_default = {};
-
-// src/components/ui/accordion/accordion.tsx
 import { jsx, jsxs } from "react/jsx-runtime";
+var styles = {
+  Accordion: "Accordion",
+  Item: "AccordionItem",
+  Header: "AccordionHeader",
+  Trigger: "AccordionTrigger",
+  TriggerIcon: "AccordionTriggerIcon",
+  Panel: "AccordionPanel"
+};
 var Accordion = React.forwardRef(function Accordion2({ className, ...props }, ref) {
   return /* @__PURE__ */ jsx(
     BaseAccordion.Root,
     {
       ref,
-      className: cn(accordion_default.Accordion, className),
+      className: cn(styles.Accordion, className),
       ...props
     }
   );
@@ -3702,7 +3705,7 @@ var AccordionItem = React.forwardRef(function AccordionItem2({ className, ...pro
     BaseAccordion.Item,
     {
       ref,
-      className: cn(accordion_default.Item, className),
+      className: cn(styles.Item, className),
       ...props
     }
   );
@@ -3713,7 +3716,7 @@ var AccordionHeader = React.forwardRef(function AccordionHeader2({ className, ..
     BaseAccordion.Header,
     {
       ref,
-      className: cn(accordion_default.Header, className),
+      className: cn(styles.Header, className),
       ...props
     }
   );
@@ -3724,11 +3727,11 @@ var AccordionTrigger = React.forwardRef(function AccordionTrigger2({ children, c
     BaseAccordion.Trigger,
     {
       ref,
-      className: cn(accordion_default.Trigger, className),
+      className: cn(styles.Trigger, className),
       ...props,
       children: [
         /* @__PURE__ */ jsx("span", { children }),
-        /* @__PURE__ */ jsx(ChevronDown, { className: accordion_default.TriggerIcon, "aria-hidden": "true" })
+        /* @__PURE__ */ jsx(ChevronDown, { className: styles.TriggerIcon, "aria-hidden": "true" })
       ]
     }
   );
@@ -3739,7 +3742,7 @@ var AccordionPanel = React.forwardRef(function AccordionPanel2({ className, ...p
     BaseAccordion.Panel,
     {
       ref,
-      className: cn(accordion_default.Panel, className),
+      className: cn(styles.Panel, className),
       ...props
     }
   );
@@ -3749,19 +3752,19 @@ AccordionPanel.displayName = "AccordionPanel";
 // src/components/ui/avatar/avatar.tsx
 import { Avatar as BaseAvatar } from "@base-ui/react/avatar";
 import * as React2 from "react";
-
-// src/components/ui/avatar/avatar.module.css
-var avatar_default = {};
-
-// src/components/ui/avatar/avatar.tsx
 import { jsx as jsx2 } from "react/jsx-runtime";
+var styles2 = {
+  Avatar: "Avatar",
+  Image: "Image",
+  Fallback: "Fallback"
+};
 var Avatar = React2.forwardRef(function Avatar2({ className, size = "md", ...props }, ref) {
   return /* @__PURE__ */ jsx2(
     BaseAvatar.Root,
     {
       ref,
       "data-size": size,
-      className: cn(avatar_default.Avatar, className),
+      className: cn(styles2.Avatar, className),
       ...props
     }
   );
@@ -3772,7 +3775,7 @@ var AvatarImage = React2.forwardRef(function AvatarImage2({ className, alt = "",
     BaseAvatar.Image,
     {
       ref,
-      className: cn(avatar_default.Image, className),
+      className: cn(styles2.Image, className),
       alt,
       ...props
     }
@@ -3784,7 +3787,7 @@ var AvatarFallback = React2.forwardRef(function AvatarFallback2({ className, ...
     BaseAvatar.Fallback,
     {
       ref,
-      className: cn(avatar_default.Fallback, className),
+      className: cn(styles2.Fallback, className),
       ...props
     }
   );
@@ -3835,35 +3838,30 @@ var cva = (base, config) => (props) => {
 
 // src/components/ui/badge/badge.tsx
 import * as React3 from "react";
-
-// src/components/ui/badge/badge.module.css
-var badge_default = {};
-
-// src/components/ui/badge/badge.tsx
 import { jsx as jsx3 } from "react/jsx-runtime";
-var badgeVariants = cva(badge_default.Badge, {
+var badgeVariants = cva("badge", {
   variants: {
     theme: {
-      primary: badge_default.Primary,
-      secondary: badge_default.Secondary,
-      accent: badge_default.Accent,
-      success: badge_default.Success,
-      warning: badge_default.Warning,
-      error: badge_default.Error
+      primary: "badge-primary",
+      secondary: "badge-secondary",
+      accent: "badge-accent",
+      success: "badge-success",
+      warning: "badge-warning",
+      error: "badge-error"
     },
     variant: {
-      filled: badge_default.Filled,
-      outlined: badge_default.Outlined,
-      soft: badge_default.Soft
+      filled: "badge-filled",
+      outlined: "badge-outlined",
+      soft: "badge-soft"
     },
     size: {
-      xs: badge_default.ExtraSmall,
-      sm: badge_default.Small,
-      md: badge_default.Medium
+      xs: "badge-xs",
+      sm: "badge-sm",
+      md: "badge-md"
     },
     shape: {
-      rounded: badge_default.Rounded,
-      square: badge_default.Square
+      rounded: "badge-rounded",
+      square: "badge-square"
     }
   },
   defaultVariants: {
@@ -4017,18 +4015,19 @@ function IconButton({
 // src/components/ui/collapsible/collapsible.tsx
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
 import * as React4 from "react";
-
-// src/components/ui/collapsible/collapsible.module.css
-var collapsible_default = {};
-
-// src/components/ui/collapsible/collapsible.tsx
 import { jsx as jsx6, jsxs as jsxs2 } from "react/jsx-runtime";
+var styles3 = {
+  Collapsible: "Collapsible",
+  Trigger: "CollapsibleTrigger",
+  TriggerIcon: "CollapsibleTriggerIcon",
+  Panel: "CollapsiblePanel"
+};
 var Collapsible = React4.forwardRef(function Collapsible2({ className, ...props }, ref) {
   return /* @__PURE__ */ jsx6(
     BaseCollapsible.Root,
     {
       ref,
-      className: cn(collapsible_default.Collapsible, className),
+      className: cn(styles3.Collapsible, className),
       ...props
     }
   );
@@ -4039,11 +4038,11 @@ var CollapsibleTrigger = React4.forwardRef(function CollapsibleTrigger2({ childr
     BaseCollapsible.Trigger,
     {
       ref,
-      className: cn(collapsible_default.Trigger, className),
+      className: cn(styles3.Trigger, className),
       ...props,
       children: [
         /* @__PURE__ */ jsx6("span", { children }),
-        /* @__PURE__ */ jsx6(ChevronDown, { className: collapsible_default.TriggerIcon, "aria-hidden": "true" })
+        /* @__PURE__ */ jsx6(ChevronDown, { className: styles3.TriggerIcon, "aria-hidden": "true" })
       ]
     }
   );
@@ -4054,7 +4053,7 @@ var CollapsiblePanel = React4.forwardRef(function CollapsiblePanel2({ className,
     BaseCollapsible.Panel,
     {
       ref,
-      className: cn(collapsible_default.Panel, className),
+      className: cn(styles3.Panel, className),
       ...props
     }
   );
@@ -4064,12 +4063,14 @@ CollapsiblePanel.displayName = "CollapsiblePanel";
 // src/components/ui/dialog/dialog.tsx
 import { Dialog as BaseDialog } from "@base-ui/react/dialog";
 import * as React5 from "react";
-
-// src/components/ui/dialog/dialog.module.css
-var dialog_default = {};
-
-// src/components/ui/dialog/dialog.tsx
 import { jsx as jsx7 } from "react/jsx-runtime";
+var styles4 = {
+  Backdrop: "DialogBackdrop",
+  Popup: "DialogPopup",
+  Title: "DialogTitle",
+  Description: "DialogDescription",
+  Close: "DialogClose"
+};
 var Dialog = BaseDialog.Root;
 var DialogTrigger = React5.forwardRef(function DialogTrigger2({ className, ...props }, ref) {
   return /* @__PURE__ */ jsx7(BaseDialog.Trigger, { ref, className, ...props });
@@ -4081,7 +4082,7 @@ var DialogBackdrop = React5.forwardRef(function DialogBackdrop2({ className, ...
     BaseDialog.Backdrop,
     {
       ref,
-      className: cn(dialog_default.Backdrop, className),
+      className: cn(styles4.Backdrop, className),
       ...props
     }
   );
@@ -4092,7 +4093,7 @@ var DialogPopup = React5.forwardRef(function DialogPopup2({ className, ...props 
     BaseDialog.Popup,
     {
       ref,
-      className: cn(dialog_default.Popup, className),
+      className: cn(styles4.Popup, className),
       ...props
     }
   );
@@ -4103,7 +4104,7 @@ var DialogTitle = React5.forwardRef(function DialogTitle2({ className, ...props 
     BaseDialog.Title,
     {
       ref,
-      className: cn(dialog_default.Title, className),
+      className: cn(styles4.Title, className),
       ...props
     }
   );
@@ -4114,7 +4115,7 @@ var DialogDescription = React5.forwardRef(function DialogDescription2({ classNam
     BaseDialog.Description,
     {
       ref,
-      className: cn(dialog_default.Description, className),
+      className: cn(styles4.Description, className),
       ...props
     }
   );
@@ -4125,7 +4126,7 @@ var DialogClose = React5.forwardRef(function DialogClose2({ className, ...props 
     BaseDialog.Close,
     {
       ref,
-      className: cn(dialog_default.Close, className),
+      className: cn(styles4.Close, className),
       ...props
     }
   );
@@ -4135,12 +4136,15 @@ DialogClose.displayName = "DialogClose";
 // src/components/ui/drawer/drawer.tsx
 import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
 import * as React6 from "react";
-
-// src/components/ui/drawer/drawer.module.css
-var drawer_default = {};
-
-// src/components/ui/drawer/drawer.tsx
 import { jsx as jsx8 } from "react/jsx-runtime";
+var styles5 = {
+  Backdrop: "DrawerBackdrop",
+  Viewport: "DrawerViewport",
+  Popup: "DrawerPopup",
+  Title: "DrawerTitle",
+  Description: "DrawerDescription",
+  Close: "DrawerClose"
+};
 var Drawer = BaseDrawer.Root;
 var DrawerTrigger = React6.forwardRef(function DrawerTrigger2({ className, ...props }, ref) {
   return /* @__PURE__ */ jsx8(BaseDrawer.Trigger, { ref, className, ...props });
@@ -4152,7 +4156,7 @@ var DrawerBackdrop = React6.forwardRef(function DrawerBackdrop2({ className, ...
     BaseDrawer.Backdrop,
     {
       ref,
-      className: cn(drawer_default.Backdrop, className),
+      className: cn(styles5.Backdrop, className),
       ...props
     }
   );
@@ -4163,7 +4167,7 @@ var DrawerViewport = React6.forwardRef(function DrawerViewport2({ className, ...
     BaseDrawer.Viewport,
     {
       ref,
-      className: cn(drawer_default.Viewport, className),
+      className: cn(styles5.Viewport, className),
       ...props
     }
   );
@@ -4174,7 +4178,7 @@ var DrawerPopup = React6.forwardRef(function DrawerPopup2({ className, ...props 
     BaseDrawer.Popup,
     {
       ref,
-      className: cn(drawer_default.Popup, className),
+      className: cn(styles5.Popup, className),
       ...props
     }
   );
@@ -4185,7 +4189,7 @@ var DrawerTitle = React6.forwardRef(function DrawerTitle2({ className, ...props 
     BaseDrawer.Title,
     {
       ref,
-      className: cn(drawer_default.Title, className),
+      className: cn(styles5.Title, className),
       ...props
     }
   );
@@ -4196,7 +4200,7 @@ var DrawerDescription = React6.forwardRef(function DrawerDescription2({ classNam
     BaseDrawer.Description,
     {
       ref,
-      className: cn(drawer_default.Description, className),
+      className: cn(styles5.Description, className),
       ...props
     }
   );
@@ -4370,12 +4374,14 @@ var InputFieldChildren = InputController;
 // src/components/ui/inputs/checkbox/checkbox.tsx
 import { Checkbox } from "@base-ui/react/checkbox";
 import * as React7 from "react";
-
-// src/components/ui/inputs/checkbox/index.module.css
-var checkbox_default = {};
-
-// src/components/ui/inputs/checkbox/checkbox.tsx
 import { jsx as jsx10, jsxs as jsxs4 } from "react/jsx-runtime";
+var styles6 = {
+  Label: "CheckboxLabel",
+  Checkbox: "Checkbox",
+  Indicator: "CheckboxIndicator",
+  Content: "CheckboxContent",
+  Description: "CheckboxDescription"
+};
 function CheckboxFieldImpl({
   id,
   label = "Checkbox",
@@ -4385,22 +4391,22 @@ function CheckboxFieldImpl({
 }, ref) {
   const labelId = label ? `${id ?? "checkbox"}-label` : void 0;
   const descriptionId = description ? `${id ?? "checkbox"}-description` : void 0;
-  return /* @__PURE__ */ jsxs4("label", { className: checkbox_default.Label, children: [
+  return /* @__PURE__ */ jsxs4("label", { className: styles6.Label, children: [
     /* @__PURE__ */ jsx10(
       Checkbox.Root,
       {
         ref,
         id,
-        className: className ?? checkbox_default.Checkbox,
+        className: className ?? styles6.Checkbox,
         "aria-labelledby": labelId,
         "aria-describedby": descriptionId,
         ...rootProps,
-        children: /* @__PURE__ */ jsx10(Checkbox.Indicator, { className: checkbox_default.Indicator, children: /* @__PURE__ */ jsx10(Check, { className: "h-4 w-4 aspect-square" }) })
+        children: /* @__PURE__ */ jsx10(Checkbox.Indicator, { className: styles6.Indicator, children: /* @__PURE__ */ jsx10(Check, { className: "h-4 w-4 aspect-square" }) })
       }
     ),
-    /* @__PURE__ */ jsxs4("span", { className: checkbox_default.Content, children: [
+    /* @__PURE__ */ jsxs4("span", { className: styles6.Content, children: [
       /* @__PURE__ */ jsx10("span", { id: labelId, children: label }),
-      description ? /* @__PURE__ */ jsx10("span", { className: checkbox_default.Description, id: descriptionId, children: description }) : null
+      description ? /* @__PURE__ */ jsx10("span", { className: styles6.Description, id: descriptionId, children: description }) : null
     ] })
   ] });
 }
@@ -4413,12 +4419,23 @@ import { Combobox } from "@base-ui/react/combobox";
 import {
   forwardRef as forwardRef11
 } from "react";
-
-// src/components/ui/inputs/combobox/index.module.css
-var combobox_default = {};
-
-// src/components/ui/inputs/combobox/index.tsx
 import { jsx as jsx11, jsxs as jsxs5 } from "react/jsx-runtime";
+var styles7 = {
+  InputGroup: "ComboboxInputGroup",
+  Input: "ComboboxInput",
+  Label: "ComboboxLabel",
+  StartAdornment: "ComboboxStartAdornment",
+  ActionButtons: "ComboboxActionButtons",
+  Trigger: "ComboboxTrigger",
+  Clear: "ComboboxClear",
+  Positioner: "ComboboxPositioner",
+  Popup: "ComboboxPopup",
+  List: "ComboboxList",
+  Item: "ComboboxItem",
+  ItemText: "ComboboxItemText",
+  ItemIndicator: "ComboboxItemIndicator",
+  Empty: "ComboboxEmpty"
+};
 function ComboboxFieldImpl({
   id = "combobox",
   label,
@@ -4451,12 +4468,12 @@ function ComboboxFieldImpl({
               {
                 ref,
                 startAdornment,
-                endAdornment: /* @__PURE__ */ jsxs5("div", { className: combobox_default.ActionButtons, children: [
+                endAdornment: /* @__PURE__ */ jsxs5("div", { className: styles7.ActionButtons, children: [
                   endAdornment,
                   /* @__PURE__ */ jsx11(
                     Combobox.Clear,
                     {
-                      className: combobox_default.Clear,
+                      className: styles7.Clear,
                       "aria-label": "Clear selection",
                       children: /* @__PURE__ */ jsx11(X, {})
                     }
@@ -4464,7 +4481,7 @@ function ComboboxFieldImpl({
                   /* @__PURE__ */ jsx11(
                     Combobox.Trigger,
                     {
-                      className: combobox_default.Trigger,
+                      className: styles7.Trigger,
                       "aria-label": "Open popup",
                       children: /* @__PURE__ */ jsx11(ChevronDown, {})
                     }
@@ -4476,16 +4493,16 @@ function ComboboxFieldImpl({
             ) })
           }
         ),
-        /* @__PURE__ */ jsx11(Combobox.Portal, { children: /* @__PURE__ */ jsx11(Combobox.Positioner, { className: combobox_default.Positioner, sideOffset: 4, children: /* @__PURE__ */ jsxs5(Combobox.Popup, { className: combobox_default.Popup, children: [
-          emptyOption ? /* @__PURE__ */ jsx11(Combobox.Empty, { children: /* @__PURE__ */ jsx11("div", { className: combobox_default.Empty, children: emptyOption }) }) : null,
-          /* @__PURE__ */ jsx11(Combobox.List, { className: combobox_default.List, children: (item) => /* @__PURE__ */ jsxs5(
+        /* @__PURE__ */ jsx11(Combobox.Portal, { children: /* @__PURE__ */ jsx11(Combobox.Positioner, { className: styles7.Positioner, sideOffset: 4, children: /* @__PURE__ */ jsxs5(Combobox.Popup, { className: styles7.Popup, children: [
+          emptyOption ? /* @__PURE__ */ jsx11(Combobox.Empty, { children: /* @__PURE__ */ jsx11("div", { className: styles7.Empty, children: emptyOption }) }) : null,
+          /* @__PURE__ */ jsx11(Combobox.List, { className: styles7.List, children: (item) => /* @__PURE__ */ jsxs5(
             Combobox.Item,
             {
               value: item,
-              className: combobox_default.Item,
+              className: styles7.Item,
               children: [
-                /* @__PURE__ */ jsx11(Combobox.ItemIndicator, { className: combobox_default.ItemIndicator, children: /* @__PURE__ */ jsx11(Check, {}) }),
-                /* @__PURE__ */ jsx11("span", { className: combobox_default.ItemText, children: itemToStringLabel(item) })
+                /* @__PURE__ */ jsx11(Combobox.ItemIndicator, { className: styles7.ItemIndicator, children: /* @__PURE__ */ jsx11(Check, {}) }),
+                /* @__PURE__ */ jsx11("span", { className: styles7.ItemText, children: itemToStringLabel(item) })
               ]
             },
             itemToStringValue(item)
@@ -4503,12 +4520,18 @@ var ComboboxField = forwardRef11(
 import { Radio } from "@base-ui/react/radio";
 import { RadioGroup } from "@base-ui/react/radio-group";
 import * as React8 from "react";
-
-// src/components/ui/inputs/radio/radio.module.css
-var radio_default = {};
-
-// src/components/ui/inputs/radio/radio.tsx
 import { jsx as jsx12, jsxs as jsxs6 } from "react/jsx-runtime";
+var styles8 = {
+  RadioGroup: "RadioGroup",
+  Label: "RadioGroupLabel",
+  Options: "RadioOptions",
+  Option: "RadioOption",
+  Radio: "Radio",
+  Indicator: "RadioIndicator",
+  Content: "RadioContent",
+  Description: "RadioDescription",
+  GroupDescription: "RadioGroupDescription"
+};
 var RadioGroupField = React8.forwardRef(function RadioGroupField2({ id, label, description, options, className, ...groupProps }, ref) {
   const labelId = label ? `${id ?? "radio-group"}-label` : void 0;
   const descriptionId = description ? `${id ?? "radio-group"}-description` : void 0;
@@ -4517,20 +4540,20 @@ var RadioGroupField = React8.forwardRef(function RadioGroupField2({ id, label, d
     {
       ref,
       id,
-      className: className ?? radio_default.RadioGroup,
+      className: className ?? styles8.RadioGroup,
       "aria-labelledby": labelId,
       "aria-describedby": descriptionId,
       ...groupProps,
       children: [
-        label ? /* @__PURE__ */ jsx12("div", { className: radio_default.Label, id: labelId, children: label }) : null,
-        /* @__PURE__ */ jsx12("div", { className: radio_default.Options, children: options.map((option) => /* @__PURE__ */ jsxs6("label", { className: radio_default.Option, children: [
-          /* @__PURE__ */ jsx12(Radio.Root, { value: option.value, className: radio_default.Radio, children: /* @__PURE__ */ jsx12(Radio.Indicator, { className: radio_default.Indicator }) }),
-          /* @__PURE__ */ jsxs6("span", { className: radio_default.Content, children: [
+        label ? /* @__PURE__ */ jsx12("div", { className: styles8.Label, id: labelId, children: label }) : null,
+        /* @__PURE__ */ jsx12("div", { className: styles8.Options, children: options.map((option) => /* @__PURE__ */ jsxs6("label", { className: styles8.Option, children: [
+          /* @__PURE__ */ jsx12(Radio.Root, { value: option.value, className: styles8.Radio, children: /* @__PURE__ */ jsx12(Radio.Indicator, { className: styles8.Indicator }) }),
+          /* @__PURE__ */ jsxs6("span", { className: styles8.Content, children: [
             /* @__PURE__ */ jsx12("span", { children: option.label }),
-            option.description ? /* @__PURE__ */ jsx12("span", { className: radio_default.Description, children: option.description }) : null
+            option.description ? /* @__PURE__ */ jsx12("span", { className: styles8.Description, children: option.description }) : null
           ] })
         ] }, option.value)) }),
-        description ? /* @__PURE__ */ jsx12("span", { className: radio_default.GroupDescription, id: descriptionId, children: description }) : null
+        description ? /* @__PURE__ */ jsx12("span", { className: styles8.GroupDescription, id: descriptionId, children: description }) : null
       ]
     }
   );
@@ -4618,12 +4641,14 @@ TextField.displayName = "TextField";
 
 // src/components/ui/loading/loading.tsx
 import * as React9 from "react";
-
-// src/components/ui/loading/loading.module.css
-var loading_default = {};
-
-// src/components/ui/loading/loading.tsx
 import { jsx as jsx16, jsxs as jsxs9 } from "react/jsx-runtime";
+var styles9 = {
+  Loading: "Loading",
+  Spinner: "LoadingSpinner",
+  Bar: "LoadingBar",
+  OverlayContent: "LoadingOverlayContent",
+  Label: "LoadingLabel"
+};
 var Loading = React9.forwardRef(
   function Loading2({
     variant = "spinner",
@@ -4641,16 +4666,16 @@ var Loading = React9.forwardRef(
         "aria-busy": "true",
         "data-variant": variant,
         "data-tone": tone,
-        className: cn(loading_default.Loading, className),
+        className: cn(styles9.Loading, className),
         ...props,
         children: [
-          variant === "spinner" ? /* @__PURE__ */ jsx16("span", { className: loading_default.Spinner, "aria-hidden": "true" }) : null,
-          variant === "bar" ? /* @__PURE__ */ jsx16("span", { className: loading_default.Bar, "aria-hidden": "true" }) : null,
-          variant === "overlay" ? /* @__PURE__ */ jsxs9("span", { className: loading_default.OverlayContent, children: [
-            /* @__PURE__ */ jsx16("span", { className: loading_default.Spinner, "aria-hidden": "true" }),
+          variant === "spinner" ? /* @__PURE__ */ jsx16("span", { className: styles9.Spinner, "aria-hidden": "true" }) : null,
+          variant === "bar" ? /* @__PURE__ */ jsx16("span", { className: styles9.Bar, "aria-hidden": "true" }) : null,
+          variant === "overlay" ? /* @__PURE__ */ jsxs9("span", { className: styles9.OverlayContent, children: [
+            /* @__PURE__ */ jsx16("span", { className: styles9.Spinner, "aria-hidden": "true" }),
             /* @__PURE__ */ jsx16("span", { children: label })
           ] }) : null,
-          variant !== "overlay" && typeof label !== "undefined" ? /* @__PURE__ */ jsx16("span", { className: loading_default.Label, children: label }) : null
+          variant !== "overlay" && typeof label !== "undefined" ? /* @__PURE__ */ jsx16("span", { className: styles9.Label, children: label }) : null
         ]
       }
     );
@@ -4661,12 +4686,17 @@ Loading.displayName = "Loading";
 // src/components/ui/menu/menu.tsx
 import { Menu as BaseMenu } from "@base-ui/react/menu";
 import * as React10 from "react";
-
-// src/components/ui/menu/menu.module.css
-var menu_default = {};
-
-// src/components/ui/menu/menu.tsx
 import { jsx as jsx17, jsxs as jsxs10 } from "react/jsx-runtime";
+var styles10 = {
+  Positioner: "MenuPositioner",
+  Popup: "MenuPopup",
+  Item: "MenuItem",
+  Separator: "MenuSeparator",
+  CheckboxItem: "MenuCheckboxItem",
+  RadioItem: "MenuRadioItem",
+  Indicator: "MenuIndicator",
+  RadioDot: "MenuRadioDot"
+};
 var Menu = BaseMenu.Root;
 var MenuPortal = BaseMenu.Portal;
 var MenuTrigger = React10.forwardRef(function MenuTrigger2({ className, ...props }, ref) {
@@ -4678,7 +4708,7 @@ var MenuPositioner = React10.forwardRef(function MenuPositioner2({ className, ..
     BaseMenu.Positioner,
     {
       ref,
-      className: cn(menu_default.Positioner, className),
+      className: cn(styles10.Positioner, className),
       ...props
     }
   );
@@ -4689,7 +4719,7 @@ var MenuPopup = React10.forwardRef(function MenuPopup2({ className, ...props }, 
     BaseMenu.Popup,
     {
       ref,
-      className: cn(menu_default.Popup, className),
+      className: cn(styles10.Popup, className),
       ...props
     }
   );
@@ -4700,7 +4730,7 @@ var MenuItem = React10.forwardRef(function MenuItem2({ className, ...props }, re
     BaseMenu.Item,
     {
       ref,
-      className: cn(menu_default.Item, className),
+      className: cn(styles10.Item, className),
       ...props
     }
   );
@@ -4711,7 +4741,7 @@ var MenuLinkItem = React10.forwardRef(function MenuLinkItem2({ className, ...pro
     BaseMenu.LinkItem,
     {
       ref,
-      className: cn(menu_default.Item, className),
+      className: cn(styles10.Item, className),
       ...props
     }
   );
@@ -4722,7 +4752,7 @@ var MenuSeparator = React10.forwardRef(function MenuSeparator2({ className, ...p
     BaseMenu.Separator,
     {
       ref,
-      className: cn(menu_default.Separator, className),
+      className: cn(styles10.Separator, className),
       ...props
     }
   );
@@ -4736,7 +4766,7 @@ var MenuSubmenuTrigger = React10.forwardRef(function MenuSubmenuTrigger2({ child
     BaseMenu.SubmenuTrigger,
     {
       ref,
-      className: cn(menu_default.Item, className),
+      className: cn(styles10.Item, className),
       ...props,
       children: [
         /* @__PURE__ */ jsx17("span", { children }),
@@ -4751,10 +4781,10 @@ var MenuCheckboxItem = React10.forwardRef(function MenuCheckboxItem2({ className
     BaseMenu.CheckboxItem,
     {
       ref,
-      className: cn(menu_default.Item, menu_default.CheckboxItem, className),
+      className: cn(styles10.Item, styles10.CheckboxItem, className),
       ...props,
       children: [
-        /* @__PURE__ */ jsx17(BaseMenu.CheckboxItemIndicator, { className: menu_default.Indicator, children: /* @__PURE__ */ jsx17(Check, { size: 14, "aria-hidden": "true" }) }),
+        /* @__PURE__ */ jsx17(BaseMenu.CheckboxItemIndicator, { className: styles10.Indicator, children: /* @__PURE__ */ jsx17(Check, { size: 14, "aria-hidden": "true" }) }),
         /* @__PURE__ */ jsx17("span", { children })
       ]
     }
@@ -4767,10 +4797,10 @@ var MenuRadioItem = React10.forwardRef(function MenuRadioItem2({ className, chil
     BaseMenu.RadioItem,
     {
       ref,
-      className: cn(menu_default.Item, menu_default.RadioItem, className),
+      className: cn(styles10.Item, styles10.RadioItem, className),
       ...props,
       children: [
-        /* @__PURE__ */ jsx17(BaseMenu.RadioItemIndicator, { className: menu_default.Indicator, children: /* @__PURE__ */ jsx17("span", { className: menu_default.RadioDot }) }),
+        /* @__PURE__ */ jsx17(BaseMenu.RadioItemIndicator, { className: styles10.Indicator, children: /* @__PURE__ */ jsx17("span", { className: styles10.RadioDot }) }),
         /* @__PURE__ */ jsx17("span", { children })
       ]
     }
@@ -4781,33 +4811,35 @@ MenuRadioItem.displayName = "MenuRadioItem";
 // src/components/ui/switch/switch.tsx
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
 import * as React11 from "react";
-
-// src/components/ui/switch/switch.module.css
-var switch_default = {};
-
-// src/components/ui/switch/switch.tsx
 import { jsx as jsx18, jsxs as jsxs11 } from "react/jsx-runtime";
+var styles11 = {
+  Field: "SwitchField",
+  Switch: "Switch",
+  Thumb: "SwitchThumb",
+  Label: "SwitchLabel",
+  Description: "SwitchDescription"
+};
 var Switch = React11.forwardRef(
   function Switch2({ id, label, description, className, ...props }, ref) {
     const inputId = id ?? React11.useId();
     const labelId = label ? `${inputId}-label` : void 0;
     const descriptionId = description ? `${inputId}-description` : void 0;
-    return /* @__PURE__ */ jsxs11("div", { className: switch_default.Field, children: [
+    return /* @__PURE__ */ jsxs11("div", { className: styles11.Field, children: [
       /* @__PURE__ */ jsx18(
         BaseSwitch.Root,
         {
           ref,
           id: inputId,
-          className: cn(switch_default.Switch, className),
+          className: cn(styles11.Switch, className),
           "aria-labelledby": labelId,
           "aria-describedby": descriptionId,
           ...props,
-          children: /* @__PURE__ */ jsx18(BaseSwitch.Thumb, { className: switch_default.Thumb })
+          children: /* @__PURE__ */ jsx18(BaseSwitch.Thumb, { className: styles11.Thumb })
         }
       ),
-      label ? /* @__PURE__ */ jsxs11("label", { className: switch_default.Label, htmlFor: inputId, children: [
+      label ? /* @__PURE__ */ jsxs11("label", { className: styles11.Label, htmlFor: inputId, children: [
         /* @__PURE__ */ jsx18("span", { id: labelId, children: label }),
-        description ? /* @__PURE__ */ jsx18("span", { className: switch_default.Description, id: descriptionId, children: description }) : null
+        description ? /* @__PURE__ */ jsx18("span", { className: styles11.Description, id: descriptionId, children: description }) : null
       ] }) : null
     ] });
   }
@@ -4906,12 +4938,16 @@ __reExport(ui_exports, tabs_exports2);
 // src/components/ui/toast/toast.tsx
 import { Toast as BaseToast } from "@base-ui/react/toast";
 import * as React12 from "react";
-
-// src/components/ui/toast/toast.module.css
-var toast_default = {};
-
-// src/components/ui/toast/toast.tsx
 import { jsx as jsx20 } from "react/jsx-runtime";
+var styles12 = {
+  Viewport: "ToastViewport",
+  Toast: "Toast",
+  Content: "ToastContent",
+  Title: "ToastTitle",
+  Description: "ToastDescription",
+  Action: "ToastAction",
+  Close: "ToastClose"
+};
 var ToastProvider = BaseToast.Provider;
 var useToastManager = BaseToast.useToastManager;
 var createToastManager = BaseToast.createToastManager;
@@ -4921,7 +4957,7 @@ var ToastViewport = React12.forwardRef(function ToastViewport2({ className, ...p
     BaseToast.Viewport,
     {
       ref,
-      className: cn(toast_default.Viewport, className),
+      className: cn(styles12.Viewport, className),
       ...props
     }
   );
@@ -4932,7 +4968,7 @@ var ToastRoot = React12.forwardRef(function ToastRoot2({ className, ...props }, 
     BaseToast.Root,
     {
       ref,
-      className: cn(toast_default.Toast, className),
+      className: cn(styles12.Toast, className),
       ...props
     }
   );
@@ -4943,7 +4979,7 @@ var ToastContent = React12.forwardRef(function ToastContent2({ className, ...pro
     BaseToast.Content,
     {
       ref,
-      className: cn(toast_default.Content, className),
+      className: cn(styles12.Content, className),
       ...props
     }
   );
@@ -4954,7 +4990,7 @@ var ToastTitle = React12.forwardRef(function ToastTitle2({ className, ...props }
     BaseToast.Title,
     {
       ref,
-      className: cn(toast_default.Title, className),
+      className: cn(styles12.Title, className),
       ...props
     }
   );
@@ -4965,7 +5001,7 @@ var ToastDescription = React12.forwardRef(function ToastDescription2({ className
     BaseToast.Description,
     {
       ref,
-      className: cn(toast_default.Description, className),
+      className: cn(styles12.Description, className),
       ...props
     }
   );
@@ -4976,7 +5012,7 @@ var ToastAction = React12.forwardRef(function ToastAction2({ className, ...props
     BaseToast.Action,
     {
       ref,
-      className: cn(toast_default.Action, className),
+      className: cn(styles12.Action, className),
       ...props
     }
   );
@@ -4987,7 +5023,7 @@ var ToastClose = React12.forwardRef(function ToastClose2({ children, className, 
     BaseToast.Close,
     {
       ref,
-      className: cn(toast_default.Close, className),
+      className: cn(styles12.Close, className),
       "aria-label": props["aria-label"] ?? "Dismiss notification",
       ...props,
       children: children ?? /* @__PURE__ */ jsx20(X, { size: 16, "aria-hidden": "true" })
@@ -5000,14 +5036,13 @@ ToastClose.displayName = "ToastClose";
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
 import * as React13 from "react";
-
-// src/components/ui/toggle/toggle.module.css
-var toggle_default = {};
-
-// src/components/ui/toggle/toggle.tsx
 import { jsx as jsx21 } from "react/jsx-runtime";
+var styles13 = {
+  Toggle: "Toggle",
+  ToggleGroup: "ToggleGroup"
+};
 var Toggle = React13.forwardRef(function Toggle2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(BaseToggle, { ref, className: cn(toggle_default.Toggle, className), ...props });
+  return /* @__PURE__ */ jsx21(BaseToggle, { ref, className: cn(styles13.Toggle, className), ...props });
 });
 Toggle.displayName = "Toggle";
 var ToggleGroup = React13.forwardRef(function ToggleGroup2({ className, ...props }, ref) {
@@ -5015,7 +5050,7 @@ var ToggleGroup = React13.forwardRef(function ToggleGroup2({ className, ...props
     BaseToggleGroup,
     {
       ref,
-      className: cn(toggle_default.ToggleGroup, className),
+      className: cn(styles13.ToggleGroup, className),
       ...props
     }
   );

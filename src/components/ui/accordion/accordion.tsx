@@ -2,7 +2,16 @@ import { cn } from "@/lib/utils";
 import { Accordion as BaseAccordion } from "@base-ui/react/accordion";
 import { ChevronDown } from "lucide-react";
 import * as React from "react";
-import styles from "./accordion.module.css";
+import "./accordion.css";
+
+const styles = {
+  Accordion: "Accordion",
+  Item: "AccordionItem",
+  Header: "AccordionHeader",
+  Trigger: "AccordionTrigger",
+  TriggerIcon: "AccordionTriggerIcon",
+  Panel: "AccordionPanel",
+} as const;
 
 export const Accordion = React.forwardRef<
   HTMLDivElement,

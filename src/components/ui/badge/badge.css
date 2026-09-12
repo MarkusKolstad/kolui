@@ -1,4 +1,4 @@
-.Badge {
+.badge {
   --badge-color: var(--secondary);
   display: inline-flex;
   width: max-content;
@@ -13,64 +13,64 @@
   gap: 4px;
 }
 
-.Small {
-  min-height: 1.375rem;
-  padding: 0.3rem 0.5rem;
-}
-
-.ExtraSmall {
+.badge-xs {
   min-height: 1.125rem;
   padding: 0.2rem 0.375rem;
   font-size: 0.625rem;
 }
 
-.Medium {
+.badge-sm {
+  min-height: 1.375rem;
+  padding: 0.3rem 0.5rem;
+}
+
+.badge-md {
   min-height: 1.75rem;
   padding: 0.4rem 0.625rem;
   font-size: 0.75rem;
 }
 
-.Primary {
+.badge-primary {
   --badge-color: var(--primary);
 }
-.Secondary {
+.badge-secondary {
   --badge-color: var(--secondary);
 }
-.Accent {
+.badge-accent {
   --badge-color: var(--accent);
 }
-.Success {
+.badge-success {
   --badge-color: var(--success);
 }
-.Warning {
+.badge-warning {
   --badge-color: var(--warning);
 }
-.Error {
+.badge-error {
   --badge-color: var(--error);
 }
 
-.Filled {
+.badge-filled {
   border-color: var(--badge-color);
   background: var(--badge-color);
   color: var(--text-contrast);
 }
 
-.Outlined {
+.badge-outlined {
   border-color: var(--badge-color);
   background: transparent;
   color: var(--badge-color);
 }
 
-.Soft {
+.badge-soft {
   border-color: color-mix(in srgb, var(--badge-color) 18%, transparent);
   background: color-mix(in srgb, var(--badge-color) 8%, transparent);
   color: var(--badge-color);
 }
 
-.Square {
+.badge-square {
   border-radius: 0.25rem;
 }
 
-.Rounded {
+.badge-rounded {
   border-radius: 999px;
 }

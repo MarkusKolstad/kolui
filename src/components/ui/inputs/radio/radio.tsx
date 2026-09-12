@@ -2,7 +2,19 @@ import { Radio } from "@base-ui/react/radio";
 import { RadioGroup, type RadioGroupProps } from "@base-ui/react/radio-group";
 import type { ReactNode } from "react";
 import * as React from "react";
-import styles from "./radio.module.css";
+import "./radio.css";
+
+const styles = {
+  RadioGroup: "RadioGroup",
+  Label: "RadioGroupLabel",
+  Options: "RadioOptions",
+  Option: "RadioOption",
+  Radio: "Radio",
+  Indicator: "RadioIndicator",
+  Content: "RadioContent",
+  Description: "RadioDescription",
+  GroupDescription: "RadioGroupDescription",
+} as const;
 
 export interface RadioOption {
   value: string;

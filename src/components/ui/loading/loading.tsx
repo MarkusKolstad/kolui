@@ -1,6 +1,14 @@
 import { cn } from "@/lib/utils";
 import * as React from "react";
-import styles from "./loading.module.css";
+import "./loading.css";
+
+const styles = {
+  Loading: "Loading",
+  Spinner: "LoadingSpinner",
+  Bar: "LoadingBar",
+  OverlayContent: "LoadingOverlayContent",
+  Label: "LoadingLabel",
+} as const;
 
 export type LoadingVariant = "spinner" | "bar" | "overlay";
 export type LoadingTone = "default" | "contrast";

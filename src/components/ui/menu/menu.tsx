@@ -2,7 +2,18 @@ import { cn } from "@/lib/utils";
 import { Menu as BaseMenu } from "@base-ui/react/menu";
 import { Check, ChevronRight } from "lucide-react";
 import * as React from "react";
-import styles from "./menu.module.css";
+import "./menu.css";
+
+const styles = {
+  Positioner: "MenuPositioner",
+  Popup: "MenuPopup",
+  Item: "MenuItem",
+  Separator: "MenuSeparator",
+  CheckboxItem: "MenuCheckboxItem",
+  RadioItem: "MenuRadioItem",
+  Indicator: "MenuIndicator",
+  RadioDot: "MenuRadioDot",
+} as const;
 
 export const Menu = BaseMenu.Root;
 export const MenuPortal = BaseMenu.Portal;

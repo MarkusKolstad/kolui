@@ -2,7 +2,14 @@ import { cn } from "@/lib/utils";
 import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
 import { ChevronDown } from "lucide-react";
 import * as React from "react";
-import styles from "./collapsible.module.css";
+import "./collapsible.css";
+
+const styles = {
+  Collapsible: "Collapsible",
+  Trigger: "CollapsibleTrigger",
+  TriggerIcon: "CollapsibleTriggerIcon",
+  Panel: "CollapsiblePanel",
+} as const;
 
 export const Collapsible = React.forwardRef<
   HTMLDivElement,

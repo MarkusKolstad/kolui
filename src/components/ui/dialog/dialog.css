@@ -1,4 +1,4 @@
-.Close {
+.DialogClose {
   box-sizing: border-box;
   display: inline-flex;
   min-height: 2.25rem;
@@ -16,17 +16,17 @@
   cursor: pointer;
 }
 
-.Close:focus-visible {
+.DialogClose:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
-.Close {
+.DialogClose {
   border-color: var(--border);
   color: var(--text-h);
 }
 
-.Backdrop {
+.DialogBackdrop {
   position: fixed;
   inset: 0;
   min-height: 100dvh;
@@ -34,12 +34,12 @@
   transition: opacity 150ms ease;
 }
 
-.Backdrop[data-starting-style],
-.Backdrop[data-ending-style] {
+.DialogBackdrop[data-starting-style],
+.DialogBackdrop[data-ending-style] {
   opacity: 0;
 }
 
-:where(.Popup) {
+:where(.DialogPopup) {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -61,18 +61,18 @@
     opacity 150ms ease;
 }
 
-:where(.Popup[data-starting-style]),
-:where(.Popup[data-ending-style]) {
+:where(.DialogPopup[data-starting-style]),
+:where(.DialogPopup[data-ending-style]) {
   transform: translate(-50%, -50%) scale(0.98);
   opacity: 0;
 }
 
-.Title {
+.DialogTitle {
   font-size: 1.25rem;
   line-height: 1.25;
 }
 
-.Description {
+.DialogDescription {
   color: var(--text);
   font-size: 0.875rem;
   line-height: 1.5;

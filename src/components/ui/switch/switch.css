@@ -1,4 +1,4 @@
-.Field {
+.SwitchField {
   display: inline-flex;
   align-items: flex-start;
   gap: 0.625rem;
@@ -37,7 +37,7 @@
   outline-offset: 2px;
 }
 
-.Thumb {
+.SwitchThumb {
   display: block;
   width: 1.125rem;
   height: 1.125rem;
@@ -47,11 +47,11 @@
   transition: translate 150ms ease;
 }
 
-.Thumb[data-checked] {
+.SwitchThumb[data-checked] {
   translate: 1.25rem 0;
 }
 
-.Label {
+.SwitchLabel {
   display: grid;
   gap: 0.125rem;
   font-size: 0.875rem;
@@ -59,7 +59,7 @@
   cursor: pointer;
 }
 
-.Description {
+.SwitchDescription {
   color: var(--text);
   font-size: 0.75rem;
 }

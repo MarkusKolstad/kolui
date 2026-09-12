@@ -16,7 +16,24 @@ import {
   InputWrapper,
   type AdornmentProps,
 } from "../base/input";
-import styles from "./index.module.css";
+import "./index.css";
+
+const styles = {
+  InputGroup: "ComboboxInputGroup",
+  Input: "ComboboxInput",
+  Label: "ComboboxLabel",
+  StartAdornment: "ComboboxStartAdornment",
+  ActionButtons: "ComboboxActionButtons",
+  Trigger: "ComboboxTrigger",
+  Clear: "ComboboxClear",
+  Positioner: "ComboboxPositioner",
+  Popup: "ComboboxPopup",
+  List: "ComboboxList",
+  Item: "ComboboxItem",
+  ItemText: "ComboboxItemText",
+  ItemIndicator: "ComboboxItemIndicator",
+  Empty: "ComboboxEmpty",
+} as const;
 
 export interface ComboboxProps<T, Multiple extends boolean>
   extends AdornmentProps, ComboboxRootProps<T, Multiple> {

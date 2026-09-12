@@ -1,31 +1,31 @@
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import * as React from "react";
-import styles from "./badge.module.css";
+import "./badge.css";
 
-const badgeVariants = cva(styles.Badge, {
+const badgeVariants = cva("badge", {
   variants: {
     theme: {
-      primary: styles.Primary,
-      secondary: styles.Secondary,
-      accent: styles.Accent,
-      success: styles.Success,
-      warning: styles.Warning,
-      error: styles.Error,
+      primary: "badge-primary",
+      secondary: "badge-secondary",
+      accent: "badge-accent",
+      success: "badge-success",
+      warning: "badge-warning",
+      error: "badge-error",
     },
     variant: {
-      filled: styles.Filled,
-      outlined: styles.Outlined,
-      soft: styles.Soft,
+      filled: "badge-filled",
+      outlined: "badge-outlined",
+      soft: "badge-soft",
     },
     size: {
-      xs: styles.ExtraSmall,
-      sm: styles.Small,
-      md: styles.Medium,
+      xs: "badge-xs",
+      sm: "badge-sm",
+      md: "badge-md",
     },
     shape: {
-      rounded: styles.Rounded,
-      square: styles.Square,
+      rounded: "badge-rounded",
+      square: "badge-square",
     },
   },
   defaultVariants: {

@@ -1,4 +1,4 @@
-.Label {
+.CheckboxLabel {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -8,12 +8,12 @@
   color: var(--text-h);
 }
 
-.Content {
+.CheckboxContent {
   display: grid;
   gap: 0.125rem;
 }
 
-.Description {
+.CheckboxDescription {
   color: var(--text);
   font-size: 0.75rem;
 }
@@ -45,7 +45,7 @@
   }
 }
 
-.Indicator {
+.CheckboxIndicator {
   display: flex;
 
   &[data-unchecked] {

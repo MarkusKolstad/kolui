@@ -2,7 +2,17 @@ import { cn } from "@/lib/utils";
 import { Toast as BaseToast } from "@base-ui/react/toast";
 import { X } from "lucide-react";
 import * as React from "react";
-import styles from "./toast.module.css";
+import "./toast.css";
+
+const styles = {
+  Viewport: "ToastViewport",
+  Toast: "Toast",
+  Content: "ToastContent",
+  Title: "ToastTitle",
+  Description: "ToastDescription",
+  Action: "ToastAction",
+  Close: "ToastClose",
+} as const;
 
 export const ToastProvider = BaseToast.Provider;
 export const useToastManager = BaseToast.useToastManager;

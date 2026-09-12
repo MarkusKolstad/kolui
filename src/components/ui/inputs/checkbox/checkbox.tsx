@@ -2,7 +2,15 @@ import { Checkbox } from "@base-ui/react/checkbox";
 import { CheckIcon } from "lucide-react";
 import type { ReactNode } from "react";
 import * as React from "react";
-import styles from "./index.module.css";
+import "./index.css";
+
+const styles = {
+  Label: "CheckboxLabel",
+  Checkbox: "Checkbox",
+  Indicator: "CheckboxIndicator",
+  Content: "CheckboxContent",
+  Description: "CheckboxDescription",
+} as const;
 
 export interface CheckboxProps extends Omit<
   React.ComponentPropsWithoutRef<typeof Checkbox.Root>,

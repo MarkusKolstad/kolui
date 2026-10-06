@@ -11,7 +11,8 @@ type TokenRow = {
 
 type SemanticRow = {
   name: string;
-  value: string;
+  light: string;
+  dark: string;
   usage: string;
 };
 
@@ -68,20 +69,52 @@ const coreTokens: TokenRow[] = [
 ];
 
 const semanticTokens: SemanticRow[] = [
-  { name: "--primary", value: "#2563eb", usage: "Primary actions" },
-  { name: "--secondary", value: "#475569", usage: "Muted emphasis" },
-  { name: "--accent", value: "#9333ea", usage: "Brand accent" },
-  { name: "--success", value: "#16a34a", usage: "Success states" },
-  { name: "--warning", value: "#f97316", usage: "Warning states" },
-  { name: "--error", value: "#dc2626", usage: "Error states" },
+  {
+    name: "--primary",
+    light: "#2563eb",
+    dark: "#60a5fa",
+    usage: "Primary actions",
+  },
+  {
+    name: "--secondary",
+    light: "#475569",
+    dark: "#94a3b8",
+    usage: "Muted emphasis",
+  },
+  {
+    name: "--accent",
+    light: "#9333ea",
+    dark: "#c084fc",
+    usage: "Brand accent",
+  },
+  {
+    name: "--success",
+    light: "#16a34a",
+    dark: "#4ade80",
+    usage: "Success states",
+  },
+  {
+    name: "--warning",
+    light: "#f97316",
+    dark: "#fbbf24",
+    usage: "Warning states",
+  },
+  {
+    name: "--error",
+    light: "#dc2626",
+    dark: "#f87171",
+    usage: "Error states",
+  },
   {
     name: "--accent-bg",
-    value: "rgba(147, 51, 234, 0.12/0.18)",
+    light: "rgba(147, 51, 234, 0.12)",
+    dark: "rgba(147, 51, 234, 0.18)",
     usage: "Soft selected backgrounds",
   },
   {
     name: "--accent-border",
-    value: "rgba(147, 51, 234, 0.45/0.55)",
+    light: "rgba(147, 51, 234, 0.45)",
+    dark: "rgba(147, 51, 234, 0.55)",
     usage: "Accent borders/focus rings",
   },
 ];
@@ -224,17 +257,15 @@ export const Overview: Story = {
         >
           <div className="theming-row theming-row-head" role="row">
             <span role="columnheader">Token</span>
-            <span role="columnheader">Preview</span>
+            <span role="columnheader">Light</span>
+            <span role="columnheader">Dark</span>
             <span role="columnheader">Usage</span>
           </div>
           {semanticTokens.map((token) => (
             <div className="theming-row" role="row" key={token.name}>
               <code>{token.name}</code>
-              {token.value.startsWith("#") ? (
-                <ColorChip color={token.value} label={token.value} />
-              ) : (
-                <code>{token.value}</code>
-              )}
+              <ColorChip color={token.light} label={token.light} />
+              <ColorChip color={token.dark} label={token.dark} />
               <span>{token.usage}</span>
             </div>
           ))}

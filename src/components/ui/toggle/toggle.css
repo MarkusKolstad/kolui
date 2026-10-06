@@ -39,7 +39,7 @@
   border-color: var(--border);
   background: var(--bg);
   color: var(--text-h);
-  box-shadow: var(--shadow);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
 }
 
 .Toggle:focus-visible {

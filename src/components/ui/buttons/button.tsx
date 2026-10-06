@@ -10,9 +10,11 @@ const buttonVariants = cva("btn", {
     variant: {
       filled: "btn-filled",
       outlined: "btn-outlined",
+      glass: "btn-glass",
       ghost: "btn-ghost",
     },
     theme: {
+      default: "btn-default",
       primary: "btn-primary",
       secondary: "btn-secondary",
       accent: "btn-accent",

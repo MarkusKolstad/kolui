@@ -52,7 +52,7 @@ import "./form.css";
 const planOptions = ["Starter", "Team", "Enterprise"];
 
 const meta = {
-  title: "Example/Form",
+  title: "Showcase/Form",
   parameters: {
     layout: "fullscreen",
   },

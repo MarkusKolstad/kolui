@@ -198,6 +198,7 @@
   cursor: pointer;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: calc(var(--spacing, 0.25rem) * 2);
   border-radius: var(--radius-sm, 0.25rem);
   border-style: var(--tw-border-style);

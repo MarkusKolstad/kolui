@@ -1,6 +1,6 @@
 @reference "../../../../index.css";
 
-.input-wrapper {
+.input {
   @apply flex flex-row items-center gap-2 border rounded-sm;
   background-color: var(--surface-soft);
   color: var(--text-h);
@@ -37,36 +37,36 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  .input-wrapper input[type="date"] {
+  .input input[type="date"] {
     color-scheme: dark;
   }
 }
 
-:root[data-kolui-theme="dark"] .input-wrapper input[type="date"] {
+:root[data-kolui-theme="dark"] .input input[type="date"] {
   color-scheme: dark;
 }
 
-:root[data-kolui-theme="light"] .input-wrapper input[type="date"] {
+:root[data-kolui-theme="light"] .input input[type="date"] {
   color-scheme: light;
 }
 
-.input-wrapper.input-sm {
+.input.input-sm {
   @apply px-2 py-1 text-sm;
 }
 
-.input-wrapper.input-md {
+.input.input-md {
   @apply px-2 py-1.5 text-base;
 }
 
-.input-wrapper.input-lg {
+.input.input-lg {
   @apply px-3 py-2 text-base;
 }
 
-.input-wrapper.input-square {
+.input.input-square {
   @apply rounded-sm;
 }
 
-.input-wrapper.input-rounded {
+.input.input-rounded {
   @apply rounded-lg;
 }
 

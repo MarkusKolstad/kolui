@@ -12,7 +12,7 @@ import {
 } from "react";
 import "./input.styles.css";
 
-const inputVariants = cva("input-wrapper", {
+const inputVariants = cva("input", {
   variants: {
     size: {
       sm: "input-sm",
@@ -156,6 +156,10 @@ export type InputFieldProps<
   labelProps?: InputLabelProps;
   description?: ReactNode;
   descriptionProps?: InputDescriptionProps;
+  fieldProps?: React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLDivElement>,
+    HTMLDivElement
+  >;
 };
 
 export interface InputControllerRenderProps {

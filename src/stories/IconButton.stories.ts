@@ -30,11 +30,12 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: ["filled", "outlined", "ghost"],
+      options: ["filled", "outlined", "glass", "ghost"],
     },
     theme: {
       control: "select",
       options: [
+        "default",
         "primary",
         "secondary",
         "accent",
@@ -70,6 +71,14 @@ export const Primary: Story = {
   },
 };
 
+export const Default: Story = {
+  args: {
+    variant: "outlined",
+    theme: "default",
+    children: icon(XIcon),
+  },
+};
+
 export const Secondary: Story = {
   args: {
     variant: "outlined",
@@ -81,6 +90,103 @@ export const Ghost: Story = {
   args: {
     variant: "ghost",
     children: icon(XIcon),
+  },
+};
+
+export const Glass: Story = {
+  args: {
+    variant: "glass",
+    children: icon(XIcon),
+  },
+};
+
+export const VariantPalette: Story = {
+  args: {
+    size: "md",
+    shape: "square",
+  },
+  parameters: {
+    layout: "padded",
+  },
+  render: (args) => {
+    const size = args.size ?? "md";
+    const shape = args.shape ?? "square";
+    const themes = [
+      "default",
+      "primary",
+      "secondary",
+      "accent",
+      "success",
+      "warning",
+      "error",
+    ] as const;
+    const variants = ["filled", "outlined", "glass", "ghost"] as const;
+    const cells = [
+      createElement("span", { key: "corner" }),
+      ...themes.map((theme) =>
+        createElement(
+          "span",
+          {
+            key: `heading-${theme}`,
+            style: {
+              fontSize: "0.75rem",
+              textAlign: "center",
+              justifySelf: "center",
+            },
+          },
+          theme,
+        ),
+      ),
+      ...variants.flatMap((variant) => [
+        createElement(
+          "span",
+          {
+            key: `label-${variant}`,
+            style: {
+              fontSize: "0.75rem",
+              textAlign: "center",
+              textTransform: "capitalize",
+              justifySelf: "center",
+            },
+          },
+          variant,
+        ),
+        ...themes.map((theme) =>
+          createElement(
+            IconButton,
+            {
+              key: `${variant}-${theme}`,
+              variant,
+              theme,
+              size,
+              shape,
+              "aria-label": `${variant} ${theme}`,
+              title: `${variant} ${theme}`,
+            },
+            icon(XIcon),
+          ),
+        ),
+      ]),
+    ];
+
+    return createElement(
+      "div",
+      { style: { maxWidth: "100%", overflowX: "auto", padding: "1rem" } },
+      createElement(
+        "div",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: "5rem repeat(7, 4rem)",
+            justifyItems: "center",
+            alignItems: "center",
+            gap: "0.5rem",
+            width: "max-content",
+          },
+        },
+        ...cells,
+      ),
+    );
   },
 };
 

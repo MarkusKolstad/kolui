@@ -20,11 +20,12 @@ const meta = {
     // backgroundColor: { control: "color" },
     variant: {
       control: "select",
-      options: ["filled", "outlined", "ghost"],
+      options: ["filled", "outlined", "glass", "ghost"],
     },
     theme: {
       control: "select",
       options: [
+        "default",
         "primary",
         "secondary",
         "accent",
@@ -74,12 +75,26 @@ export const Ghost: Story = {
   },
 };
 
-export const DarkSurfacePalette: Story = {
+export const Glass: Story = {
+  args: {
+    variant: "glass",
+    children: "Glass",
+  },
+};
+
+export const VariantPalette: Story = {
+  args: {
+    size: "md",
+    shape: "square",
+  },
   parameters: {
     layout: "padded",
   },
-  render: () => {
+  render: (args) => {
+    const size = args.size ?? "md";
+    const shape = args.shape ?? "square";
     const themes = [
+      "default",
       "primary",
       "secondary",
       "accent",
@@ -87,45 +102,64 @@ export const DarkSurfacePalette: Story = {
       "warning",
       "error",
     ] as const;
-    const variants = ["filled", "outlined", "ghost"] as const;
+    const variants = ["filled", "outlined", "glass", "ghost"] as const;
+    const cells = [
+      createElement("span", { key: "corner" }),
+      ...themes.map((theme) =>
+        createElement(
+          "span",
+          {
+            key: `heading-${theme}`,
+            style: { fontSize: "0.75rem", textAlign: "center" },
+          },
+          theme,
+        ),
+      ),
+      ...variants.flatMap((variant) => [
+        createElement(
+          "span",
+          {
+            key: `label-${variant}`,
+            style: {
+              fontSize: "0.75rem",
+              textAlign: "center",
+              textTransform: "capitalize",
+            },
+          },
+          variant,
+        ),
+        ...themes.map((theme) =>
+          createElement(
+            Button,
+            {
+              key: `${variant}-${theme}`,
+              variant,
+              theme,
+              size,
+              shape,
+            },
+            theme,
+          ),
+        ),
+      ]),
+    ];
 
     return createElement(
       "div",
-      {
-        style: {
-          display: "grid",
-          gap: "1rem",
-          background: "#16171d",
-          padding: "2rem",
-          borderRadius: "1rem",
-        },
-      },
-      variants.map((variant) =>
-        createElement(
-          "div",
-          {
-            key: variant,
-            style: {
-              display: "flex",
-              gap: "0.75rem",
-              flexWrap: "wrap",
-              alignItems: "center",
-              marginLeft: "auto",
-              marginRight: "auto",
-            },
+      { style: { maxWidth: "100%", overflowX: "auto", padding: "1rem" } },
+      createElement(
+        "div",
+        {
+          style: {
+            display: "grid",
+            gridTemplateColumns: "5rem repeat(7, minmax(6rem, max-content))",
+            justifyItems: "center",
+            alignItems: "center",
+            gap: "0.75rem",
+            width: "max-content",
           },
-          themes.map((theme) =>
-            createElement(
-              Button,
-              {
-                key: `${variant}-${theme}`,
-                variant,
-                theme,
-              },
-              theme,
-            ),
-          ),
-        ),
+        },
+        ...cells,
       ),
     );
   },

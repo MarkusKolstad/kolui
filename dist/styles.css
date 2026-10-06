@@ -44,9 +44,12 @@
     --surface-soft: #22252e;
     --border: #2e303a;
     --code-bg: #1f2028;
-    --secondary: #a8b3c2;
-    /* --accent: #c026d3; */
-    --accent: #9333ea;
+    --primary: #60a5fa;
+    --secondary: #94a3b8;
+    --accent: #c084fc;
+    --success: #4ade80;
+    --error: #f87171;
+    --warning: #fbbf24;
     /* --accent-bg: rgba(192, 132, 252, 0.15); */
     --accent-bg: rgba(147, 51, 234, 0.18);
     /* --accent-border: rgba(192, 132, 252, 0.5); */
@@ -65,9 +68,13 @@
   --surface-soft: #22252e;
   --border: #2e303a;
   --code-bg: #1f2028;
-  --secondary: #a8b3c2;
-  /* --accent: #c026d3; */
-  --accent: #9333ea;
+  --primary: #60a5fa;
+  --secondary: #94a3b8;
+  /* --accent: #c084fc; */
+  --accent: #ba80f5;
+  --success: #4ade80;
+  --error: #f87171;
+  --warning: #fbbf24;
   /* --accent-bg: rgba(192, 132, 252, 0.15); */
   --accent-bg: rgba(147, 51, 234, 0.18);
   /* --accent-border: rgba(192, 132, 252, 0.5); */
@@ -364,6 +371,7 @@ code {
   cursor: pointer;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: calc(var(--spacing, 0.25rem) * 2);
   border-radius: var(--radius-sm, 0.25rem);
   border-style: var(--tw-border-style);

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { forwardRef, useId } from "react";
 import {
   InputDescription,
@@ -8,7 +9,16 @@ import {
 
 export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(
   function TextField(
-    { className, id, label, description, required, disabled, ...inputProps },
+    {
+      className,
+      id,
+      label,
+      description,
+      required,
+      disabled,
+      fieldProps,
+      ...inputProps
+    },
     ref,
   ) {
     const generatedId = useId();
@@ -17,7 +27,10 @@ export const TextField = forwardRef<HTMLInputElement, InputFieldProps>(
     const descriptionId = description ? inputId + "-description" : undefined;
 
     return (
-      <div className="flex flex-col gap-1">
+      <div
+        {...fieldProps}
+        className={cn("flex flex-col gap-1", fieldProps?.className)}
+      >
         {labelId ? (
           <InputLabel
             id={labelId}

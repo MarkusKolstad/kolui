@@ -1,10 +1,13 @@
 @reference "../../../index.css";
 
 .btn {
-  @apply border rounded-sm cursor-pointer transition-all font-medium flex flex-row items-center gap-2;
+  @apply border rounded-sm cursor-pointer transition-all font-medium flex flex-row items-center gap-2 justify-center;
 
   --color: #ff4141;
   /* Colors */
+  &.btn-default {
+    --color: var(--text-h);
+  }
   &.btn-primary {
     --color: var(--primary);
   }
@@ -26,7 +29,11 @@
 
   /* Variants */
   &.btn-filled {
-    @apply border border-[var(--color)] bg-[var(--color)] text-white;
+    @apply border border-[var(--color)] bg-[var(--color)] text-(--text-contrast);
+
+    &.btn-default {
+      color: var(--text-contrast);
+    }
 
     &:hover {
       background-color: color-mix(in oklch, var(--color) 95%, black);
@@ -36,13 +43,29 @@
     }
   }
   &.btn-outlined {
-    @apply border border-[var(--color)] text-[var(--color)];
+    /* @apply border border-[var(--color)] text-[var(--color)]; */
+    @apply border;
+    color: var(--color);
+    border-color: color-mix(in oklch, var(--color) 25%, transparent);
 
     &:hover {
       background-color: color-mix(in oklch, var(--color) 14%, transparent);
     }
     &:active {
       background-color: color-mix(in oklch, var(--color) 22%, transparent);
+    }
+  }
+  &.btn-glass {
+    @apply border;
+    color: var(--color);
+    border-color: color-mix(in oklch, var(--color) 25%, transparent);
+    background-color: color-mix(in oklch, var(--color) 14%, transparent);
+
+    &:hover {
+      background-color: color-mix(in oklch, var(--color) 22%, transparent);
+    }
+    &:active {
+      background-color: color-mix(in oklch, var(--color) 30%, transparent);
     }
   }
   &.btn-ghost {
@@ -68,15 +91,22 @@
   }
 
   &.icon-btn {
-    @apply aspect-square flex justify-center items-center p-0;
+    @apply aspect-square w-8 h-8 shrink-0 flex justify-center items-center p-0;
+
+    & > svg {
+      @apply block shrink-0;
+      width: 1em;
+      height: 1em;
+    }
+
     &.btn-sm {
-      @apply min-w-6;
+      @apply w-6 h-6;
     }
     &.btn-md {
-      @apply min-w-8;
+      @apply w-8 h-8;
     }
     &.btn-lg {
-      @apply min-w-10;
+      @apply w-10 h-10;
     }
   }
 
@@ -85,5 +115,17 @@
   }
   &.btn-square {
     @apply rounded-sm;
+  }
+}
+
+:root[data-kolui-theme="dark"] .btn:is(.btn-outlined, .btn-glass).btn-default {
+  --color: var(--text-h);
+  border-color: var(--border);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-kolui-theme]) .btn:is(.btn-outlined, .btn-glass).btn-default {
+    --color: var(--text-h);
+    border-color: var(--border);
   }
 }

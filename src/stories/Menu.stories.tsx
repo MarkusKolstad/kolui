@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   render: () => (
     <Menu>
-      <MenuTrigger render={<Button theme="secondary" variant="outlined" />}>
+      <MenuTrigger render={<Button theme="default" variant="outlined" />}>
         <MoreHorizontal size={16} aria-hidden="true" />
         Actions
       </MenuTrigger>

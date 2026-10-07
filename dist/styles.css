@@ -382,6 +382,9 @@ code {
   transition-timing-function: var(--tw-ease, var(--default-transition-timing-function, cubic-bezier(0.4, 0, 0.2, 1)));
   transition-duration: var(--tw-duration, var(--default-transition-duration, 150ms));
   --color: #ff4141;
+  &.btn-default {
+    --color: var(--text-h);
+  }
   &.btn-primary {
     --color: var(--primary);
   }
@@ -405,7 +408,10 @@ code {
     border-width: 1px;
     border-color: var(--color);
     background-color: var(--color);
-    color: var(--color-white, #fff);
+    color: var(--text-contrast);
+    &.btn-default {
+      color: var(--text-contrast);
+    }
     &:hover {
       background-color: var(--color);
       @supports (color: color-mix(in lab, red, red)) {
@@ -422,8 +428,11 @@ code {
   &.btn-outlined {
     border-style: var(--tw-border-style);
     border-width: 1px;
-    border-color: var(--color);
     color: var(--color);
+    border-color: var(--color);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklch, var(--color) 25%, transparent);
+    }
     &:hover {
       background-color: var(--color);
       @supports (color: color-mix(in lab, red, red)) {
@@ -434,6 +443,31 @@ code {
       background-color: var(--color);
       @supports (color: color-mix(in lab, red, red)) {
         background-color: color-mix(in oklch, var(--color) 22%, transparent);
+      }
+    }
+  }
+  &.btn-glass {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    color: var(--color);
+    border-color: var(--color);
+    @supports (color: color-mix(in lab, red, red)) {
+      border-color: color-mix(in oklch, var(--color) 25%, transparent);
+    }
+    background-color: var(--color);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklch, var(--color) 14%, transparent);
+    }
+    &:hover {
+      background-color: var(--color);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklch, var(--color) 22%, transparent);
+      }
+    }
+    &:active {
+      background-color: var(--color);
+      @supports (color: color-mix(in lab, red, red)) {
+        background-color: color-mix(in oklch, var(--color) 30%, transparent);
       }
     }
   }
@@ -473,17 +507,29 @@ code {
   &.icon-btn {
     display: flex;
     aspect-ratio: 1 / 1;
+    height: calc(var(--spacing, 0.25rem) * 8);
+    width: calc(var(--spacing, 0.25rem) * 8);
+    flex-shrink: 0;
     align-items: center;
     justify-content: center;
     padding: 0px;
+    & > svg {
+      display: block;
+      flex-shrink: 0;
+      width: 1em;
+      height: 1em;
+    }
     &.btn-sm {
-      min-width: calc(var(--spacing, 0.25rem) * 6);
+      height: calc(var(--spacing, 0.25rem) * 6);
+      width: calc(var(--spacing, 0.25rem) * 6);
     }
     &.btn-md {
-      min-width: calc(var(--spacing, 0.25rem) * 8);
+      height: calc(var(--spacing, 0.25rem) * 8);
+      width: calc(var(--spacing, 0.25rem) * 8);
     }
     &.btn-lg {
-      min-width: calc(var(--spacing, 0.25rem) * 10);
+      height: calc(var(--spacing, 0.25rem) * 10);
+      width: calc(var(--spacing, 0.25rem) * 10);
     }
   }
   &.btn-rounded {
@@ -491,6 +537,16 @@ code {
   }
   &.btn-square {
     border-radius: var(--radius-sm, 0.25rem);
+  }
+}
+:root[data-kolui-theme=dark] .btn:is(.btn-outlined, .btn-glass).btn-default {
+  --color: var(--text-h);
+  border-color: var(--border);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-kolui-theme]) .btn:is(.btn-outlined, .btn-glass).btn-default {
+    --color: var(--text-h);
+    border-color: var(--border);
   }
 }
 @property --tw-border-style { syntax: "*"; inherits: false; initial-value: solid; }
@@ -776,7 +832,7 @@ code {
 
 /* src/components/ui/inputs/base/input.styles.css */
 @layer properties;
-.input-wrapper {
+.input {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -818,38 +874,38 @@ code {
   }
 }
 @media (prefers-color-scheme: dark) {
-  .input-wrapper input[type=date] {
+  .input input[type=date] {
     color-scheme: dark;
   }
 }
-:root[data-kolui-theme=dark] .input-wrapper input[type=date] {
+:root[data-kolui-theme=dark] .input input[type=date] {
   color-scheme: dark;
 }
-:root[data-kolui-theme=light] .input-wrapper input[type=date] {
+:root[data-kolui-theme=light] .input input[type=date] {
   color-scheme: light;
 }
-.input-wrapper.input-sm {
+.input.input-sm {
   padding-inline: calc(var(--spacing, 0.25rem) * 2);
   padding-block: var(--spacing, 0.25rem);
   font-size: var(--text-sm, 0.875rem);
   line-height: var(--tw-leading, var(--text-sm--line-height, calc(1.25 / 0.875)));
 }
-.input-wrapper.input-md {
+.input.input-md {
   padding-inline: calc(var(--spacing, 0.25rem) * 2);
   padding-block: calc(var(--spacing, 0.25rem) * 1.5);
   font-size: var(--text-base, 1rem);
   line-height: var(--tw-leading, var(--text-base--line-height, calc(1.5 / 1)));
 }
-.input-wrapper.input-lg {
+.input.input-lg {
   padding-inline: calc(var(--spacing, 0.25rem) * 3);
   padding-block: calc(var(--spacing, 0.25rem) * 2);
   font-size: var(--text-base, 1rem);
   line-height: var(--tw-leading, var(--text-base--line-height, calc(1.5 / 1)));
 }
-.input-wrapper.input-square {
+.input.input-square {
   border-radius: var(--radius-sm, 0.25rem);
 }
-.input-wrapper.input-rounded {
+.input.input-rounded {
   border-radius: var(--radius-lg, 0.5rem);
 }
 .input-label {
@@ -887,6 +943,85 @@ code {
       --tw-font-weight: initial;
     }
   }
+}
+
+/* src/components/ui/inputs/calendar/calendar.css */
+.Calendar {
+  width: min(22rem, 100%);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  background: var(--bg);
+  color: var(--text-h);
+}
+.CalendarHeader {
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+.CalendarMonth {
+  margin: 0;
+  color: var(--text-h);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+.CalendarGrid {
+  display: grid;
+  gap: 0.25rem;
+}
+.CalendarWeekdays,
+.CalendarWeek {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+}
+.CalendarWeekday {
+  display: grid;
+  min-height: 2rem;
+  place-items: center;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.CalendarDay {
+  display: grid;
+  aspect-ratio: 1;
+  width: 100%;
+  justify-content: center;
+  min-width: 0;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  padding: 0;
+  background: transparent;
+  color: var(--text-h);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+.CalendarDay:hover {
+  background: var(--surface-soft);
+}
+.CalendarDay:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.CalendarDay[aria-selected=true] {
+  border-color: var(--primary);
+  background: var(--primary);
+  color: var(--text-contrast);
+}
+.CalendarDay[aria-current=date]:not([aria-selected=true]) {
+  border-color: var(--border);
+}
+.CalendarDay-outside {
+  color: var(--text);
+}
+.CalendarCell {
+  min-width: 0;
 }
 
 /* src/components/ui/inputs/checkbox/index.css */
@@ -1848,7 +1983,7 @@ code {
   border-color: var(--border);
   background: var(--bg);
   color: var(--text-h);
-  box-shadow: var(--shadow);
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.18);
 }
 .Toggle:focus-visible {
   position: relative;

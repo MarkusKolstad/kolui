@@ -81,7 +81,7 @@ export const RightSide: Story = {
             </div>
             <div className="grid gap-3 text-sm text-(--text)">
               <p>Changes are saved automatically as you make them.</p>
-              <Button variant="outlined" theme="secondary">
+              <Button variant="outlined" theme="default">
                 Manage preferences
               </Button>
             </div>

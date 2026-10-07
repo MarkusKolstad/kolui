@@ -42,9 +42,7 @@ export const Default: Story = {
             </DialogDescription>
           </div>
           <div className="flex justify-end gap-2">
-            <DialogClose
-              render={<Button variant="outlined" theme="secondary" />}
-            >
+            <DialogClose render={<Button variant="outlined" theme="default" />}>
               <X size={16} aria-hidden="true" />
               Close
             </DialogClose>

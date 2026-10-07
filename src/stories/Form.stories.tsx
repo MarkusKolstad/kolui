@@ -218,7 +218,7 @@ function FormExample() {
                         <Button
                           type="button"
                           variant="ghost"
-                          theme="secondary"
+                          theme="default"
                           aria-label="More workspace actions"
                         />
                       }
@@ -291,7 +291,7 @@ function FormExample() {
                       <Button
                         type="button"
                         variant="outlined"
-                        theme="secondary"
+                        theme="default"
                       />
                     }
                   >
@@ -317,7 +317,7 @@ function FormExample() {
                             <Button
                               type="button"
                               variant="outlined"
-                              theme="secondary"
+                              theme="default"
                             />
                           }
                         >
@@ -365,7 +365,7 @@ function FormExample() {
                         <IconButton
                           type="button"
                           variant="ghost"
-                          theme="secondary"
+                          theme="default"
                           aria-label="More team actions"
                         />
                       }
@@ -395,7 +395,7 @@ function FormExample() {
               Your information stays private and is never sold.
             </p>
             <div className="form-story-actions">
-              <Button type="reset" variant="ghost" theme="secondary">
+              <Button type="reset" variant="ghost" theme="default">
                 <RotateCcw size={16} aria-hidden="true" />
                 Reset
               </Button>

@@ -187,10 +187,12 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
   {
     className,
     id,
+    size = "md",
     label,
     labelProps,
     description,
     descriptionProps,
+    fieldProps,
     ...inputProps
   }: InputFieldProps<TElement>,
   ref: ForwardedRef<TElement>,
@@ -201,7 +203,14 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
   const descriptionId = description ? `${inputId}-description` : undefined;
 
   return (
-    <div className="flex flex-col gap-1">
+    <div
+      {...fieldProps}
+      className={cn(
+        "input-field flex flex-col gap-1",
+        `input-field-${size}`,
+        fieldProps?.className,
+      )}
+    >
       {labelId ? (
         <InputLabel id={labelId} htmlFor={inputId} {...labelProps}>
           {label}
@@ -210,6 +219,7 @@ function InputFieldImpl<TElement extends InputFieldElement = HTMLInputElement>(
       <InputWrapper<TElement>
         ref={ref}
         className={className}
+        size={size}
         aria-labelledby={labelId}
         aria-describedby={descriptionId}
         id={inputId}

@@ -24,16 +24,10 @@
       outline-color: white;
     }
   }
-
-  /* &:has(.ComboboxClear) .ComboboxInput {
-    padding: 0 calc(0.5rem + 2rem * 2) 0 0.5rem;
-  } */
 }
 
 .ComboboxInput {
   box-sizing: border-box;
-  /* padding: 0 calc(0.5rem + 2rem) 0 0.5rem; */
-  /* padding: 0 0.5rem 0 0.5rem; */
   margin: 0;
   border: none;
   border-radius: 0;
@@ -69,42 +63,8 @@
   }
 }
 
-.ComboboxLabel {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  color: oklch(14.5% 0 0deg);
-  position: relative;
-
-  @media (prefers-color-scheme: dark) {
-    color: white;
-  }
-}
-
-.ComboboxStartAdornment {
-  box-sizing: border-box;
-  /* position: absolute; */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  border: none;
-  color: oklch(55.6% 0 0deg);
-  padding: 0;
-
-  @media (prefers-color-scheme: dark) {
-    color: oklch(70.8% 0 0deg);
-  }
-}
-
 .ComboboxActionButtons {
   box-sizing: border-box;
-  /* position: absolute; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -132,9 +92,9 @@
 
 .ComboboxTrigger {
   svg {
-    /* @apply transition-all; */
     transition: all ease-in-out 0.125s;
   }
+
   &[aria-expanded="true"] {
     svg {
       transform: rotate(180deg);
@@ -156,7 +116,6 @@
     opacity 0.1s,
     transform 0.1s;
   transform-origin: var(--transform-origin);
-
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 

@@ -83,6 +83,11 @@
   }
 }
 
+.input-field-sm .input-label,
+.input-field-sm .input-description {
+  @apply text-xs;
+}
+
 .input-description {
   @apply text-sm font-normal;
   color: var(--text);

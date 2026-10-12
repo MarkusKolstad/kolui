@@ -1,6 +1,6 @@
 "use client";
 
-import { Combobox, type ComboboxRootProps } from "@base-ui/react/combobox";
+import type { ComboboxRootProps } from "@base-ui/react/combobox";
 import type { Group } from "@base-ui/react/internals/resolveValueLabel";
 import { CheckIcon, ChevronDown, XIcon } from "lucide-react";
 import {
@@ -12,27 +12,28 @@ import {
   type RefAttributes,
 } from "react";
 import {
+  Combobox,
+  ComboboxClear,
+  ComboboxEmpty,
+  ComboboxInput,
+  ComboboxInputGroup,
+  ComboboxItem,
+  ComboboxItemIndicator,
+  ComboboxList,
+  ComboboxPopup,
+  ComboboxPortal,
+  ComboboxPositioner,
+  ComboboxTrigger,
+} from "../../combobox";
+import {
   InputController,
   InputWrapper,
   type AdornmentProps,
 } from "../base/input";
-import "./index.css";
 
 const styles = {
-  InputGroup: "ComboboxInputGroup",
-  Input: "ComboboxInput",
-  Label: "ComboboxLabel",
-  StartAdornment: "ComboboxStartAdornment",
   ActionButtons: "ComboboxActionButtons",
-  Trigger: "ComboboxTrigger",
-  Clear: "ComboboxClear",
-  Positioner: "ComboboxPositioner",
-  Popup: "ComboboxPopup",
-  List: "ComboboxList",
-  Item: "ComboboxItem",
   ItemText: "ComboboxItemText",
-  ItemIndicator: "ComboboxItemIndicator",
-  Empty: "ComboboxEmpty",
 } as const;
 
 export interface ComboboxProps<T, Multiple extends boolean>
@@ -63,7 +64,7 @@ function ComboboxFieldImpl<T, Multiple extends boolean = false>(
   ref: ForwardedRef<HTMLInputElement>,
 ) {
   return (
-    <Combobox.Root
+    <Combobox
       items={items}
       inputRef={ref}
       itemToStringValue={itemToStringValue}
@@ -75,103 +76,55 @@ function ComboboxFieldImpl<T, Multiple extends boolean = false>(
         label={label}
         description={description}
         render={(props) => (
-          <Combobox.InputGroup>
+          <ComboboxInputGroup unstyled>
             <InputWrapper<HTMLInputElement>
               ref={ref}
               startAdornment={startAdornment}
               endAdornment={
                 <div className={styles.ActionButtons}>
                   {endAdornment}
-                  <Combobox.Clear
-                    className={styles.Clear}
-                    aria-label="Clear selection"
-                  >
+                  <ComboboxClear aria-label="Clear selection">
                     <XIcon />
-                  </Combobox.Clear>
-                  <Combobox.Trigger
-                    className={styles.Trigger}
-                    aria-label="Open popup"
-                  >
+                  </ComboboxClear>
+                  <ComboboxTrigger aria-label="Open popup">
                     <ChevronDown />
-                  </Combobox.Trigger>
+                  </ComboboxTrigger>
                 </div>
               }
               render={(renderProps: ComponentPropsWithoutRef<"input">) => (
-                <Combobox.Input {...renderProps} />
+                <ComboboxInput unstyled {...renderProps} />
               )}
               {...props}
             />
-          </Combobox.InputGroup>
+          </ComboboxInputGroup>
         )}
       />
-      {/* <div className={styles.Label}>
-        <label htmlFor={id}>{label}</label>
-        <Combobox.InputGroup className={styles.InputGroup}>
-          <div className={styles.StartAdornment}>
-            <AppleIcon />
-          </div>
-          <Combobox.Input
-            placeholder="e.g. Apple"
-            id={id}
-            className={styles.Input}
-          />
-          <div className={styles.ActionButtons}>
-            <Combobox.Clear
-              className={styles.Clear}
-              aria-label="Clear selection"
-            >
-              <XIcon />
-            </Combobox.Clear>
-            <Combobox.Trigger
-              className={styles.Trigger}
-              aria-label="Open popup"
-            >
-              <ChevronDown />
-            </Combobox.Trigger>
-          </div>
-        </Combobox.InputGroup>
-        <InputDescription id={id}>{description}</InputDescription>
-      </div> */}
-
-      <Combobox.Portal>
-        <Combobox.Positioner className={styles.Positioner} sideOffset={4}>
-          <Combobox.Popup className={styles.Popup}>
+      <ComboboxPortal>
+        <ComboboxPositioner sideOffset={4}>
+          <ComboboxPopup>
             {emptyOption ? (
-              <Combobox.Empty>
-                <div className={styles.Empty}>{emptyOption}</div>
-              </Combobox.Empty>
+              <ComboboxEmpty>{emptyOption}</ComboboxEmpty>
             ) : null}
-            <Combobox.List className={styles.List}>
+            <ComboboxList>
               {(item: T) => (
-                <Combobox.Item
-                  key={itemToStringValue(item)}
-                  value={item}
-                  className={styles.Item}
-                >
-                  <Combobox.ItemIndicator className={styles.ItemIndicator}>
+                <ComboboxItem key={itemToStringValue(item)} value={item}>
+                  <ComboboxItemIndicator>
                     <CheckIcon />
-                  </Combobox.ItemIndicator>
+                  </ComboboxItemIndicator>
                   <span className={styles.ItemText}>
                     {itemToStringLabel(item)}
                   </span>
-                </Combobox.Item>
+                </ComboboxItem>
               )}
-            </Combobox.List>
-          </Combobox.Popup>
-        </Combobox.Positioner>
-      </Combobox.Portal>
-    </Combobox.Root>
+            </ComboboxList>
+          </ComboboxPopup>
+        </ComboboxPositioner>
+      </ComboboxPortal>
+    </Combobox>
   );
 }
 
+/** A complete combobox field with label, description, adornments, and default item rendering. */
 export const ComboboxField = forwardRef(
   ComboboxFieldImpl,
 ) as ComboboxFieldComponent;
-
-// const SingleTest = () => {
-// return <ComboboxField<{value: string, label: string}> items={[{ value: "apple", label: "Apple" }]} itemToStringValue={(item) => item.value} />
-// }
-
-// const MultipleTest = () => {
-// return <ComboboxField<{value: string, label: string}, true> multiple items={[{ value: "apple", label: "Apple" }]} itemToStringValue={(item) => item.value} />
-// }

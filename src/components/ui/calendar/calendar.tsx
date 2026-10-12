@@ -1,16 +1,10 @@
 import { IconButton } from "@/components/ui/buttons";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useMemo, useState, type ComponentPropsWithoutRef } from "react";
+import { type ComponentPropsWithoutRef } from "react";
 import "./calendar.css";
-import {
-  formatCalendarDate,
-  formatCalendarMonth,
-  getCalendarDates,
-  getWeekdayLabels,
-  isSameCalendarDay,
-  type WeekStartsOn,
-} from "./calendar.utils";
+import { formatCalendarDate, formatCalendarMonth, type WeekStartsOn } from "./calendar.utils";
+import { useCalendar } from "./use-calendar";
 
 export interface CalendarProps extends Omit<
   ComponentPropsWithoutRef<"div">,
@@ -30,41 +24,12 @@ export function Calendar({
   weekStartsOn = "sunday",
   ...props
 }: CalendarProps) {
-  const [uncontrolledValue, setUncontrolledValue] = useState(
-    () => defaultValue ?? new Date(),
-  );
-  const selectedDate = value ?? uncontrolledValue;
-  const [monthOffset, setMonthOffset] = useState(0);
-  const visibleMonth = useMemo(
-    () =>
-      new Date(
-        selectedDate.getFullYear(),
-        selectedDate.getMonth() + monthOffset,
-        1,
-      ),
-    [selectedDate, monthOffset],
-  );
-  const dates = useMemo(
-    () => getCalendarDates(visibleMonth, weekStartsOn),
-    [visibleMonth, weekStartsOn],
-  );
-  const weekdays = useMemo(
-    () => getWeekdayLabels(weekStartsOn),
-    [weekStartsOn],
-  );
-  const today = new Date();
-
-  function changeMonth(offset: number) {
-    setMonthOffset((currentOffset) => currentOffset + offset);
-  }
-
-  function selectDate(date: Date) {
-    if (!value) {
-      setUncontrolledValue(date);
-    }
-    onValueChange?.(date);
-    setMonthOffset(0);
-  }
+  const { calendar, nextMonth, previousMonth, selectDate } = useCalendar({
+    value,
+    defaultValue,
+    onValueChange,
+    weekStartsOn,
+  });
 
   return (
     <div className={cn("Calendar", className)} {...props}>
@@ -75,12 +40,12 @@ export function Calendar({
           size="sm"
           shape="rounded"
           aria-label="Previous month"
-          onClick={() => changeMonth(-1)}
+          onClick={previousMonth}
         >
           <ChevronLeft aria-hidden="true" />
         </IconButton>
         <h2 className="CalendarMonth" aria-live="polite">
-          {formatCalendarMonth(visibleMonth)}
+          {formatCalendarMonth(calendar.month)}
         </h2>
         <IconButton
           variant="ghost"
@@ -88,14 +53,14 @@ export function Calendar({
           size="sm"
           shape="rounded"
           aria-label="Next month"
-          onClick={() => changeMonth(1)}
+          onClick={nextMonth}
         >
           <ChevronRight aria-hidden="true" />
         </IconButton>
       </div>
       <div className="CalendarGrid" role="grid" aria-label="Calendar dates">
         <div className="CalendarWeekdays" role="row">
-          {weekdays.map((weekday, index) => (
+          {calendar.weekdays.map((weekday, index) => (
             <span
               className="CalendarWeekday"
               role="columnheader"
@@ -105,31 +70,26 @@ export function Calendar({
             </span>
           ))}
         </div>
-        {Array.from({ length: 6 }, (_, weekIndex) => (
+        {calendar.weeks.map((week, weekIndex) => (
           <div className="CalendarWeek" role="row" key={weekIndex}>
-            {dates.slice(weekIndex * 7, weekIndex * 7 + 7).map((date) => {
-              const isCurrentMonth =
-                date.getMonth() === visibleMonth.getMonth();
-              const isSelected = isSameCalendarDay(date, selectedDate);
-              const isToday = isSameCalendarDay(date, today);
-
+            {week.days.map((day) => {
               return (
                 <div
                   className="CalendarCell"
                   role="gridcell"
-                  aria-selected={isSelected}
-                  key={date.toISOString()}
+                  aria-selected={day.isSelected}
+                  key={day.date.toISOString()}
                 >
                   <button
                     className={cn("CalendarDay", {
-                      "CalendarDay-outside": !isCurrentMonth,
+                      "CalendarDay-outside": !day.isCurrentMonth,
                     })}
                     type="button"
-                    aria-label={formatCalendarDate(date)}
-                    aria-current={isToday ? "date" : undefined}
-                    onClick={() => selectDate(date)}
+                    aria-label={formatCalendarDate(day.date)}
+                    aria-current={day.isToday ? "date" : undefined}
+                    onClick={() => selectDate(day.date)}
                   >
-                    {date.getDate()}
+                    {day.date.getDate()}
                   </button>
                 </div>
               );

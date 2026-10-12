@@ -82,6 +82,9 @@
   /* Sizes */
   &.btn-sm {
     @apply px-2 text-sm;
+    display: inline-flex;
+    flex: 0 0 auto;
+    padding: 3px 9px;
   }
   &.btn-md {
     @apply px-3 py-1 text-base;

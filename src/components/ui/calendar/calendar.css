@@ -1,4 +1,4 @@
-@reference "../../../../index.css";
+@reference "../../../index.css";
 
 .Calendar {
   width: min(22rem, 100%);

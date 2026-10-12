@@ -2,20 +2,22 @@ import * as _base_ui_react from '@base-ui/react';
 import { useRender } from '@base-ui/react';
 import { Accordion as Accordion$1 } from '@base-ui/react/accordion';
 import * as React$1 from 'react';
-import { ReactNode, ComponentPropsWithoutRef, RefAttributes, ReactElement } from 'react';
+import { ComponentPropsWithoutRef, ReactNode, RefAttributes, ReactElement } from 'react';
 import { Avatar as Avatar$1 } from '@base-ui/react/avatar';
 import * as class_variance_authority_types from 'class-variance-authority/types';
 import * as class_variance_authority from 'class-variance-authority';
 import { VariantProps } from 'class-variance-authority';
 import { Button as Button$1 } from '@base-ui/react/button';
+import { Combobox as Combobox$1, ComboboxRootProps } from '@base-ui/react/combobox';
 import { Dialog as Dialog$1 } from '@base-ui/react/dialog';
 import { Drawer as Drawer$1 } from '@base-ui/react/drawer';
 import { Checkbox } from '@base-ui/react/checkbox';
-import { ComboboxRootProps } from '@base-ui/react/combobox';
 import { Group } from '@base-ui/react/internals/resolveValueLabel';
 import { RadioGroupProps } from '@base-ui/react/radio-group';
 import * as react_jsx_runtime from 'react/jsx-runtime';
 import { Menu as Menu$1 } from '@base-ui/react/menu';
+import * as _base_ui_react_internals_types from '@base-ui/react/internals/types';
+import { Popover as Popover$1 } from '@base-ui/react/popover';
 import { Switch as Switch$1 } from '@base-ui/react/switch';
 import { Toast } from '@base-ui/react/toast';
 import { Toggle as Toggle$1 } from '@base-ui/react/toggle';
@@ -58,9 +60,102 @@ declare function Button({ className, variant, theme, size, shape, ...props }: Bu
 declare const iconButtonVariants: (props: VariantProps<typeof buttonVariants>) => string;
 declare function IconButton({ className, variant, theme, size, shape, ...props }: Button$1.Props & VariantProps<typeof buttonVariants>): React$1.JSX.Element;
 
+type WeekStartsOn = "sunday" | "monday";
+
+interface CalendarProps extends Omit<ComponentPropsWithoutRef<"div">, "onChange" | "defaultValue"> {
+    value?: Date;
+    defaultValue?: Date;
+    onValueChange?: (value: Date) => void;
+    weekStartsOn?: WeekStartsOn;
+}
+declare function Calendar({ className, value, defaultValue, onValueChange, weekStartsOn, ...props }: CalendarProps): React$1.JSX.Element;
+
+interface CalendarDay {
+    date: Date;
+    isCurrentMonth: boolean;
+    isSelected: boolean;
+    isToday: boolean;
+}
+interface CalendarWeek {
+    days: readonly CalendarDay[];
+}
+interface CalendarMonth {
+    month: Date;
+    weekdays: readonly string[];
+    weeks: readonly CalendarWeek[];
+}
+interface CreateCalendarMonthOptions {
+    month: Date;
+    selectedDate?: Date;
+    today?: Date;
+    weekStartsOn?: WeekStartsOn;
+}
+/**
+ * Creates a six-week month grid for mapping to any calendar UI.
+ *
+ * All dates use the browser's local time zone.
+ */
+declare function createCalendarMonth({ month, selectedDate, today, weekStartsOn, }: CreateCalendarMonthOptions): CalendarMonth;
+
+interface UseCalendarProps {
+    value?: Date;
+    defaultValue?: Date;
+    onValueChange?: (value: Date) => void;
+    month?: Date;
+    defaultMonth?: Date;
+    onMonthChange?: (month: Date) => void;
+    weekStartsOn?: WeekStartsOn;
+}
+interface UseCalendarReturn {
+    calendar: CalendarMonth;
+    selectedDate: Date;
+    visibleMonth: Date;
+    selectDate: (date: Date) => void;
+    setMonth: (month: Date) => void;
+    nextMonth: () => void;
+    previousMonth: () => void;
+}
+/**
+ * Manages local-time calendar selection and month navigation without rendering UI.
+ *
+ * Use `calendar.weeks` and `calendar.weekdays` to map a calendar grid.
+ */
+declare function useCalendar({ value, defaultValue, onValueChange, month, defaultMonth, onMonthChange, weekStartsOn, }?: UseCalendarProps): UseCalendarReturn;
+
 declare const Collapsible: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.CollapsibleRootProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
 declare const CollapsibleTrigger: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.CollapsibleTriggerProps, "ref"> & React$1.RefAttributes<HTMLButtonElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
 declare const CollapsiblePanel: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.CollapsiblePanelProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+
+/** Coordinates a combobox's items, value, and open state. */
+declare const Combobox: typeof Combobox$1.Root;
+/** Groups the input with its trigger and clear controls. */
+declare const ComboboxInputGroup: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.ComboboxInputGroupProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & {
+    /** Disables the default group styling when composing with another input wrapper. */
+    unstyled?: boolean;
+} & React$1.RefAttributes<HTMLDivElement>>;
+/** The text input used to search and filter combobox items. */
+declare const ComboboxInput: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompleteInputProps, "ref"> & React$1.RefAttributes<HTMLInputElement>, "ref"> & {
+    /** Disables the default input styling when composing with another input wrapper. */
+    unstyled?: boolean;
+} & React$1.RefAttributes<HTMLInputElement>>;
+/** Opens and closes the combobox popup. */
+declare const ComboboxTrigger: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.ComboboxTriggerProps, "ref"> & React$1.RefAttributes<HTMLButtonElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
+/** Clears the current combobox value and input text. */
+declare const ComboboxClear: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompleteClearProps, "ref"> & React$1.RefAttributes<HTMLButtonElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
+/** Renders combobox popup content outside the current DOM hierarchy. */
+declare const ComboboxPortal: React$1.ForwardRefExoticComponent<Omit<_base_ui_react.AutocompletePortalProps, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** Positions the combobox popup relative to its input. */
+declare const ComboboxPositioner: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompletePositionerProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** The styled surface that contains the combobox list. */
+declare const ComboboxPopup: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompletePopupProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** Renders the collection of available combobox items. */
+declare const ComboboxList: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompleteListProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** Selects a value when clicked or highlighted with the keyboard. */
+declare const ComboboxItem: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.ComboboxItemProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** Indicates that its parent combobox item is selected. */
+declare const ComboboxItemIndicator: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.ComboboxItemIndicatorProps, "ref"> & React$1.RefAttributes<HTMLSpanElement>, "ref"> & React$1.RefAttributes<HTMLSpanElement>>;
+/** Renders when the combobox has no matching items. */
+declare const ComboboxEmpty: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.AutocompleteEmptyProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
 
 declare const Dialog: typeof Dialog$1.Root;
 declare const DialogTrigger: React$1.ForwardRefExoticComponent<Omit<_base_ui_react.DialogTriggerProps<unknown> & React$1.RefAttributes<HTMLElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
@@ -130,16 +225,6 @@ declare const InputField: InputFieldComponent;
 declare function InputController({ id, label, labelProps, description, descriptionProps, render, }: InputControllerProps): React$1.JSX.Element;
 declare const InputFieldChildren: typeof InputController;
 
-type WeekStartsOn = "sunday" | "monday";
-
-interface CalendarProps extends Omit<ComponentPropsWithoutRef<"div">, "onChange" | "defaultValue"> {
-    value?: Date;
-    defaultValue?: Date;
-    onValueChange?: (value: Date) => void;
-    weekStartsOn?: WeekStartsOn;
-}
-declare function Calendar({ className, value, defaultValue, onValueChange, weekStartsOn, ...props }: CalendarProps): React$1.JSX.Element;
-
 interface CheckboxProps extends Omit<React$1.ComponentPropsWithoutRef<typeof Checkbox.Root>, "children"> {
     label?: ReactNode;
     description?: ReactNode;
@@ -154,6 +239,7 @@ interface ComboboxProps<T, Multiple extends boolean> extends AdornmentProps, Com
     items?: readonly T[] | readonly Group<T>[] | undefined;
 }
 type ComboboxFieldComponent = <T, Multiple extends boolean = false>(props: ComboboxProps<T, Multiple> & RefAttributes<HTMLInputElement>) => ReactElement | null;
+/** A complete combobox field with label, description, adornments, and default item rendering. */
 declare const ComboboxField: ComboboxFieldComponent;
 
 interface RadioOption {
@@ -226,6 +312,71 @@ declare const MenuCheckboxItem: React$1.ForwardRefExoticComponent<Omit<Omit<_bas
 declare const MenuRadioGroup: React$1.NamedExoticComponent<Omit<_base_ui_react.ContextMenuRadioGroupProps, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
 declare const MenuRadioItem: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.ContextMenuRadioItemProps, "ref"> & React$1.RefAttributes<HTMLElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
 
+/**
+ * Coordinates a popover's open state and interactions.
+ *
+ * Use `open` and `onOpenChange` to control visibility externally.
+ */
+declare const Popover: typeof Popover$1.Root;
+/** Renders popover content in a portal outside the current DOM hierarchy. */
+declare const PopoverPortal: React$1.ForwardRefExoticComponent<Omit<_base_ui_react.PopoverPortalProps, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/**
+ * Toggles the popover when pressed and serves as its default positioning anchor.
+ *
+ * Set `nativeButton={false}` when rendering a non-button element such as an input.
+ */
+declare const PopoverTrigger: React$1.ForwardRefExoticComponent<Omit<_base_ui_react_internals_types.NativeButtonProps & Omit<_base_ui_react_internals_types.WithBaseUIEvent<React$1.DetailedHTMLProps<React$1.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>>, "className" | "color" | "defaultValue" | "defaultChecked" | "style"> & {
+    className?: string | ((state: _base_ui_react.PopoverTriggerState) => string | undefined);
+    render?: React$1.ReactElement<unknown, string | React$1.JSXElementConstructor<any>> | _base_ui_react.ComponentRenderFn<_base_ui_react.HTMLProps, _base_ui_react.PopoverTriggerState>;
+    style?: React$1.CSSProperties | ((state: _base_ui_react.PopoverTriggerState) => React$1.CSSProperties | undefined);
+} & {
+    nativeButton?: boolean | undefined;
+    handle?: Popover$1.Handle<unknown>;
+    payload?: unknown;
+    id?: string | undefined;
+    openOnHover?: boolean | undefined;
+    delay?: number | undefined;
+    closeDelay?: number | undefined;
+} & React$1.RefAttributes<HTMLElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
+/** Dims the page behind a modal popover. */
+declare const PopoverBackdrop: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverBackdropProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/**
+ * Positions popover content relative to its trigger or a custom `anchor` element.
+ *
+ * Positioning is independent from the popover's open state.
+ */
+declare const PopoverPositioner: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverPositionerProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** The styled surface that contains popover content. */
+declare const PopoverPopup: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverPopupProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** Positioning options forwarded to the popover positioner. */
+type PopoverPositioningProps = Pick<React$1.ComponentPropsWithoutRef<typeof Popover$1.Positioner>, "align" | "alignOffset" | "anchor" | "arrowPadding" | "collisionAvoidance" | "collisionBoundary" | "collisionPadding" | "disableAnchorTracking" | "positionMethod" | "side" | "sideOffset" | "sticky">;
+/** Props for the precomposed popover portal, positioner, arrow, and popup. */
+interface PopoverContentProps extends React$1.ComponentPropsWithoutRef<typeof Popover$1.Popup>, PopoverPositioningProps {
+    /** Whether to render an arrow pointing toward the anchor. @default false */
+    arrow?: boolean;
+    /** Props applied to the arrow when {@link arrow} is enabled. */
+    arrowProps?: React$1.ComponentPropsWithoutRef<typeof Popover$1.Arrow>;
+}
+/**
+ * A precomposed popover surface with a portal and positioned popup.
+ *
+ * It anchors to `PopoverTrigger` by default. Pass `anchor` to position it
+ * against a different element, ref, virtual element, or callback. `anchor`
+ * controls placement only; use `Popover`'s `open` and `onOpenChange` props
+ * to control visibility. Use `arrow` to render an anchor indicator.
+ *
+ * Use the individual popover primitives when a custom DOM structure is needed.
+ */
+declare const PopoverContent: React$1.ForwardRefExoticComponent<PopoverContentProps & React$1.RefAttributes<HTMLDivElement>>;
+/** An arrow that points from the popover surface toward its anchor. */
+declare const PopoverArrow: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverArrowProps, "ref"> & React$1.RefAttributes<HTMLDivElement>, "ref"> & React$1.RefAttributes<HTMLDivElement>>;
+/** A heading that labels the popover for assistive technologies. */
+declare const PopoverTitle: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverTitleProps, "ref"> & React$1.RefAttributes<HTMLHeadingElement>, "ref"> & React$1.RefAttributes<HTMLHeadingElement>>;
+/** Supporting text that describes the popover's purpose. */
+declare const PopoverDescription: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverDescriptionProps, "ref"> & React$1.RefAttributes<HTMLParagraphElement>, "ref"> & React$1.RefAttributes<HTMLParagraphElement>>;
+/** Closes the popover when pressed. */
+declare const PopoverClose: React$1.ForwardRefExoticComponent<Omit<Omit<_base_ui_react.PopoverCloseProps, "ref"> & React$1.RefAttributes<HTMLButtonElement>, "ref"> & React$1.RefAttributes<HTMLButtonElement>>;
+
 interface SwitchProps extends React$1.ComponentPropsWithoutRef<typeof Switch$1.Root> {
     label?: React$1.ReactNode;
     description?: React$1.ReactNode;
@@ -258,4 +409,4 @@ declare const ToggleGroup: React$1.ForwardRefExoticComponent<Omit<ToggleGroup$1.
 
 declare function cn(...inputs: ClassValue[]): string;
 
-export { Accordion, AccordionHeader, AccordionItem, AccordionPanel, AccordionTrigger, type AdornmentProps, Avatar, AvatarFallback, AvatarImage, type AvatarProps, type AvatarSize, Badge, type BadgeProps, Button, Calendar, type CalendarProps, CheckboxField, type CheckboxProps, Collapsible, CollapsiblePanel, CollapsibleTrigger, ComboboxField, type ComboboxProps, Dialog, DialogBackdrop, DialogClose, DialogDescription, DialogPopup, DialogPortal, DialogTitle, DialogTrigger, Drawer, DrawerBackdrop, DrawerClose, DrawerDescription, DrawerPopup, DrawerPortal, DrawerTitle, DrawerTrigger, DrawerViewport, IconButton, type InputBase, InputController, type InputControllerProps, type InputControllerRenderProps, InputDescription, type InputDescriptionProps, InputField, InputFieldChildren, type InputFieldProps, InputLabel, type InputLabelProps, InputWrapper, Loading, type LoadingProps, type LoadingTone, type LoadingVariant, Menu, MenuCheckboxItem, MenuGroup, MenuGroupLabel, MenuItem, MenuLinkItem, MenuPopup, MenuPortal, MenuPositioner, MenuRadioGroup, MenuRadioItem, MenuSeparator, MenuSubmenuRoot, MenuSubmenuTrigger, MenuTrigger, RadioGroupField, type RadioGroupFieldProps, type RadioOption, SelectField, Switch, type SwitchProps, Tab, TabIndicator, TabPanel, Tabs, TabsList, TextAreaField, TextField, ToastAction, ToastClose, ToastContent, ToastDescription, ToastPortal, ToastProvider, ToastRoot, ToastTitle, ToastViewport, Toggle, ToggleGroup, badgeVariants, buttonVariants, cn, createToastManager, iconButtonVariants, inputVariants, useToastManager };
+export { Accordion, AccordionHeader, AccordionItem, AccordionPanel, AccordionTrigger, type AdornmentProps, Avatar, AvatarFallback, AvatarImage, type AvatarProps, type AvatarSize, Badge, type BadgeProps, Button, Calendar, type CalendarDay, type CalendarMonth, type CalendarProps, type CalendarWeek, CheckboxField, type CheckboxProps, Collapsible, CollapsiblePanel, CollapsibleTrigger, Combobox, ComboboxClear, ComboboxEmpty, ComboboxField, ComboboxInput, ComboboxInputGroup, ComboboxItem, ComboboxItemIndicator, ComboboxList, ComboboxPopup, ComboboxPortal, ComboboxPositioner, type ComboboxProps, ComboboxTrigger, type CreateCalendarMonthOptions, Dialog, DialogBackdrop, DialogClose, DialogDescription, DialogPopup, DialogPortal, DialogTitle, DialogTrigger, Drawer, DrawerBackdrop, DrawerClose, DrawerDescription, DrawerPopup, DrawerPortal, DrawerTitle, DrawerTrigger, DrawerViewport, IconButton, type InputBase, InputController, type InputControllerProps, type InputControllerRenderProps, InputDescription, type InputDescriptionProps, InputField, InputFieldChildren, type InputFieldProps, InputLabel, type InputLabelProps, InputWrapper, Loading, type LoadingProps, type LoadingTone, type LoadingVariant, Menu, MenuCheckboxItem, MenuGroup, MenuGroupLabel, MenuItem, MenuLinkItem, MenuPopup, MenuPortal, MenuPositioner, MenuRadioGroup, MenuRadioItem, MenuSeparator, MenuSubmenuRoot, MenuSubmenuTrigger, MenuTrigger, Popover, PopoverArrow, PopoverBackdrop, PopoverClose, PopoverContent, type PopoverContentProps, PopoverDescription, PopoverPopup, PopoverPortal, PopoverPositioner, PopoverTitle, PopoverTrigger, RadioGroupField, type RadioGroupFieldProps, type RadioOption, SelectField, Switch, type SwitchProps, Tab, TabIndicator, TabPanel, Tabs, TabsList, TextAreaField, TextField, ToastAction, ToastClose, ToastContent, ToastDescription, ToastPortal, ToastProvider, ToastRoot, ToastTitle, ToastViewport, Toggle, ToggleGroup, type UseCalendarProps, type UseCalendarReturn, badgeVariants, buttonVariants, cn, createCalendarMonth, createToastManager, iconButtonVariants, inputVariants, useCalendar, useToastManager };

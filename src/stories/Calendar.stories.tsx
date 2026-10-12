@@ -3,7 +3,7 @@ import { useState } from "react";
 import {
   Calendar,
   type CalendarProps,
-} from "../components/ui/inputs/calendar/calendar";
+} from "../components/ui/calendar";
 
 const meta = {
   title: "Example/Calendar",

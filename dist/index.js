@@ -34,7 +34,19 @@ __export(index_exports, {
   Collapsible: () => Collapsible,
   CollapsiblePanel: () => CollapsiblePanel,
   CollapsibleTrigger: () => CollapsibleTrigger,
+  Combobox: () => Combobox,
+  ComboboxClear: () => ComboboxClear,
+  ComboboxEmpty: () => ComboboxEmpty,
   ComboboxField: () => ComboboxField,
+  ComboboxInput: () => ComboboxInput,
+  ComboboxInputGroup: () => ComboboxInputGroup,
+  ComboboxItem: () => ComboboxItem,
+  ComboboxItemIndicator: () => ComboboxItemIndicator,
+  ComboboxList: () => ComboboxList,
+  ComboboxPopup: () => ComboboxPopup,
+  ComboboxPortal: () => ComboboxPortal,
+  ComboboxPositioner: () => ComboboxPositioner,
+  ComboboxTrigger: () => ComboboxTrigger,
   Dialog: () => Dialog,
   DialogBackdrop: () => DialogBackdrop,
   DialogClose: () => DialogClose,
@@ -75,6 +87,17 @@ __export(index_exports, {
   MenuSubmenuRoot: () => MenuSubmenuRoot,
   MenuSubmenuTrigger: () => MenuSubmenuTrigger,
   MenuTrigger: () => MenuTrigger,
+  Popover: () => Popover,
+  PopoverArrow: () => PopoverArrow,
+  PopoverBackdrop: () => PopoverBackdrop,
+  PopoverClose: () => PopoverClose,
+  PopoverContent: () => PopoverContent,
+  PopoverDescription: () => PopoverDescription,
+  PopoverPopup: () => PopoverPopup,
+  PopoverPortal: () => PopoverPortal,
+  PopoverPositioner: () => PopoverPositioner,
+  PopoverTitle: () => PopoverTitle,
+  PopoverTrigger: () => PopoverTrigger,
   RadioGroupField: () => RadioGroupField,
   SelectField: () => SelectField,
   Switch: () => Switch,
@@ -99,9 +122,11 @@ __export(index_exports, {
   badgeVariants: () => badgeVariants,
   buttonVariants: () => buttonVariants,
   cn: () => cn,
+  createCalendarMonth: () => createCalendarMonth,
   createToastManager: () => createToastManager,
   iconButtonVariants: () => iconButtonVariants,
   inputVariants: () => inputVariants,
+  useCalendar: () => useCalendar,
   useToastManager: () => useToastManager
 });
 
@@ -123,7 +148,19 @@ __export(components_exports, {
   Collapsible: () => Collapsible,
   CollapsiblePanel: () => CollapsiblePanel,
   CollapsibleTrigger: () => CollapsibleTrigger,
+  Combobox: () => Combobox,
+  ComboboxClear: () => ComboboxClear,
+  ComboboxEmpty: () => ComboboxEmpty,
   ComboboxField: () => ComboboxField,
+  ComboboxInput: () => ComboboxInput,
+  ComboboxInputGroup: () => ComboboxInputGroup,
+  ComboboxItem: () => ComboboxItem,
+  ComboboxItemIndicator: () => ComboboxItemIndicator,
+  ComboboxList: () => ComboboxList,
+  ComboboxPopup: () => ComboboxPopup,
+  ComboboxPortal: () => ComboboxPortal,
+  ComboboxPositioner: () => ComboboxPositioner,
+  ComboboxTrigger: () => ComboboxTrigger,
   Dialog: () => Dialog,
   DialogBackdrop: () => DialogBackdrop,
   DialogClose: () => DialogClose,
@@ -164,6 +201,17 @@ __export(components_exports, {
   MenuSubmenuRoot: () => MenuSubmenuRoot,
   MenuSubmenuTrigger: () => MenuSubmenuTrigger,
   MenuTrigger: () => MenuTrigger,
+  Popover: () => Popover,
+  PopoverArrow: () => PopoverArrow,
+  PopoverBackdrop: () => PopoverBackdrop,
+  PopoverClose: () => PopoverClose,
+  PopoverContent: () => PopoverContent,
+  PopoverDescription: () => PopoverDescription,
+  PopoverPopup: () => PopoverPopup,
+  PopoverPortal: () => PopoverPortal,
+  PopoverPositioner: () => PopoverPositioner,
+  PopoverTitle: () => PopoverTitle,
+  PopoverTrigger: () => PopoverTrigger,
   RadioGroupField: () => RadioGroupField,
   SelectField: () => SelectField,
   Switch: () => Switch,
@@ -187,9 +235,11 @@ __export(components_exports, {
   ToggleGroup: () => ToggleGroup,
   badgeVariants: () => badgeVariants,
   buttonVariants: () => buttonVariants,
+  createCalendarMonth: () => createCalendarMonth,
   createToastManager: () => createToastManager,
   iconButtonVariants: () => iconButtonVariants,
   inputVariants: () => inputVariants,
+  useCalendar: () => useCalendar,
   useToastManager: () => useToastManager
 });
 
@@ -211,7 +261,19 @@ __export(ui_exports, {
   Collapsible: () => Collapsible,
   CollapsiblePanel: () => CollapsiblePanel,
   CollapsibleTrigger: () => CollapsibleTrigger,
+  Combobox: () => Combobox,
+  ComboboxClear: () => ComboboxClear,
+  ComboboxEmpty: () => ComboboxEmpty,
   ComboboxField: () => ComboboxField,
+  ComboboxInput: () => ComboboxInput,
+  ComboboxInputGroup: () => ComboboxInputGroup,
+  ComboboxItem: () => ComboboxItem,
+  ComboboxItemIndicator: () => ComboboxItemIndicator,
+  ComboboxList: () => ComboboxList,
+  ComboboxPopup: () => ComboboxPopup,
+  ComboboxPortal: () => ComboboxPortal,
+  ComboboxPositioner: () => ComboboxPositioner,
+  ComboboxTrigger: () => ComboboxTrigger,
   Dialog: () => Dialog,
   DialogBackdrop: () => DialogBackdrop,
   DialogClose: () => DialogClose,
@@ -252,6 +314,17 @@ __export(ui_exports, {
   MenuSubmenuRoot: () => MenuSubmenuRoot,
   MenuSubmenuTrigger: () => MenuSubmenuTrigger,
   MenuTrigger: () => MenuTrigger,
+  Popover: () => Popover,
+  PopoverArrow: () => PopoverArrow,
+  PopoverBackdrop: () => PopoverBackdrop,
+  PopoverClose: () => PopoverClose,
+  PopoverContent: () => PopoverContent,
+  PopoverDescription: () => PopoverDescription,
+  PopoverPopup: () => PopoverPopup,
+  PopoverPortal: () => PopoverPortal,
+  PopoverPositioner: () => PopoverPositioner,
+  PopoverTitle: () => PopoverTitle,
+  PopoverTrigger: () => PopoverTrigger,
   RadioGroupField: () => RadioGroupField,
   SelectField: () => SelectField,
   Switch: () => Switch,
@@ -275,9 +348,11 @@ __export(ui_exports, {
   ToggleGroup: () => ToggleGroup,
   badgeVariants: () => badgeVariants,
   buttonVariants: () => buttonVariants,
+  createCalendarMonth: () => createCalendarMonth,
   createToastManager: () => createToastManager,
   iconButtonVariants: () => iconButtonVariants,
   inputVariants: () => inputVariants,
+  useCalendar: () => useCalendar,
   useToastManager: () => useToastManager
 });
 
@@ -4021,369 +4096,10 @@ function IconButton({
   );
 }
 
-// src/components/ui/collapsible/collapsible.tsx
-import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
-import * as React4 from "react";
-import { jsx as jsx6, jsxs as jsxs2 } from "react/jsx-runtime";
-var styles3 = {
-  Collapsible: "Collapsible",
-  Trigger: "CollapsibleTrigger",
-  TriggerIcon: "CollapsibleTriggerIcon",
-  Panel: "CollapsiblePanel"
-};
-var Collapsible = React4.forwardRef(function Collapsible2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx6(
-    BaseCollapsible.Root,
-    {
-      ref,
-      className: cn(styles3.Collapsible, className),
-      ...props
-    }
-  );
-});
-Collapsible.displayName = "Collapsible";
-var CollapsibleTrigger = React4.forwardRef(function CollapsibleTrigger2({ children, className, ...props }, ref) {
-  return /* @__PURE__ */ jsxs2(
-    BaseCollapsible.Trigger,
-    {
-      ref,
-      className: cn(styles3.Trigger, className),
-      ...props,
-      children: [
-        /* @__PURE__ */ jsx6("span", { children }),
-        /* @__PURE__ */ jsx6(ChevronDown, { className: styles3.TriggerIcon, "aria-hidden": "true" })
-      ]
-    }
-  );
-});
-CollapsibleTrigger.displayName = "CollapsibleTrigger";
-var CollapsiblePanel = React4.forwardRef(function CollapsiblePanel2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx6(
-    BaseCollapsible.Panel,
-    {
-      ref,
-      className: cn(styles3.Panel, className),
-      ...props
-    }
-  );
-});
-CollapsiblePanel.displayName = "CollapsiblePanel";
+// src/components/ui/calendar/calendar.tsx
+import "react";
 
-// src/components/ui/dialog/dialog.tsx
-import { Dialog as BaseDialog } from "@base-ui/react/dialog";
-import * as React5 from "react";
-import { jsx as jsx7 } from "react/jsx-runtime";
-var styles4 = {
-  Backdrop: "DialogBackdrop",
-  Popup: "DialogPopup",
-  Title: "DialogTitle",
-  Description: "DialogDescription",
-  Close: "DialogClose"
-};
-var Dialog = BaseDialog.Root;
-var DialogTrigger = React5.forwardRef(function DialogTrigger2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(BaseDialog.Trigger, { ref, className, ...props });
-});
-DialogTrigger.displayName = "DialogTrigger";
-var DialogPortal = BaseDialog.Portal;
-var DialogBackdrop = React5.forwardRef(function DialogBackdrop2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(
-    BaseDialog.Backdrop,
-    {
-      ref,
-      className: cn(styles4.Backdrop, className),
-      ...props
-    }
-  );
-});
-DialogBackdrop.displayName = "DialogBackdrop";
-var DialogPopup = React5.forwardRef(function DialogPopup2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(
-    BaseDialog.Popup,
-    {
-      ref,
-      className: cn(styles4.Popup, className),
-      ...props
-    }
-  );
-});
-DialogPopup.displayName = "DialogPopup";
-var DialogTitle = React5.forwardRef(function DialogTitle2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(
-    BaseDialog.Title,
-    {
-      ref,
-      className: cn(styles4.Title, className),
-      ...props
-    }
-  );
-});
-DialogTitle.displayName = "DialogTitle";
-var DialogDescription = React5.forwardRef(function DialogDescription2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(
-    BaseDialog.Description,
-    {
-      ref,
-      className: cn(styles4.Description, className),
-      ...props
-    }
-  );
-});
-DialogDescription.displayName = "DialogDescription";
-var DialogClose = React5.forwardRef(function DialogClose2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx7(
-    BaseDialog.Close,
-    {
-      ref,
-      className: cn(styles4.Close, className),
-      ...props
-    }
-  );
-});
-DialogClose.displayName = "DialogClose";
-
-// src/components/ui/drawer/drawer.tsx
-import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
-import * as React6 from "react";
-import { jsx as jsx8 } from "react/jsx-runtime";
-var styles5 = {
-  Backdrop: "DrawerBackdrop",
-  Viewport: "DrawerViewport",
-  Popup: "DrawerPopup",
-  Title: "DrawerTitle",
-  Description: "DrawerDescription",
-  Close: "DrawerClose"
-};
-var Drawer = BaseDrawer.Root;
-var DrawerTrigger = React6.forwardRef(function DrawerTrigger2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(BaseDrawer.Trigger, { ref, className, ...props });
-});
-DrawerTrigger.displayName = "DrawerTrigger";
-var DrawerPortal = BaseDrawer.Portal;
-var DrawerBackdrop = React6.forwardRef(function DrawerBackdrop2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Backdrop,
-    {
-      ref,
-      className: cn(styles5.Backdrop, className),
-      ...props
-    }
-  );
-});
-DrawerBackdrop.displayName = "DrawerBackdrop";
-var DrawerViewport = React6.forwardRef(function DrawerViewport2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Viewport,
-    {
-      ref,
-      className: cn(styles5.Viewport, className),
-      ...props
-    }
-  );
-});
-DrawerViewport.displayName = "DrawerViewport";
-var DrawerPopup = React6.forwardRef(function DrawerPopup2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Popup,
-    {
-      ref,
-      className: cn(styles5.Popup, className),
-      ...props
-    }
-  );
-});
-DrawerPopup.displayName = "DrawerPopup";
-var DrawerTitle = React6.forwardRef(function DrawerTitle2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Title,
-    {
-      ref,
-      className: cn(styles5.Title, className),
-      ...props
-    }
-  );
-});
-DrawerTitle.displayName = "DrawerTitle";
-var DrawerDescription = React6.forwardRef(function DrawerDescription2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Description,
-    {
-      ref,
-      className: cn(styles5.Description, className),
-      ...props
-    }
-  );
-});
-DrawerDescription.displayName = "DrawerDescription";
-var DrawerClose = React6.forwardRef(function DrawerClose2({ children, className, ...props }, ref) {
-  return /* @__PURE__ */ jsx8(
-    BaseDrawer.Close,
-    {
-      ref,
-      className,
-      "aria-label": props["aria-label"] ?? "Close drawer",
-      ...props,
-      children: children ?? /* @__PURE__ */ jsx8(X, { size: 18, "aria-hidden": "true" })
-    }
-  );
-});
-DrawerClose.displayName = "DrawerClose";
-
-// src/components/ui/inputs/base/input.tsx
-import { useRender } from "@base-ui/react";
-import {
-  forwardRef as forwardRef9,
-  useId
-} from "react";
-import { jsx as jsx9, jsxs as jsxs3 } from "react/jsx-runtime";
-var inputVariants = cva("input", {
-  variants: {
-    size: {
-      sm: "input-sm",
-      md: "input-md",
-      lg: "input-lg"
-    },
-    shape: {
-      square: "input-square",
-      rounded: "input-rounded"
-    }
-  },
-  defaultVariants: {
-    size: "md",
-    shape: "square"
-  }
-});
-function InputWrapperImpl({
-  className,
-  size = "md",
-  shape = "square",
-  startAdornment,
-  endAdornment,
-  id,
-  render,
-  ...inputProps
-}, ref) {
-  const generatedId = useId();
-  const inputId = id ?? generatedId;
-  const element = useRender({
-    defaultTagName: "input",
-    ref,
-    props: { ...inputProps, id: inputId },
-    render
-  });
-  return /* @__PURE__ */ jsxs3(
-    "label",
-    {
-      className: cn(inputVariants({ size, shape, className })),
-      htmlFor: inputId,
-      children: [
-        startAdornment,
-        element,
-        endAdornment
-      ]
-    }
-  );
-}
-var InputWrapper = forwardRef9(
-  InputWrapperImpl
-);
-var InputLabel = forwardRef9(
-  function InputLabel2({
-    className,
-    id,
-    htmlFor,
-    disabled,
-    "aria-disabled": ariaDisabled = disabled,
-    required,
-    "aria-required": ariaRequired = required,
-    ...labelProps
-  }, ref) {
-    return /* @__PURE__ */ jsx9(
-      "label",
-      {
-        ref,
-        id,
-        htmlFor,
-        className: cn("input-label", className),
-        "aria-disabled": ariaDisabled,
-        "aria-required": ariaRequired,
-        ...labelProps
-      }
-    );
-  }
-);
-InputLabel.displayName = "InputLabel";
-var InputDescription = forwardRef9(function InputDescription2({ className, id, ...spanProps }, ref) {
-  return /* @__PURE__ */ jsx9(
-    "span",
-    {
-      ref,
-      id,
-      className: cn("input-description", className),
-      ...spanProps
-    }
-  );
-});
-InputDescription.displayName = "InputDescription";
-function InputFieldImpl({
-  className,
-  id,
-  label,
-  labelProps,
-  description,
-  descriptionProps,
-  ...inputProps
-}, ref) {
-  const generatedId = useId();
-  const inputId = id ?? generatedId;
-  const labelId = label ? `${inputId}-label` : void 0;
-  const descriptionId = description ? `${inputId}-description` : void 0;
-  return /* @__PURE__ */ jsxs3("div", { className: "flex flex-col gap-1", children: [
-    labelId ? /* @__PURE__ */ jsx9(InputLabel, { id: labelId, htmlFor: inputId, ...labelProps, children: label }) : null,
-    /* @__PURE__ */ jsx9(
-      InputWrapper,
-      {
-        ref,
-        className,
-        "aria-labelledby": labelId,
-        "aria-describedby": descriptionId,
-        id: inputId,
-        ...inputProps
-      }
-    ),
-    descriptionId ? /* @__PURE__ */ jsx9(InputDescription, { id: descriptionId, ...descriptionProps, children: description }) : null
-  ] });
-}
-var InputField = forwardRef9(InputFieldImpl);
-function InputController({
-  id,
-  label,
-  labelProps,
-  description,
-  descriptionProps,
-  render
-}) {
-  const generatedId = useId();
-  const inputId = id ?? generatedId;
-  const labelId = label ? `${inputId}-label` : void 0;
-  const descriptionId = description ? `${inputId}-description` : void 0;
-  const content = render({
-    id: inputId,
-    "aria-labelledby": labelId,
-    "aria-describedby": descriptionId
-  });
-  return /* @__PURE__ */ jsxs3("div", { className: "flex flex-col gap-1", children: [
-    labelId ? /* @__PURE__ */ jsx9(InputLabel, { id: labelId, htmlFor: inputId, ...labelProps, children: label }) : null,
-    content,
-    descriptionId ? /* @__PURE__ */ jsx9(InputDescription, { id: descriptionId, ...descriptionProps, children: description }) : null
-  ] });
-}
-var InputFieldChildren = InputController;
-
-// src/components/ui/inputs/calendar/calendar.tsx
-import { useMemo as useMemo2, useState } from "react";
-
-// src/components/ui/inputs/calendar/calendar.utils.ts
+// src/components/ui/calendar/calendar.utils.ts
 var monthFormatter = new Intl.DateTimeFormat(void 0, {
   year: "numeric",
   month: "long"
@@ -4432,8 +4148,108 @@ function getWeekdayLabels(weekStartsOn = "sunday") {
   );
 }
 
-// src/components/ui/inputs/calendar/calendar.tsx
-import { jsx as jsx10, jsxs as jsxs4 } from "react/jsx-runtime";
+// src/components/ui/calendar/use-calendar.ts
+import { useCallback as useCallback2, useMemo as useMemo2, useState } from "react";
+
+// src/components/ui/calendar/calendar.model.ts
+function createCalendarMonth({
+  month,
+  selectedDate,
+  today = /* @__PURE__ */ new Date(),
+  weekStartsOn = "sunday"
+}) {
+  const visibleMonth = new Date(month.getFullYear(), month.getMonth(), 1);
+  const dates = getCalendarDates(visibleMonth, weekStartsOn);
+  const days = dates.map((date) => ({
+    date,
+    isCurrentMonth: date.getMonth() === visibleMonth.getMonth(),
+    isSelected: selectedDate ? isSameCalendarDay(date, selectedDate) : false,
+    isToday: isSameCalendarDay(date, today)
+  }));
+  return {
+    month: visibleMonth,
+    weekdays: getWeekdayLabels(weekStartsOn),
+    weeks: Array.from({ length: 6 }, (_, index) => ({
+      days: days.slice(index * 7, index * 7 + 7)
+    }))
+  };
+}
+
+// src/components/ui/calendar/use-calendar.ts
+function getMonthStart(date) {
+  return new Date(date.getFullYear(), date.getMonth(), 1);
+}
+function getInitialSelectedDate({ value, defaultValue }) {
+  return value ?? defaultValue ?? /* @__PURE__ */ new Date();
+}
+function useCalendar({
+  value,
+  defaultValue,
+  onValueChange,
+  month,
+  defaultMonth,
+  onMonthChange,
+  weekStartsOn = "sunday"
+} = {}) {
+  const [uncontrolledValue, setUncontrolledValue] = useState(
+    () => defaultValue ?? /* @__PURE__ */ new Date()
+  );
+  const selectedDate = value ?? uncontrolledValue;
+  const [uncontrolledMonth, setUncontrolledMonth] = useState(
+    () => getMonthStart(defaultMonth ?? getInitialSelectedDate({ value, defaultValue }))
+  );
+  const visibleMonth = getMonthStart(month ?? uncontrolledMonth);
+  const setMonth = useCallback2(
+    (nextMonth2) => {
+      const normalizedMonth = getMonthStart(nextMonth2);
+      if (!month) {
+        setUncontrolledMonth(normalizedMonth);
+      }
+      onMonthChange?.(normalizedMonth);
+    },
+    [month, onMonthChange]
+  );
+  const selectDate = useCallback2(
+    (date) => {
+      if (!value) {
+        setUncontrolledValue(date);
+      }
+      onValueChange?.(date);
+      setMonth(date);
+    },
+    [onValueChange, setMonth, value]
+  );
+  const nextMonth = useCallback2(() => {
+    setMonth(
+      new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() + 1, 1)
+    );
+  }, [setMonth, visibleMonth]);
+  const previousMonth = useCallback2(() => {
+    setMonth(
+      new Date(visibleMonth.getFullYear(), visibleMonth.getMonth() - 1, 1)
+    );
+  }, [setMonth, visibleMonth]);
+  const calendar = useMemo2(
+    () => createCalendarMonth({
+      month: visibleMonth,
+      selectedDate,
+      weekStartsOn
+    }),
+    [selectedDate, visibleMonth, weekStartsOn]
+  );
+  return {
+    calendar,
+    selectedDate,
+    visibleMonth,
+    selectDate,
+    setMonth,
+    nextMonth,
+    previousMonth
+  };
+}
+
+// src/components/ui/calendar/calendar.tsx
+import { jsx as jsx6, jsxs as jsxs2 } from "react/jsx-runtime";
 function Calendar({
   className,
   value,
@@ -4442,41 +4258,15 @@ function Calendar({
   weekStartsOn = "sunday",
   ...props
 }) {
-  const [uncontrolledValue, setUncontrolledValue] = useState(
-    () => defaultValue ?? /* @__PURE__ */ new Date()
-  );
-  const selectedDate = value ?? uncontrolledValue;
-  const [monthOffset, setMonthOffset] = useState(0);
-  const visibleMonth = useMemo2(
-    () => new Date(
-      selectedDate.getFullYear(),
-      selectedDate.getMonth() + monthOffset,
-      1
-    ),
-    [selectedDate, monthOffset]
-  );
-  const dates = useMemo2(
-    () => getCalendarDates(visibleMonth, weekStartsOn),
-    [visibleMonth, weekStartsOn]
-  );
-  const weekdays = useMemo2(
-    () => getWeekdayLabels(weekStartsOn),
-    [weekStartsOn]
-  );
-  const today = /* @__PURE__ */ new Date();
-  function changeMonth(offset) {
-    setMonthOffset((currentOffset) => currentOffset + offset);
-  }
-  function selectDate(date) {
-    if (!value) {
-      setUncontrolledValue(date);
-    }
-    onValueChange?.(date);
-    setMonthOffset(0);
-  }
-  return /* @__PURE__ */ jsxs4("div", { className: cn("Calendar", className), ...props, children: [
-    /* @__PURE__ */ jsxs4("div", { className: "CalendarHeader", children: [
-      /* @__PURE__ */ jsx10(
+  const { calendar, nextMonth, previousMonth, selectDate } = useCalendar({
+    value,
+    defaultValue,
+    onValueChange,
+    weekStartsOn
+  });
+  return /* @__PURE__ */ jsxs2("div", { className: cn("Calendar", className), ...props, children: [
+    /* @__PURE__ */ jsxs2("div", { className: "CalendarHeader", children: [
+      /* @__PURE__ */ jsx6(
         IconButton,
         {
           variant: "ghost",
@@ -4484,12 +4274,12 @@ function Calendar({
           size: "sm",
           shape: "rounded",
           "aria-label": "Previous month",
-          onClick: () => changeMonth(-1),
-          children: /* @__PURE__ */ jsx10(ChevronLeft, { "aria-hidden": "true" })
+          onClick: previousMonth,
+          children: /* @__PURE__ */ jsx6(ChevronLeft, { "aria-hidden": "true" })
         }
       ),
-      /* @__PURE__ */ jsx10("h2", { className: "CalendarMonth", "aria-live": "polite", children: formatCalendarMonth(visibleMonth) }),
-      /* @__PURE__ */ jsx10(
+      /* @__PURE__ */ jsx6("h2", { className: "CalendarMonth", "aria-live": "polite", children: formatCalendarMonth(calendar.month) }),
+      /* @__PURE__ */ jsx6(
         IconButton,
         {
           variant: "ghost",
@@ -4497,13 +4287,13 @@ function Calendar({
           size: "sm",
           shape: "rounded",
           "aria-label": "Next month",
-          onClick: () => changeMonth(1),
-          children: /* @__PURE__ */ jsx10(ChevronRight, { "aria-hidden": "true" })
+          onClick: nextMonth,
+          children: /* @__PURE__ */ jsx6(ChevronRight, { "aria-hidden": "true" })
         }
       )
     ] }),
-    /* @__PURE__ */ jsxs4("div", { className: "CalendarGrid", role: "grid", "aria-label": "Calendar dates", children: [
-      /* @__PURE__ */ jsx10("div", { className: "CalendarWeekdays", role: "row", children: weekdays.map((weekday, index) => /* @__PURE__ */ jsx10(
+    /* @__PURE__ */ jsxs2("div", { className: "CalendarGrid", role: "grid", "aria-label": "Calendar dates", children: [
+      /* @__PURE__ */ jsx6("div", { className: "CalendarWeekdays", role: "row", children: calendar.weekdays.map((weekday, index) => /* @__PURE__ */ jsx6(
         "span",
         {
           className: "CalendarWeekday",
@@ -4512,42 +4302,541 @@ function Calendar({
         },
         `${weekday}-${index}`
       )) }),
-      Array.from({ length: 6 }, (_, weekIndex) => /* @__PURE__ */ jsx10("div", { className: "CalendarWeek", role: "row", children: dates.slice(weekIndex * 7, weekIndex * 7 + 7).map((date) => {
-        const isCurrentMonth = date.getMonth() === visibleMonth.getMonth();
-        const isSelected = isSameCalendarDay(date, selectedDate);
-        const isToday = isSameCalendarDay(date, today);
-        return /* @__PURE__ */ jsx10(
+      calendar.weeks.map((week, weekIndex) => /* @__PURE__ */ jsx6("div", { className: "CalendarWeek", role: "row", children: week.days.map((day) => {
+        return /* @__PURE__ */ jsx6(
           "div",
           {
             className: "CalendarCell",
             role: "gridcell",
-            "aria-selected": isSelected,
-            children: /* @__PURE__ */ jsx10(
+            "aria-selected": day.isSelected,
+            children: /* @__PURE__ */ jsx6(
               "button",
               {
                 className: cn("CalendarDay", {
-                  "CalendarDay-outside": !isCurrentMonth
+                  "CalendarDay-outside": !day.isCurrentMonth
                 }),
                 type: "button",
-                "aria-label": formatCalendarDate(date),
-                "aria-current": isToday ? "date" : void 0,
-                onClick: () => selectDate(date),
-                children: date.getDate()
+                "aria-label": formatCalendarDate(day.date),
+                "aria-current": day.isToday ? "date" : void 0,
+                onClick: () => selectDate(day.date),
+                children: day.date.getDate()
               }
             )
           },
-          date.toISOString()
+          day.date.toISOString()
         );
       }) }, weekIndex))
     ] })
   ] });
 }
 
+// src/components/ui/collapsible/collapsible.tsx
+import { Collapsible as BaseCollapsible } from "@base-ui/react/collapsible";
+import * as React4 from "react";
+import { jsx as jsx7, jsxs as jsxs3 } from "react/jsx-runtime";
+var styles3 = {
+  Collapsible: "Collapsible",
+  Trigger: "CollapsibleTrigger",
+  TriggerIcon: "CollapsibleTriggerIcon",
+  Panel: "CollapsiblePanel"
+};
+var Collapsible = React4.forwardRef(function Collapsible2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx7(
+    BaseCollapsible.Root,
+    {
+      ref,
+      className: cn(styles3.Collapsible, className),
+      ...props
+    }
+  );
+});
+Collapsible.displayName = "Collapsible";
+var CollapsibleTrigger = React4.forwardRef(function CollapsibleTrigger2({ children, className, ...props }, ref) {
+  return /* @__PURE__ */ jsxs3(
+    BaseCollapsible.Trigger,
+    {
+      ref,
+      className: cn(styles3.Trigger, className),
+      ...props,
+      children: [
+        /* @__PURE__ */ jsx7("span", { children }),
+        /* @__PURE__ */ jsx7(ChevronDown, { className: styles3.TriggerIcon, "aria-hidden": "true" })
+      ]
+    }
+  );
+});
+CollapsibleTrigger.displayName = "CollapsibleTrigger";
+var CollapsiblePanel = React4.forwardRef(function CollapsiblePanel2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx7(
+    BaseCollapsible.Panel,
+    {
+      ref,
+      className: cn(styles3.Panel, className),
+      ...props
+    }
+  );
+});
+CollapsiblePanel.displayName = "CollapsiblePanel";
+
+// src/components/ui/combobox/combobox.tsx
+import { Combobox as BaseCombobox } from "@base-ui/react/combobox";
+import { forwardRef as forwardRef7 } from "react";
+import { jsx as jsx8 } from "react/jsx-runtime";
+var styles4 = {
+  InputGroup: "ComboboxInputGroup",
+  Input: "ComboboxInput",
+  Trigger: "ComboboxTrigger",
+  Clear: "ComboboxClear",
+  Positioner: "ComboboxPositioner",
+  Popup: "ComboboxPopup",
+  List: "ComboboxList",
+  Item: "ComboboxItem",
+  ItemIndicator: "ComboboxItemIndicator",
+  Empty: "ComboboxEmpty"
+};
+var Combobox = BaseCombobox.Root;
+var ComboboxInputGroup = forwardRef7(function ComboboxInputGroup2({ className, unstyled = false, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.InputGroup,
+    {
+      ref,
+      className: cn(!unstyled && styles4.InputGroup, className),
+      ...props
+    }
+  );
+});
+ComboboxInputGroup.displayName = "ComboboxInputGroup";
+var ComboboxInput = forwardRef7(function ComboboxInput2({ className, unstyled = false, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Input,
+    {
+      ref,
+      className: cn(!unstyled && styles4.Input, className),
+      ...props
+    }
+  );
+});
+ComboboxInput.displayName = "ComboboxInput";
+var ComboboxTrigger = forwardRef7(function ComboboxTrigger2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Trigger,
+    {
+      ref,
+      className: cn(styles4.Trigger, className),
+      ...props
+    }
+  );
+});
+ComboboxTrigger.displayName = "ComboboxTrigger";
+var ComboboxClear = forwardRef7(function ComboboxClear2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Clear,
+    {
+      ref,
+      className: cn(styles4.Clear, className),
+      ...props
+    }
+  );
+});
+ComboboxClear.displayName = "ComboboxClear";
+var ComboboxPortal = BaseCombobox.Portal;
+var ComboboxPositioner = forwardRef7(function ComboboxPositioner2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Positioner,
+    {
+      ref,
+      className: cn(styles4.Positioner, className),
+      ...props
+    }
+  );
+});
+ComboboxPositioner.displayName = "ComboboxPositioner";
+var ComboboxPopup = forwardRef7(function ComboboxPopup2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Popup,
+    {
+      ref,
+      className: cn(styles4.Popup, className),
+      ...props
+    }
+  );
+});
+ComboboxPopup.displayName = "ComboboxPopup";
+var ComboboxList = forwardRef7(function ComboboxList2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.List,
+    {
+      ref,
+      className: cn(styles4.List, className),
+      ...props
+    }
+  );
+});
+ComboboxList.displayName = "ComboboxList";
+var ComboboxItem = forwardRef7(function ComboboxItem2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Item,
+    {
+      ref,
+      className: cn(styles4.Item, className),
+      ...props
+    }
+  );
+});
+ComboboxItem.displayName = "ComboboxItem";
+var ComboboxItemIndicator = forwardRef7(function ComboboxItemIndicator2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.ItemIndicator,
+    {
+      ref,
+      className: cn(styles4.ItemIndicator, className),
+      ...props
+    }
+  );
+});
+ComboboxItemIndicator.displayName = "ComboboxItemIndicator";
+var ComboboxEmpty = forwardRef7(function ComboboxEmpty2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx8(
+    BaseCombobox.Empty,
+    {
+      ref,
+      className: cn(styles4.Empty, className),
+      ...props
+    }
+  );
+});
+ComboboxEmpty.displayName = "ComboboxEmpty";
+
+// src/components/ui/dialog/dialog.tsx
+import { Dialog as BaseDialog } from "@base-ui/react/dialog";
+import * as React5 from "react";
+import { jsx as jsx9 } from "react/jsx-runtime";
+var styles5 = {
+  Backdrop: "DialogBackdrop",
+  Popup: "DialogPopup",
+  Title: "DialogTitle",
+  Description: "DialogDescription",
+  Close: "DialogClose"
+};
+var Dialog = BaseDialog.Root;
+var DialogTrigger = React5.forwardRef(function DialogTrigger2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(BaseDialog.Trigger, { ref, className, ...props });
+});
+DialogTrigger.displayName = "DialogTrigger";
+var DialogPortal = BaseDialog.Portal;
+var DialogBackdrop = React5.forwardRef(function DialogBackdrop2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(
+    BaseDialog.Backdrop,
+    {
+      ref,
+      className: cn(styles5.Backdrop, className),
+      ...props
+    }
+  );
+});
+DialogBackdrop.displayName = "DialogBackdrop";
+var DialogPopup = React5.forwardRef(function DialogPopup2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(
+    BaseDialog.Popup,
+    {
+      ref,
+      className: cn(styles5.Popup, className),
+      ...props
+    }
+  );
+});
+DialogPopup.displayName = "DialogPopup";
+var DialogTitle = React5.forwardRef(function DialogTitle2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(
+    BaseDialog.Title,
+    {
+      ref,
+      className: cn(styles5.Title, className),
+      ...props
+    }
+  );
+});
+DialogTitle.displayName = "DialogTitle";
+var DialogDescription = React5.forwardRef(function DialogDescription2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(
+    BaseDialog.Description,
+    {
+      ref,
+      className: cn(styles5.Description, className),
+      ...props
+    }
+  );
+});
+DialogDescription.displayName = "DialogDescription";
+var DialogClose = React5.forwardRef(function DialogClose2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx9(
+    BaseDialog.Close,
+    {
+      ref,
+      className: cn(styles5.Close, className),
+      ...props
+    }
+  );
+});
+DialogClose.displayName = "DialogClose";
+
+// src/components/ui/drawer/drawer.tsx
+import { Drawer as BaseDrawer } from "@base-ui/react/drawer";
+import * as React6 from "react";
+import { jsx as jsx10 } from "react/jsx-runtime";
+var styles6 = {
+  Backdrop: "DrawerBackdrop",
+  Viewport: "DrawerViewport",
+  Popup: "DrawerPopup",
+  Title: "DrawerTitle",
+  Description: "DrawerDescription",
+  Close: "DrawerClose"
+};
+var Drawer = BaseDrawer.Root;
+var DrawerTrigger = React6.forwardRef(function DrawerTrigger2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(BaseDrawer.Trigger, { ref, className, ...props });
+});
+DrawerTrigger.displayName = "DrawerTrigger";
+var DrawerPortal = BaseDrawer.Portal;
+var DrawerBackdrop = React6.forwardRef(function DrawerBackdrop2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Backdrop,
+    {
+      ref,
+      className: cn(styles6.Backdrop, className),
+      ...props
+    }
+  );
+});
+DrawerBackdrop.displayName = "DrawerBackdrop";
+var DrawerViewport = React6.forwardRef(function DrawerViewport2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Viewport,
+    {
+      ref,
+      className: cn(styles6.Viewport, className),
+      ...props
+    }
+  );
+});
+DrawerViewport.displayName = "DrawerViewport";
+var DrawerPopup = React6.forwardRef(function DrawerPopup2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Popup,
+    {
+      ref,
+      className: cn(styles6.Popup, className),
+      ...props
+    }
+  );
+});
+DrawerPopup.displayName = "DrawerPopup";
+var DrawerTitle = React6.forwardRef(function DrawerTitle2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Title,
+    {
+      ref,
+      className: cn(styles6.Title, className),
+      ...props
+    }
+  );
+});
+DrawerTitle.displayName = "DrawerTitle";
+var DrawerDescription = React6.forwardRef(function DrawerDescription2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Description,
+    {
+      ref,
+      className: cn(styles6.Description, className),
+      ...props
+    }
+  );
+});
+DrawerDescription.displayName = "DrawerDescription";
+var DrawerClose = React6.forwardRef(function DrawerClose2({ children, className, ...props }, ref) {
+  return /* @__PURE__ */ jsx10(
+    BaseDrawer.Close,
+    {
+      ref,
+      className,
+      "aria-label": props["aria-label"] ?? "Close drawer",
+      ...props,
+      children: children ?? /* @__PURE__ */ jsx10(X, { size: 18, "aria-hidden": "true" })
+    }
+  );
+});
+DrawerClose.displayName = "DrawerClose";
+
+// src/components/ui/inputs/base/input.tsx
+import { useRender } from "@base-ui/react";
+import {
+  forwardRef as forwardRef10,
+  useId
+} from "react";
+import { jsx as jsx11, jsxs as jsxs4 } from "react/jsx-runtime";
+var inputVariants = cva("input", {
+  variants: {
+    size: {
+      sm: "input-sm",
+      md: "input-md",
+      lg: "input-lg"
+    },
+    shape: {
+      square: "input-square",
+      rounded: "input-rounded"
+    }
+  },
+  defaultVariants: {
+    size: "md",
+    shape: "square"
+  }
+});
+function InputWrapperImpl({
+  className,
+  size = "md",
+  shape = "square",
+  startAdornment,
+  endAdornment,
+  id,
+  render,
+  ...inputProps
+}, ref) {
+  const generatedId = useId();
+  const inputId = id ?? generatedId;
+  const element = useRender({
+    defaultTagName: "input",
+    ref,
+    props: { ...inputProps, id: inputId },
+    render
+  });
+  return /* @__PURE__ */ jsxs4(
+    "label",
+    {
+      className: cn(inputVariants({ size, shape, className })),
+      htmlFor: inputId,
+      children: [
+        startAdornment,
+        element,
+        endAdornment
+      ]
+    }
+  );
+}
+var InputWrapper = forwardRef10(
+  InputWrapperImpl
+);
+var InputLabel = forwardRef10(
+  function InputLabel2({
+    className,
+    id,
+    htmlFor,
+    disabled,
+    "aria-disabled": ariaDisabled = disabled,
+    required,
+    "aria-required": ariaRequired = required,
+    ...labelProps
+  }, ref) {
+    return /* @__PURE__ */ jsx11(
+      "label",
+      {
+        ref,
+        id,
+        htmlFor,
+        className: cn("input-label", className),
+        "aria-disabled": ariaDisabled,
+        "aria-required": ariaRequired,
+        ...labelProps
+      }
+    );
+  }
+);
+InputLabel.displayName = "InputLabel";
+var InputDescription = forwardRef10(function InputDescription2({ className, id, ...spanProps }, ref) {
+  return /* @__PURE__ */ jsx11(
+    "span",
+    {
+      ref,
+      id,
+      className: cn("input-description", className),
+      ...spanProps
+    }
+  );
+});
+InputDescription.displayName = "InputDescription";
+function InputFieldImpl({
+  className,
+  id,
+  size = "md",
+  label,
+  labelProps,
+  description,
+  descriptionProps,
+  fieldProps,
+  ...inputProps
+}, ref) {
+  const generatedId = useId();
+  const inputId = id ?? generatedId;
+  const labelId = label ? `${inputId}-label` : void 0;
+  const descriptionId = description ? `${inputId}-description` : void 0;
+  return /* @__PURE__ */ jsxs4(
+    "div",
+    {
+      ...fieldProps,
+      className: cn(
+        "input-field flex flex-col gap-1",
+        `input-field-${size}`,
+        fieldProps?.className
+      ),
+      children: [
+        labelId ? /* @__PURE__ */ jsx11(InputLabel, { id: labelId, htmlFor: inputId, ...labelProps, children: label }) : null,
+        /* @__PURE__ */ jsx11(
+          InputWrapper,
+          {
+            ref,
+            className,
+            size,
+            "aria-labelledby": labelId,
+            "aria-describedby": descriptionId,
+            id: inputId,
+            ...inputProps
+          }
+        ),
+        descriptionId ? /* @__PURE__ */ jsx11(InputDescription, { id: descriptionId, ...descriptionProps, children: description }) : null
+      ]
+    }
+  );
+}
+var InputField = forwardRef10(InputFieldImpl);
+function InputController({
+  id,
+  label,
+  labelProps,
+  description,
+  descriptionProps,
+  render
+}) {
+  const generatedId = useId();
+  const inputId = id ?? generatedId;
+  const labelId = label ? `${inputId}-label` : void 0;
+  const descriptionId = description ? `${inputId}-description` : void 0;
+  const content = render({
+    id: inputId,
+    "aria-labelledby": labelId,
+    "aria-describedby": descriptionId
+  });
+  return /* @__PURE__ */ jsxs4("div", { className: "flex flex-col gap-1", children: [
+    labelId ? /* @__PURE__ */ jsx11(InputLabel, { id: labelId, htmlFor: inputId, ...labelProps, children: label }) : null,
+    content,
+    descriptionId ? /* @__PURE__ */ jsx11(InputDescription, { id: descriptionId, ...descriptionProps, children: description }) : null
+  ] });
+}
+var InputFieldChildren = InputController;
+
 // src/components/ui/inputs/checkbox/checkbox.tsx
 import { Checkbox } from "@base-ui/react/checkbox";
 import * as React7 from "react";
-import { jsx as jsx11, jsxs as jsxs5 } from "react/jsx-runtime";
-var styles6 = {
+import { jsx as jsx12, jsxs as jsxs5 } from "react/jsx-runtime";
+var styles7 = {
   Label: "CheckboxLabel",
   Checkbox: "Checkbox",
   Indicator: "CheckboxIndicator",
@@ -4563,22 +4852,22 @@ function CheckboxFieldImpl({
 }, ref) {
   const labelId = label ? `${id ?? "checkbox"}-label` : void 0;
   const descriptionId = description ? `${id ?? "checkbox"}-description` : void 0;
-  return /* @__PURE__ */ jsxs5("label", { className: styles6.Label, children: [
-    /* @__PURE__ */ jsx11(
+  return /* @__PURE__ */ jsxs5("label", { className: styles7.Label, children: [
+    /* @__PURE__ */ jsx12(
       Checkbox.Root,
       {
         ref,
         id,
-        className: className ?? styles6.Checkbox,
+        className: className ?? styles7.Checkbox,
         "aria-labelledby": labelId,
         "aria-describedby": descriptionId,
         ...rootProps,
-        children: /* @__PURE__ */ jsx11(Checkbox.Indicator, { className: styles6.Indicator, children: /* @__PURE__ */ jsx11(Check, { className: "h-4 w-4 aspect-square" }) })
+        children: /* @__PURE__ */ jsx12(Checkbox.Indicator, { className: styles7.Indicator, children: /* @__PURE__ */ jsx12(Check, { className: "h-4 w-4 aspect-square" }) })
       }
     ),
-    /* @__PURE__ */ jsxs5("span", { className: styles6.Content, children: [
-      /* @__PURE__ */ jsx11("span", { id: labelId, children: label }),
-      description ? /* @__PURE__ */ jsx11("span", { className: styles6.Description, id: descriptionId, children: description }) : null
+    /* @__PURE__ */ jsxs5("span", { className: styles7.Content, children: [
+      /* @__PURE__ */ jsx12("span", { id: labelId, children: label }),
+      description ? /* @__PURE__ */ jsx12("span", { className: styles7.Description, id: descriptionId, children: description }) : null
     ] })
   ] });
 }
@@ -4587,26 +4876,13 @@ var CheckboxField = React7.forwardRef(
 );
 
 // src/components/ui/inputs/combobox/index.tsx
-import { Combobox } from "@base-ui/react/combobox";
 import {
-  forwardRef as forwardRef11
+  forwardRef as forwardRef12
 } from "react";
-import { jsx as jsx12, jsxs as jsxs6 } from "react/jsx-runtime";
-var styles7 = {
-  InputGroup: "ComboboxInputGroup",
-  Input: "ComboboxInput",
-  Label: "ComboboxLabel",
-  StartAdornment: "ComboboxStartAdornment",
+import { jsx as jsx13, jsxs as jsxs6 } from "react/jsx-runtime";
+var styles8 = {
   ActionButtons: "ComboboxActionButtons",
-  Trigger: "ComboboxTrigger",
-  Clear: "ComboboxClear",
-  Positioner: "ComboboxPositioner",
-  Popup: "ComboboxPopup",
-  List: "ComboboxList",
-  Item: "ComboboxItem",
-  ItemText: "ComboboxItemText",
-  ItemIndicator: "ComboboxItemIndicator",
-  Empty: "ComboboxEmpty"
+  ItemText: "ComboboxItemText"
 };
 function ComboboxFieldImpl({
   id = "combobox",
@@ -4621,7 +4897,7 @@ function ComboboxFieldImpl({
   ...rootProps
 }, ref) {
   return /* @__PURE__ */ jsxs6(
-    Combobox.Root,
+    Combobox,
     {
       items,
       inputRef: ref,
@@ -4629,62 +4905,40 @@ function ComboboxFieldImpl({
       itemToStringLabel,
       ...rootProps,
       children: [
-        /* @__PURE__ */ jsx12(
+        /* @__PURE__ */ jsx13(
           InputController,
           {
             id,
             label,
             description,
-            render: (props) => /* @__PURE__ */ jsx12(Combobox.InputGroup, { children: /* @__PURE__ */ jsx12(
+            render: (props) => /* @__PURE__ */ jsx13(ComboboxInputGroup, { unstyled: true, children: /* @__PURE__ */ jsx13(
               InputWrapper,
               {
                 ref,
                 startAdornment,
-                endAdornment: /* @__PURE__ */ jsxs6("div", { className: styles7.ActionButtons, children: [
+                endAdornment: /* @__PURE__ */ jsxs6("div", { className: styles8.ActionButtons, children: [
                   endAdornment,
-                  /* @__PURE__ */ jsx12(
-                    Combobox.Clear,
-                    {
-                      className: styles7.Clear,
-                      "aria-label": "Clear selection",
-                      children: /* @__PURE__ */ jsx12(X, {})
-                    }
-                  ),
-                  /* @__PURE__ */ jsx12(
-                    Combobox.Trigger,
-                    {
-                      className: styles7.Trigger,
-                      "aria-label": "Open popup",
-                      children: /* @__PURE__ */ jsx12(ChevronDown, {})
-                    }
-                  )
+                  /* @__PURE__ */ jsx13(ComboboxClear, { "aria-label": "Clear selection", children: /* @__PURE__ */ jsx13(X, {}) }),
+                  /* @__PURE__ */ jsx13(ComboboxTrigger, { "aria-label": "Open popup", children: /* @__PURE__ */ jsx13(ChevronDown, {}) })
                 ] }),
-                render: (renderProps) => /* @__PURE__ */ jsx12(Combobox.Input, { ...renderProps }),
+                render: (renderProps) => /* @__PURE__ */ jsx13(ComboboxInput, { unstyled: true, ...renderProps }),
                 ...props
               }
             ) })
           }
         ),
-        /* @__PURE__ */ jsx12(Combobox.Portal, { children: /* @__PURE__ */ jsx12(Combobox.Positioner, { className: styles7.Positioner, sideOffset: 4, children: /* @__PURE__ */ jsxs6(Combobox.Popup, { className: styles7.Popup, children: [
-          emptyOption ? /* @__PURE__ */ jsx12(Combobox.Empty, { children: /* @__PURE__ */ jsx12("div", { className: styles7.Empty, children: emptyOption }) }) : null,
-          /* @__PURE__ */ jsx12(Combobox.List, { className: styles7.List, children: (item) => /* @__PURE__ */ jsxs6(
-            Combobox.Item,
-            {
-              value: item,
-              className: styles7.Item,
-              children: [
-                /* @__PURE__ */ jsx12(Combobox.ItemIndicator, { className: styles7.ItemIndicator, children: /* @__PURE__ */ jsx12(Check, {}) }),
-                /* @__PURE__ */ jsx12("span", { className: styles7.ItemText, children: itemToStringLabel(item) })
-              ]
-            },
-            itemToStringValue(item)
-          ) })
+        /* @__PURE__ */ jsx13(ComboboxPortal, { children: /* @__PURE__ */ jsx13(ComboboxPositioner, { sideOffset: 4, children: /* @__PURE__ */ jsxs6(ComboboxPopup, { children: [
+          emptyOption ? /* @__PURE__ */ jsx13(ComboboxEmpty, { children: emptyOption }) : null,
+          /* @__PURE__ */ jsx13(ComboboxList, { children: (item) => /* @__PURE__ */ jsxs6(ComboboxItem, { value: item, children: [
+            /* @__PURE__ */ jsx13(ComboboxItemIndicator, { children: /* @__PURE__ */ jsx13(Check, {}) }),
+            /* @__PURE__ */ jsx13("span", { className: styles8.ItemText, children: itemToStringLabel(item) })
+          ] }, itemToStringValue(item)) })
         ] }) }) })
       ]
     }
   );
 }
-var ComboboxField = forwardRef11(
+var ComboboxField = forwardRef12(
   ComboboxFieldImpl
 );
 
@@ -4692,8 +4946,8 @@ var ComboboxField = forwardRef11(
 import { Radio } from "@base-ui/react/radio";
 import { RadioGroup } from "@base-ui/react/radio-group";
 import * as React8 from "react";
-import { jsx as jsx13, jsxs as jsxs7 } from "react/jsx-runtime";
-var styles8 = {
+import { jsx as jsx14, jsxs as jsxs7 } from "react/jsx-runtime";
+var styles9 = {
   RadioGroup: "RadioGroup",
   Label: "RadioGroupLabel",
   Options: "RadioOptions",
@@ -4712,20 +4966,20 @@ var RadioGroupField = React8.forwardRef(function RadioGroupField2({ id, label, d
     {
       ref,
       id,
-      className: className ?? styles8.RadioGroup,
+      className: className ?? styles9.RadioGroup,
       "aria-labelledby": labelId,
       "aria-describedby": descriptionId,
       ...groupProps,
       children: [
-        label ? /* @__PURE__ */ jsx13("div", { className: styles8.Label, id: labelId, children: label }) : null,
-        /* @__PURE__ */ jsx13("div", { className: styles8.Options, children: options.map((option) => /* @__PURE__ */ jsxs7("label", { className: styles8.Option, children: [
-          /* @__PURE__ */ jsx13(Radio.Root, { value: option.value, className: styles8.Radio, children: /* @__PURE__ */ jsx13(Radio.Indicator, { className: styles8.Indicator }) }),
-          /* @__PURE__ */ jsxs7("span", { className: styles8.Content, children: [
-            /* @__PURE__ */ jsx13("span", { children: option.label }),
-            option.description ? /* @__PURE__ */ jsx13("span", { className: styles8.Description, children: option.description }) : null
+        label ? /* @__PURE__ */ jsx14("div", { className: styles9.Label, id: labelId, children: label }) : null,
+        /* @__PURE__ */ jsx14("div", { className: styles9.Options, children: options.map((option) => /* @__PURE__ */ jsxs7("label", { className: styles9.Option, children: [
+          /* @__PURE__ */ jsx14(Radio.Root, { value: option.value, className: styles9.Radio, children: /* @__PURE__ */ jsx14(Radio.Indicator, { className: styles9.Indicator }) }),
+          /* @__PURE__ */ jsxs7("span", { className: styles9.Content, children: [
+            /* @__PURE__ */ jsx14("span", { children: option.label }),
+            option.description ? /* @__PURE__ */ jsx14("span", { className: styles9.Description, children: option.description }) : null
           ] })
         ] }, option.value)) }),
-        description ? /* @__PURE__ */ jsx13("span", { className: styles8.GroupDescription, id: descriptionId, children: description }) : null
+        description ? /* @__PURE__ */ jsx14("span", { className: styles9.GroupDescription, id: descriptionId, children: description }) : null
       ]
     }
   );
@@ -4733,17 +4987,17 @@ var RadioGroupField = React8.forwardRef(function RadioGroupField2({ id, label, d
 RadioGroupField.displayName = "RadioGroupField";
 
 // src/components/ui/inputs/selectfield.tsx
-import { forwardRef as forwardRef13, useId as useId2 } from "react";
-import { Fragment, jsx as jsx14, jsxs as jsxs8 } from "react/jsx-runtime";
-var SelectField = forwardRef13(
+import { forwardRef as forwardRef14, useId as useId2 } from "react";
+import { Fragment, jsx as jsx15, jsxs as jsxs8 } from "react/jsx-runtime";
+var SelectField = forwardRef14(
   function InputField2({ className, id, label, description, ...inputProps }, ref) {
     const generatedId = useId2();
     const inputId = id ?? generatedId;
     const labelId = label ? inputId + "-label" : void 0;
     const descriptionId = description ? inputId + "-description" : void 0;
     return /* @__PURE__ */ jsxs8(Fragment, { children: [
-      labelId ? /* @__PURE__ */ jsx14(InputLabel, { id: labelId, htmlFor: inputId, children: label }) : null,
-      /* @__PURE__ */ jsx14(
+      labelId ? /* @__PURE__ */ jsx15(InputLabel, { id: labelId, htmlFor: inputId, children: label }) : null,
+      /* @__PURE__ */ jsx15(
         InputWrapper,
         {
           ref,
@@ -4752,31 +5006,31 @@ var SelectField = forwardRef13(
           ...inputProps
         }
       ),
-      descriptionId ? /* @__PURE__ */ jsx14(InputDescription, { id: descriptionId, children: description }) : null
+      descriptionId ? /* @__PURE__ */ jsx15(InputDescription, { id: descriptionId, children: description }) : null
     ] });
   }
 );
 SelectField.displayName = "SelectField";
 
 // src/components/ui/inputs/textareafield.tsx
-import { forwardRef as forwardRef14 } from "react";
-import { jsx as jsx15 } from "react/jsx-runtime";
-var TextAreaField = forwardRef14(function TextAreaField2(props, ref) {
-  return /* @__PURE__ */ jsx15(
+import { forwardRef as forwardRef15 } from "react";
+import { jsx as jsx16 } from "react/jsx-runtime";
+var TextAreaField = forwardRef15(function TextAreaField2(props, ref) {
+  return /* @__PURE__ */ jsx16(
     InputField,
     {
       ref,
       ...props,
-      render: (renderProps) => /* @__PURE__ */ jsx15("textarea", { ...renderProps })
+      render: (renderProps) => /* @__PURE__ */ jsx16("textarea", { ...renderProps })
     }
   );
 });
 TextAreaField.displayName = "TextAreaField";
 
 // src/components/ui/inputs/textfield.tsx
-import { forwardRef as forwardRef15, useId as useId3 } from "react";
-import { jsx as jsx16, jsxs as jsxs9 } from "react/jsx-runtime";
-var TextField = forwardRef15(
+import { forwardRef as forwardRef16, useId as useId3 } from "react";
+import { jsx as jsx17, jsxs as jsxs9 } from "react/jsx-runtime";
+var TextField = forwardRef16(
   function TextField2({
     className,
     id,
@@ -4797,7 +5051,7 @@ var TextField = forwardRef15(
         ...fieldProps,
         className: cn("flex flex-col gap-1", fieldProps?.className),
         children: [
-          labelId ? /* @__PURE__ */ jsx16(
+          labelId ? /* @__PURE__ */ jsx17(
             InputLabel,
             {
               id: labelId,
@@ -4807,7 +5061,7 @@ var TextField = forwardRef15(
               children: label
             }
           ) : null,
-          /* @__PURE__ */ jsx16(
+          /* @__PURE__ */ jsx17(
             InputWrapper,
             {
               ref,
@@ -4819,7 +5073,7 @@ var TextField = forwardRef15(
               ...inputProps
             }
           ),
-          descriptionId ? /* @__PURE__ */ jsx16(InputDescription, { id: descriptionId, children: description }) : null
+          descriptionId ? /* @__PURE__ */ jsx17(InputDescription, { id: descriptionId, children: description }) : null
         ]
       }
     );
@@ -4829,8 +5083,8 @@ TextField.displayName = "TextField";
 
 // src/components/ui/loading/loading.tsx
 import * as React9 from "react";
-import { jsx as jsx17, jsxs as jsxs10 } from "react/jsx-runtime";
-var styles9 = {
+import { jsx as jsx18, jsxs as jsxs10 } from "react/jsx-runtime";
+var styles10 = {
   Loading: "Loading",
   Spinner: "LoadingSpinner",
   Bar: "LoadingBar",
@@ -4854,16 +5108,16 @@ var Loading = React9.forwardRef(
         "aria-busy": "true",
         "data-variant": variant,
         "data-tone": tone,
-        className: cn(styles9.Loading, className),
+        className: cn(styles10.Loading, className),
         ...props,
         children: [
-          variant === "spinner" ? /* @__PURE__ */ jsx17("span", { className: styles9.Spinner, "aria-hidden": "true" }) : null,
-          variant === "bar" ? /* @__PURE__ */ jsx17("span", { className: styles9.Bar, "aria-hidden": "true" }) : null,
-          variant === "overlay" ? /* @__PURE__ */ jsxs10("span", { className: styles9.OverlayContent, children: [
-            /* @__PURE__ */ jsx17("span", { className: styles9.Spinner, "aria-hidden": "true" }),
-            /* @__PURE__ */ jsx17("span", { children: label })
+          variant === "spinner" ? /* @__PURE__ */ jsx18("span", { className: styles10.Spinner, "aria-hidden": "true" }) : null,
+          variant === "bar" ? /* @__PURE__ */ jsx18("span", { className: styles10.Bar, "aria-hidden": "true" }) : null,
+          variant === "overlay" ? /* @__PURE__ */ jsxs10("span", { className: styles10.OverlayContent, children: [
+            /* @__PURE__ */ jsx18("span", { className: styles10.Spinner, "aria-hidden": "true" }),
+            /* @__PURE__ */ jsx18("span", { children: label })
           ] }) : null,
-          variant !== "overlay" && typeof label !== "undefined" ? /* @__PURE__ */ jsx17("span", { className: styles9.Label, children: label }) : null
+          variant !== "overlay" && typeof label !== "undefined" ? /* @__PURE__ */ jsx18("span", { className: styles10.Label, children: label }) : null
         ]
       }
     );
@@ -4874,8 +5128,8 @@ Loading.displayName = "Loading";
 // src/components/ui/menu/menu.tsx
 import { Menu as BaseMenu } from "@base-ui/react/menu";
 import * as React10 from "react";
-import { jsx as jsx18, jsxs as jsxs11 } from "react/jsx-runtime";
-var styles10 = {
+import { jsx as jsx19, jsxs as jsxs11 } from "react/jsx-runtime";
+var styles11 = {
   Positioner: "MenuPositioner",
   Popup: "MenuPopup",
   Item: "MenuItem",
@@ -4888,59 +5142,59 @@ var styles10 = {
 var Menu = BaseMenu.Root;
 var MenuPortal = BaseMenu.Portal;
 var MenuTrigger = React10.forwardRef(function MenuTrigger2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(BaseMenu.Trigger, { ref, className, ...props });
+  return /* @__PURE__ */ jsx19(BaseMenu.Trigger, { ref, className, ...props });
 });
 MenuTrigger.displayName = "MenuTrigger";
 var MenuPositioner = React10.forwardRef(function MenuPositioner2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(
+  return /* @__PURE__ */ jsx19(
     BaseMenu.Positioner,
     {
       ref,
-      className: cn(styles10.Positioner, className),
+      className: cn(styles11.Positioner, className),
       ...props
     }
   );
 });
 MenuPositioner.displayName = "MenuPositioner";
 var MenuPopup = React10.forwardRef(function MenuPopup2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(
+  return /* @__PURE__ */ jsx19(
     BaseMenu.Popup,
     {
       ref,
-      className: cn(styles10.Popup, className),
+      className: cn(styles11.Popup, className),
       ...props
     }
   );
 });
 MenuPopup.displayName = "MenuPopup";
 var MenuItem = React10.forwardRef(function MenuItem2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(
+  return /* @__PURE__ */ jsx19(
     BaseMenu.Item,
     {
       ref,
-      className: cn(styles10.Item, className),
+      className: cn(styles11.Item, className),
       ...props
     }
   );
 });
 MenuItem.displayName = "MenuItem";
 var MenuLinkItem = React10.forwardRef(function MenuLinkItem2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(
+  return /* @__PURE__ */ jsx19(
     BaseMenu.LinkItem,
     {
       ref,
-      className: cn(styles10.Item, className),
+      className: cn(styles11.Item, className),
       ...props
     }
   );
 });
 MenuLinkItem.displayName = "MenuLinkItem";
 var MenuSeparator = React10.forwardRef(function MenuSeparator2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx18(
+  return /* @__PURE__ */ jsx19(
     BaseMenu.Separator,
     {
       ref,
-      className: cn(styles10.Separator, className),
+      className: cn(styles11.Separator, className),
       ...props
     }
   );
@@ -4954,11 +5208,11 @@ var MenuSubmenuTrigger = React10.forwardRef(function MenuSubmenuTrigger2({ child
     BaseMenu.SubmenuTrigger,
     {
       ref,
-      className: cn(styles10.Item, className),
+      className: cn(styles11.Item, className),
       ...props,
       children: [
-        /* @__PURE__ */ jsx18("span", { children }),
-        /* @__PURE__ */ jsx18(ChevronRight, { size: 16, "aria-hidden": "true" })
+        /* @__PURE__ */ jsx19("span", { children }),
+        /* @__PURE__ */ jsx19(ChevronRight, { size: 16, "aria-hidden": "true" })
       ]
     }
   );
@@ -4969,11 +5223,11 @@ var MenuCheckboxItem = React10.forwardRef(function MenuCheckboxItem2({ className
     BaseMenu.CheckboxItem,
     {
       ref,
-      className: cn(styles10.Item, styles10.CheckboxItem, className),
+      className: cn(styles11.Item, styles11.CheckboxItem, className),
       ...props,
       children: [
-        /* @__PURE__ */ jsx18(BaseMenu.CheckboxItemIndicator, { className: styles10.Indicator, children: /* @__PURE__ */ jsx18(Check, { size: 14, "aria-hidden": "true" }) }),
-        /* @__PURE__ */ jsx18("span", { children })
+        /* @__PURE__ */ jsx19(BaseMenu.CheckboxItemIndicator, { className: styles11.Indicator, children: /* @__PURE__ */ jsx19(Check, { size: 14, "aria-hidden": "true" }) }),
+        /* @__PURE__ */ jsx19("span", { children })
       ]
     }
   );
@@ -4985,49 +5239,188 @@ var MenuRadioItem = React10.forwardRef(function MenuRadioItem2({ className, chil
     BaseMenu.RadioItem,
     {
       ref,
-      className: cn(styles10.Item, styles10.RadioItem, className),
+      className: cn(styles11.Item, styles11.RadioItem, className),
       ...props,
       children: [
-        /* @__PURE__ */ jsx18(BaseMenu.RadioItemIndicator, { className: styles10.Indicator, children: /* @__PURE__ */ jsx18("span", { className: styles10.RadioDot }) }),
-        /* @__PURE__ */ jsx18("span", { children })
+        /* @__PURE__ */ jsx19(BaseMenu.RadioItemIndicator, { className: styles11.Indicator, children: /* @__PURE__ */ jsx19("span", { className: styles11.RadioDot }) }),
+        /* @__PURE__ */ jsx19("span", { children })
       ]
     }
   );
 });
 MenuRadioItem.displayName = "MenuRadioItem";
 
+// src/components/ui/popover/popover.tsx
+import { Popover as BasePopover } from "@base-ui/react/popover";
+import * as React11 from "react";
+import { jsx as jsx20, jsxs as jsxs12 } from "react/jsx-runtime";
+var styles12 = {
+  Backdrop: "PopoverBackdrop",
+  Positioner: "PopoverPositioner",
+  Popup: "PopoverPopup",
+  Arrow: "PopoverArrow",
+  Title: "PopoverTitle",
+  Description: "PopoverDescription",
+  Close: "PopoverClose"
+};
+var Popover = BasePopover.Root;
+var PopoverPortal = BasePopover.Portal;
+var PopoverTrigger = React11.forwardRef(function PopoverTrigger2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(BasePopover.Trigger, { ref, className, ...props });
+});
+PopoverTrigger.displayName = "PopoverTrigger";
+var PopoverBackdrop = React11.forwardRef(function PopoverBackdrop2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Backdrop,
+    {
+      ref,
+      className: cn(styles12.Backdrop, className),
+      ...props
+    }
+  );
+});
+PopoverBackdrop.displayName = "PopoverBackdrop";
+var PopoverPositioner = React11.forwardRef(function PopoverPositioner2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Positioner,
+    {
+      ref,
+      className: cn(styles12.Positioner, className),
+      ...props
+    }
+  );
+});
+PopoverPositioner.displayName = "PopoverPositioner";
+var PopoverPopup = React11.forwardRef(function PopoverPopup2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Popup,
+    {
+      ref,
+      className: cn(styles12.Popup, className),
+      ...props
+    }
+  );
+});
+PopoverPopup.displayName = "PopoverPopup";
+var PopoverContent = React11.forwardRef(
+  function PopoverContent2({
+    align,
+    alignOffset,
+    anchor,
+    arrow = false,
+    arrowPadding,
+    arrowProps,
+    collisionAvoidance,
+    collisionBoundary,
+    collisionPadding,
+    disableAnchorTracking,
+    positionMethod,
+    side,
+    sideOffset = 8,
+    sticky,
+    ...props
+  }, ref) {
+    return /* @__PURE__ */ jsx20(PopoverPortal, { children: /* @__PURE__ */ jsxs12(
+      PopoverPositioner,
+      {
+        align,
+        alignOffset,
+        anchor,
+        arrowPadding,
+        collisionAvoidance,
+        collisionBoundary,
+        collisionPadding,
+        disableAnchorTracking,
+        positionMethod,
+        side,
+        sideOffset,
+        sticky,
+        children: [
+          arrow ? /* @__PURE__ */ jsx20(PopoverArrow, { ...arrowProps }) : null,
+          /* @__PURE__ */ jsx20(PopoverPopup, { ref, ...props })
+        ]
+      }
+    ) });
+  }
+);
+PopoverContent.displayName = "PopoverContent";
+var PopoverArrow = React11.forwardRef(function PopoverArrow2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Arrow,
+    {
+      ref,
+      className: cn(styles12.Arrow, className),
+      ...props
+    }
+  );
+});
+PopoverArrow.displayName = "PopoverArrow";
+var PopoverTitle = React11.forwardRef(function PopoverTitle2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Title,
+    {
+      ref,
+      className: cn(styles12.Title, className),
+      ...props
+    }
+  );
+});
+PopoverTitle.displayName = "PopoverTitle";
+var PopoverDescription = React11.forwardRef(function PopoverDescription2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Description,
+    {
+      ref,
+      className: cn(styles12.Description, className),
+      ...props
+    }
+  );
+});
+PopoverDescription.displayName = "PopoverDescription";
+var PopoverClose = React11.forwardRef(function PopoverClose2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx20(
+    BasePopover.Close,
+    {
+      ref,
+      className: cn(styles12.Close, className),
+      ...props
+    }
+  );
+});
+PopoverClose.displayName = "PopoverClose";
+
 // src/components/ui/switch/switch.tsx
 import { Switch as BaseSwitch } from "@base-ui/react/switch";
-import * as React11 from "react";
-import { jsx as jsx19, jsxs as jsxs12 } from "react/jsx-runtime";
-var styles11 = {
+import * as React12 from "react";
+import { jsx as jsx21, jsxs as jsxs13 } from "react/jsx-runtime";
+var styles13 = {
   Field: "SwitchField",
   Switch: "Switch",
   Thumb: "SwitchThumb",
   Label: "SwitchLabel",
   Description: "SwitchDescription"
 };
-var Switch = React11.forwardRef(
+var Switch = React12.forwardRef(
   function Switch2({ id, label, description, className, ...props }, ref) {
-    const inputId = id ?? React11.useId();
+    const inputId = id ?? React12.useId();
     const labelId = label ? `${inputId}-label` : void 0;
     const descriptionId = description ? `${inputId}-description` : void 0;
-    return /* @__PURE__ */ jsxs12("div", { className: styles11.Field, children: [
-      /* @__PURE__ */ jsx19(
+    return /* @__PURE__ */ jsxs13("div", { className: styles13.Field, children: [
+      /* @__PURE__ */ jsx21(
         BaseSwitch.Root,
         {
           ref,
           id: inputId,
-          className: cn(styles11.Switch, className),
+          className: cn(styles13.Switch, className),
           "aria-labelledby": labelId,
           "aria-describedby": descriptionId,
           ...props,
-          children: /* @__PURE__ */ jsx19(BaseSwitch.Thumb, { className: styles11.Thumb })
+          children: /* @__PURE__ */ jsx21(BaseSwitch.Thumb, { className: styles13.Thumb })
         }
       ),
-      label ? /* @__PURE__ */ jsxs12("label", { className: styles11.Label, htmlFor: inputId, children: [
-        /* @__PURE__ */ jsx19("span", { id: labelId, children: label }),
-        description ? /* @__PURE__ */ jsx19("span", { className: styles11.Description, id: descriptionId, children: description }) : null
+      label ? /* @__PURE__ */ jsxs13("label", { className: styles13.Label, htmlFor: inputId, children: [
+        /* @__PURE__ */ jsx21("span", { id: labelId, children: label }),
+        description ? /* @__PURE__ */ jsx21("span", { className: styles13.Description, id: descriptionId, children: description }) : null
       ] }) : null
     ] });
   }
@@ -5054,16 +5447,16 @@ __export(tabs_exports, {
   TabsList: () => TabsList
 });
 import { Tabs as BaseTabs } from "@base-ui/react/tabs";
-import { forwardRef as forwardRef19 } from "react";
+import { forwardRef as forwardRef21 } from "react";
 __reExport(tabs_exports, tabs_star);
 import * as tabs_star from "@base-ui/react/tabs";
-import { jsx as jsx20 } from "react/jsx-runtime";
-var Tabs = forwardRef19(function({ className, ...rest }, ref) {
-  return /* @__PURE__ */ jsx20(BaseTabs.Root, { ref, className: cn("tabs", className), ...rest });
+import { jsx as jsx22 } from "react/jsx-runtime";
+var Tabs = forwardRef21(function({ className, ...rest }, ref) {
+  return /* @__PURE__ */ jsx22(BaseTabs.Root, { ref, className: cn("tabs", className), ...rest });
 });
-var TabIndicator = forwardRef19(
+var TabIndicator = forwardRef21(
   function({ className, ...rest }, ref) {
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx22(
       BaseTabs.Indicator,
       {
         ref,
@@ -5091,8 +5484,8 @@ var tablistVariants = cva("tablist", {
     theme: "primary"
   }
 });
-var TabsList = forwardRef19(function({ variant, theme, className, ...rest }, ref) {
-  return /* @__PURE__ */ jsx20(
+var TabsList = forwardRef21(function({ variant, theme, className, ...rest }, ref) {
+  return /* @__PURE__ */ jsx22(
     BaseTabs.List,
     {
       ref,
@@ -5101,12 +5494,12 @@ var TabsList = forwardRef19(function({ variant, theme, className, ...rest }, ref
     }
   );
 });
-var Tab = forwardRef19(function({ className, ...rest }, ref) {
-  return /* @__PURE__ */ jsx20(BaseTabs.Tab, { ref, className: cn("tab", className), ...rest });
+var Tab = forwardRef21(function({ className, ...rest }, ref) {
+  return /* @__PURE__ */ jsx22(BaseTabs.Tab, { ref, className: cn("tab", className), ...rest });
 });
-var TabPanel = forwardRef19(
+var TabPanel = forwardRef21(
   function({ className, ...rest }, ref) {
-    return /* @__PURE__ */ jsx20(
+    return /* @__PURE__ */ jsx22(
       BaseTabs.Panel,
       {
         ref,
@@ -5125,9 +5518,9 @@ __reExport(ui_exports, tabs_exports2);
 
 // src/components/ui/toast/toast.tsx
 import { Toast as BaseToast } from "@base-ui/react/toast";
-import * as React12 from "react";
-import { jsx as jsx21 } from "react/jsx-runtime";
-var styles12 = {
+import * as React13 from "react";
+import { jsx as jsx23 } from "react/jsx-runtime";
+var styles14 = {
   Viewport: "ToastViewport",
   Toast: "Toast",
   Content: "ToastContent",
@@ -5140,81 +5533,81 @@ var ToastProvider = BaseToast.Provider;
 var useToastManager = BaseToast.useToastManager;
 var createToastManager = BaseToast.createToastManager;
 var ToastPortal = BaseToast.Portal;
-var ToastViewport = React12.forwardRef(function ToastViewport2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastViewport = React13.forwardRef(function ToastViewport2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Viewport,
     {
       ref,
-      className: cn(styles12.Viewport, className),
+      className: cn(styles14.Viewport, className),
       ...props
     }
   );
 });
 ToastViewport.displayName = "ToastViewport";
-var ToastRoot = React12.forwardRef(function ToastRoot2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastRoot = React13.forwardRef(function ToastRoot2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Root,
     {
       ref,
-      className: cn(styles12.Toast, className),
+      className: cn(styles14.Toast, className),
       ...props
     }
   );
 });
 ToastRoot.displayName = "ToastRoot";
-var ToastContent = React12.forwardRef(function ToastContent2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastContent = React13.forwardRef(function ToastContent2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Content,
     {
       ref,
-      className: cn(styles12.Content, className),
+      className: cn(styles14.Content, className),
       ...props
     }
   );
 });
 ToastContent.displayName = "ToastContent";
-var ToastTitle = React12.forwardRef(function ToastTitle2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastTitle = React13.forwardRef(function ToastTitle2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Title,
     {
       ref,
-      className: cn(styles12.Title, className),
+      className: cn(styles14.Title, className),
       ...props
     }
   );
 });
 ToastTitle.displayName = "ToastTitle";
-var ToastDescription = React12.forwardRef(function ToastDescription2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastDescription = React13.forwardRef(function ToastDescription2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Description,
     {
       ref,
-      className: cn(styles12.Description, className),
+      className: cn(styles14.Description, className),
       ...props
     }
   );
 });
 ToastDescription.displayName = "ToastDescription";
-var ToastAction = React12.forwardRef(function ToastAction2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastAction = React13.forwardRef(function ToastAction2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Action,
     {
       ref,
-      className: cn(styles12.Action, className),
+      className: cn(styles14.Action, className),
       ...props
     }
   );
 });
 ToastAction.displayName = "ToastAction";
-var ToastClose = React12.forwardRef(function ToastClose2({ children, className, ...props }, ref) {
-  return /* @__PURE__ */ jsx21(
+var ToastClose = React13.forwardRef(function ToastClose2({ children, className, ...props }, ref) {
+  return /* @__PURE__ */ jsx23(
     BaseToast.Close,
     {
       ref,
-      className: cn(styles12.Close, className),
+      className: cn(styles14.Close, className),
       "aria-label": props["aria-label"] ?? "Dismiss notification",
       ...props,
-      children: children ?? /* @__PURE__ */ jsx21(X, { size: 16, "aria-hidden": "true" })
+      children: children ?? /* @__PURE__ */ jsx23(X, { size: 16, "aria-hidden": "true" })
     }
   );
 });
@@ -5223,22 +5616,22 @@ ToastClose.displayName = "ToastClose";
 // src/components/ui/toggle/toggle.tsx
 import { Toggle as BaseToggle } from "@base-ui/react/toggle";
 import { ToggleGroup as BaseToggleGroup } from "@base-ui/react/toggle-group";
-import * as React13 from "react";
-import { jsx as jsx22 } from "react/jsx-runtime";
-var styles13 = {
+import * as React14 from "react";
+import { jsx as jsx24 } from "react/jsx-runtime";
+var styles15 = {
   Toggle: "Toggle",
   ToggleGroup: "ToggleGroup"
 };
-var Toggle = React13.forwardRef(function Toggle2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx22(BaseToggle, { ref, className: cn(styles13.Toggle, className), ...props });
+var Toggle = React14.forwardRef(function Toggle2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx24(BaseToggle, { ref, className: cn(styles15.Toggle, className), ...props });
 });
 Toggle.displayName = "Toggle";
-var ToggleGroup = React13.forwardRef(function ToggleGroup2({ className, ...props }, ref) {
-  return /* @__PURE__ */ jsx22(
+var ToggleGroup = React14.forwardRef(function ToggleGroup2({ className, ...props }, ref) {
+  return /* @__PURE__ */ jsx24(
     BaseToggleGroup,
     {
       ref,
-      className: cn(styles13.ToggleGroup, className),
+      className: cn(styles15.ToggleGroup, className),
       ...props
     }
   );
@@ -5266,7 +5659,19 @@ export {
   Collapsible,
   CollapsiblePanel,
   CollapsibleTrigger,
+  Combobox,
+  ComboboxClear,
+  ComboboxEmpty,
   ComboboxField,
+  ComboboxInput,
+  ComboboxInputGroup,
+  ComboboxItem,
+  ComboboxItemIndicator,
+  ComboboxList,
+  ComboboxPopup,
+  ComboboxPortal,
+  ComboboxPositioner,
+  ComboboxTrigger,
   Dialog,
   DialogBackdrop,
   DialogClose,
@@ -5307,6 +5712,17 @@ export {
   MenuSubmenuRoot,
   MenuSubmenuTrigger,
   MenuTrigger,
+  Popover,
+  PopoverArrow,
+  PopoverBackdrop,
+  PopoverClose,
+  PopoverContent,
+  PopoverDescription,
+  PopoverPopup,
+  PopoverPortal,
+  PopoverPositioner,
+  PopoverTitle,
+  PopoverTrigger,
   RadioGroupField,
   SelectField,
   Switch,
@@ -5331,9 +5747,11 @@ export {
   badgeVariants,
   buttonVariants,
   cn,
+  createCalendarMonth,
   createToastManager,
   iconButtonVariants,
   inputVariants,
+  useCalendar,
   useToastManager
 };
 /*! Bundled license information:
